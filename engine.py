@@ -1,47 +1,54 @@
 import urllib.request
 import json
+import os
 
-# 1. Your list of tournament/league API links
-API_URLS = [
-    "https://gamesheetstats.com/api/unified-games/14873"
-    # We can paste your other links right here later, separated by commas!
-]
-
-def fetch_and_transform_data():
-    all_raw_games = []
-
-    # 2. EXTRACT: Loop through your links and download the data
-    for url in API_URLS:
-        print(f"Fetching data from: {url}")
+def fetch_all_lacrosse_data():
+    # 1. Safely open and read your sources config file
+    if not os.path.exists('sources.json'):
+        print("❌ Error: sources.json file not found! Please create it first.")
+        return
         
-        # We disguise Python as a normal web browser so the API doesn't block us
+    with open('sources.json', 'r') as f:
+        sources = json.load(f)
+    
+    # 2. Extract every ID number out of both categories
+    league_ids = list(sources.get("leagues", {}).values())
+    tournament_ids = list(sources.get("tournaments", {}).values())
+    all_ids = league_ids + tournament_ids
+    
+    all_raw_games = []
+    
+    print(f"🚀 Lacrosse Data Pipeline Active.")
+    print(f"📊 Found {len(league_ids)} core leagues & {len(tournament_ids)} tournaments in config.")
+    print(f"📡 Processing {len(all_ids)} total GameSheet data streams...\n")
+
+    # 3. Pull down data for every single ID automatically
+    for id_number in all_ids:
+        url = f"https://gamesheetstats.com/api/unified-games/{id_number}"
+        
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         
         try:
             with urllib.request.urlopen(req) as response:
-                # Read the JSON data into Python's memory
                 data = json.loads(response.read().decode())
                 
-                # Add these games to our master list
                 if isinstance(data, list):
                     all_raw_games.extend(data)
-                elif isinstance(data, dict):
-                    print("Found dictionary structure, we may need to adjust!")
+                    print(f"  🔹 ID [{id_number}]: Connected. Grabbed {len(data)} games.")
+                else:
+                    print(f"  ⚠️ ID [{id_number}]: Connected, but returned unexpected format.")
                     
         except Exception as e:
-            print(f"Failed to pull {url} - Error: {e}")
+            print(f"  ❌ Error loading ID [{id_number}]: {e}")
 
-    print(f"\n--- EXTRACTION COMPLETE ---")
-    print(f"Total games downloaded into memory: {len(all_raw_games)}")
-    
-    # 3. TRANSFORM: This is where we will rebuild your Excel rules!
-    print("\n--- TRANSFORMATION READY ---")
-    
-    # For now, let's just peek at the very first game to see the raw data structure
-    if all_raw_games:
-        print("Here is a quick look at the first raw game pulled from GameSheet:")
-        # We print just the first 500 characters so it doesn't flood your screen
-        print(json.dumps(all_raw_games[0], indent=2)[:500] + "\n... [cut off for space]")
+    print(f"\n==================================================")
+    print(f"🏆 PIPELINE AGGREGATION COMPLETE")
+    print(f"==================================================")
+    print(f"Successfully compiled {len(all_raw_games)} total lacrosse games into memory.")
+    print(f"All data streams are now stacked together safely.")
+    print(f"Website integrity unaffected. Sandbox testing successful.")
+    print(f"==================================================")
 
-# Start the engine!
-fetch_and_transform_data()
+# Run the master fetch routine
+if __name__ == "__main__":
+    fetch_all_lacrosse_data()

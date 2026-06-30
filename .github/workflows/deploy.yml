@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository code
         uses: actions/checkout@v4
         with:
-          ref: staging # 👻 THIS LOCKS THE ROBOT TO THE GHOST BRANCH!
+          ref: staging
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -27,8 +27,8 @@ jobs:
           git config --global user.name "DailyLax Automation Bot"
           git config --global user.email "bot@dailylax.ca"
           
-          if [ -n "$(git status --porcelain MyLax_Rankings.json)" ]; then
-            git add MyLax_Rankings.json
+          if [ -n "$(git status --porcelain)" ]; then
+            git add MyLax_Rankings.json site_metadata.json
             git commit -m "🏆 Nightly Standings Auto-Update (Ghost Site)"
             git push origin staging
           else

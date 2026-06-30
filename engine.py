@@ -7,18 +7,25 @@ from datetime import datetime
 DIVISION_MAP = {}
 
 def load_division_map():
+    """Reads your clean division roadmap from divisions.json."""
+    global DIVISION_MAP
     if os.path.exists('divisions.json'):
         with open('divisions.json', 'r') as f:
             DIVISION_MAP = json.load(f)
 
 def clean_team_name(name_string):
-    if not name_string: return ""
+    """Global cleanup for typos that happen everywhere."""
+    if not name_string:
+        return ""
     cleaned = name_string.strip()
-    if cleaned == "Clarington Gaels 1*": return "Clarington Gaels 1"
+    if cleaned == "Clarington Gaels 1*":
+        return "Clarington Gaels 1"
     return cleaned
 
 def format_date_string(raw_date):
-    if not raw_date: return ""
+    """Converts ISO dates to match your standard date format."""
+    if not raw_date:
+        return ""
     try:
         date_part = raw_date.split('T')[0]
         dt = datetime.strptime(date_part, "%Y-%m-%d")
@@ -27,6 +34,7 @@ def format_date_string(raw_date):
         return str(raw_date)
 
 def transform_and_filter_game(game, id_number):
+    """Cleans data and strips individual matches to your 8 required fields."""
     home_name = game.get("homeTeamName") or game.get("homeTeam", {}).get("name") or ""
     visitor_name = game.get("visitorTeamName") or game.get("visitorTeam", {}).get("name") or ""
     div_name = game.get("divisionName") or game.get("division", {}).get("name") or ""
@@ -49,7 +57,6 @@ def transform_and_filter_game(game, id_number):
     raw_date = game.get("date") or game.get("gameDate") or game.get("dateString") or ""
     clean_date = format_date_string(raw_date)
     
-    # Track raw values directly to spot API mismatches
     raw_status = game.get("status") or game.get("gameState") or "final"
     visitor_score = game.get("visitorTeamScore") or game.get("visitorScore") or game.get("visitorGoals") or game.get("visitorTeam", {}).get("score", 0)
     home_score = game.get("homeTeamScore") or game.get("homeScore") or game.get("homeGoals") or game.get("homeTeam", {}).get("score", 0)
@@ -67,51 +74,136 @@ def transform_and_filter_game(game, id_number):
         "Type": str(game_type).lower()
     }
 
-def run_pipeline_auditor(games_list):
-    """
-    🔬 THE PIPELINE AUDITOR
-    Inspects your 5,065 compiled items to tell us exactly why 
-    the ranking filter dropped them.
-    """
-    if not games_list:
-        print("❌ Auditor Error: The dataset passed in is completely empty.")
-        return
-
-    print("\n" + "="*75)
-    print("🔬 PIPELINE AUDITOR REPORT")
-    print("="*75)
-    
-    # 1. Print exactly what the first item looks like inside memory
-    print("🎯 SAMPLE GAME OBJECT STRIPPED BY PYTHON:")
-    print(json.dumps(games_list[0], indent=2))
-    print("-"*75)
-
-    # 2. Audit unique values found in the Status column
-    status_values = {}
-    division_values = set()
-    empty_division_count = 0
-    
+def calculate_srs_rankings(games_list):
+    """Processes games, calculates capped AGD, iterates SoS, and scales top team to 99.99."""
+    division_games = {}
     for g in games_list:
-        stat = g["Status"]
+        if g["Status"] != "final":
+            continue
         div = g["Division"]
-        status_values[stat] = status_values.get(stat, 0) + 1
-        if div:
-            division_values.add(div)
-        else:
-            empty_division_count += 1
+        if not div or div == "":
+            continue
+        if div not in division_games:
+            division_games[div] = []
+        division_games[div].append(g)
 
-    print("🚦 ALL UNIQUE STATUS STRINGS FOUND IN DATA:")
-    for stat, count in status_values.items():
-        print(f"  ▪️ '{stat}' : found in {count} games")
+    all_division_rankings = {}
+
+    for div, games in division_games.items():
+        teams = set()
+        for g in games:
+            teams.add(g["Home Team"])
+            teams.add(g["Visitor Team"])
+        teams = list(teams)
         
-    print(f"\n📦 DIVISION SUMMARY:")
-    print(f"  ▪️ Total Unique Divisions Found: {len(division_values)}")
-    print(f"  ▪️ Games with BLANK/EMPTY Divisions: {empty_division_count}")
-    print("="*75 + "\n")
+        if not teams: 
+            continue
+
+        team_records = {t: {"W": 0, "L": 0, "T": 0, "total_gd": 0, "matchups": []} for t in teams}
+
+        for g in games:
+            home = g["Home Team"]
+            visitor = g["Visitor Team"]
+            h_score = g["Home Score"]
+            v_score = g["Visitor Score"]
+
+            h_diff = h_score - v_score
+            v_diff = v_score - h_score
+
+            h_diff_capped = max(-10, min(10, h_diff))
+            v_diff_capped = max(-10, min(10, v_diff))
+
+            if h_score > v_score:
+                team_records[home]["W"] += 1
+                team_records[visitor]["L"] += 1
+            elif v_score > h_score:
+                team_records[visitor]["W"] += 1
+                team_records[home]["L"] += 1
+            else:
+                team_records[home]["T"] += 1
+                team_records[visitor]["T"] += 1
+
+            team_records[home]["total_gd"] += h_diff_capped
+            team_records[visitor]["total_gd"] += v_diff_capped
+            team_records[home]["matchups"].append((visitor, h_diff_capped))
+            team_records[visitor]["matchups"].append((home, v_diff_capped))
+
+        agd = {}
+        for t in teams:
+            gp = len(team_records[t]["matchups"])
+            agd[t] = team_records[t]["total_gd"] / gp if gp > 0 else 0
+
+        ratings = {t: agd[t] for t in teams}
+
+        for _ in range(200):
+            new_ratings = {}
+            for t in teams:
+                opp_ratings = [ratings[opp] for opp, _ in team_records[t]["matchups"]]
+                sos = sum(opp_ratings) / len(opp_ratings) if opp_ratings else 0
+                new_ratings[t] = sos + agd[t]
+            ratings = new_ratings
+
+        max_rating = max(ratings.values()) if ratings else 0
+        shift = 99.99 - max_rating
+
+        div_leaderboard = []
+        for t in teams:
+            final_rating = ratings[t] + shift
+            final_agd = agd[t]
+            final_sos = final_rating - final_agd
+
+            w = team_records[t]["W"]
+            l = team_records[t]["L"]
+            t_count = team_records[t]["T"]
+            wlt_string = f"{w}-{l}-{t_count}"
+
+            div_leaderboard.append({
+                "Team Name": t,
+                "W-L-T": wlt_string,
+                "Rating": round(final_rating, 2),
+                "AGD": round(final_agd, 2),
+                "SoS": round(final_sos, 2)
+            })
+
+        div_leaderboard = sorted(div_leaderboard, key=lambda x: x["Rating"], reverse=True)
+
+        for index, item in enumerate(div_leaderboard):
+            item["Rank"] = index + 1
+
+        ordered_div_leaderboard = []
+        for item in div_leaderboard:
+            ordered_div_leaderboard.append({
+                "Rank": item["Rank"],
+                "Team Name": item["Team Name"],
+                "W-L-T": item["W-L-T"],
+                "Rating": item["Rating"],
+                "AGD": item["AGD"],
+                "SoS": item["SoS"]
+            })
+
+        all_division_rankings[div] = ordered_div_leaderboard
+
+    return all_division_rankings
+
+def print_rankings_preview(all_rankings):
+    """Prints the actual computed top 5 teams for every single division."""
+    if not all_rankings:
+        print("\n⚠️ SYSTEM NOTICE: The rankings dictionary is completely empty.", flush=True)
+        return
+        
+    print("\n" + "="*90, flush=True)
+    print("📋 SANITARY VERIFICATION PREVIEW - LIVE GENERATED STANDINGS", flush=True)
+    print("="*90, flush=True)
+    for div, teams in sorted(all_rankings.items()):
+        print(f"\n🏆 DIVISION: {div} (Top 5 Snapshot)", flush=True)
+        print(f"{'Rank'.ljust(5)} | {'Team Name'.ljust(30)} | {'W-L-T'.ljust(8)} | {'Rating'.ljust(7)} | {'AGD'.ljust(6)} | {'SoS'}", flush=True)
+        print("-"*90, flush=True)
+        for t in teams[:5]:
+            print(f"{str(t['Rank']).ljust(5)} | {t['Team Name'].ljust(30)} | {t['W-L-T'].ljust(8)} | {str(t['Rating']).ljust(7)} | {str(t['AGD']).ljust(6)} | {t['SoS']}", flush=True)
 
 def fetch_all_lacrosse_data():
     if not os.path.exists('sources.json'):
-        print("❌ Error: sources.json file not found!")
+        print("❌ Error: sources.json file not found!", flush=True)
         return
         
     with open('sources.json', 'r') as f:
@@ -126,6 +218,7 @@ def fetch_all_lacrosse_data():
         else:
             all_ids = list(sources.values())
 
+    print(f"🚀 Initializing Extraction. Found {len(all_ids)} GameSheet targets.", flush=True)
     final_clean_games = []
 
     for id_number in all_ids:
@@ -134,15 +227,25 @@ def fetch_all_lacrosse_data():
         try:
             with urllib.request.urlopen(req) as response:
                 games_list = json.loads(response.read().decode())
-                target_list = games_list if isinstance(games_list, list) else games_list.get("games", [])
+                
+                # Full fallback structure array handling
+                target_list = []
+                if isinstance(games_list, list):
+                    target_list = games_list
+                elif isinstance(games_list, dict):
+                    target_list = games_list.get("games") or games_list.get("data") or games_list.get("unifiedGames") or []
+                
                 for game in target_list:
                     clean_item = transform_and_filter_game(game, id_number)
                     final_clean_games.append(clean_item)
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"  ⚠️ Skipped Target ID [{id_number}]: {e}", flush=True)
 
-    # Run our diagnostic check to look inside memory
-    run_pipeline_auditor(final_clean_games)
+    print(f"✅ Data Extraction Complete. Total valid matches stored: {len(final_clean_games)}", flush=True)
+    print("🧮 Processing 200-loop SRS matrix rankings...", flush=True)
+    
+    rankings_output = calculate_srs_rankings(final_clean_games)
+    print_rankings_preview(rankings_output)
 
 if __name__ == "__main__":
     fetch_all_lacrosse_data()

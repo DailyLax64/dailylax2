@@ -34,19 +34,26 @@ def format_date_string(raw_date):
         return str(raw_date)
 
 def transform_and_filter_game(game, id_number):
-    """Cleans data and strips individual matches to your 8 required fields."""
-    # 1. Gather Team Names Resiliently
-    home_name = game.get("homeTeamName") or game.get("homeTeam", {}).get("name") or ""
-    visitor_name = game.get("visitorTeamName") or game.get("visitorTeam", {}).get("name") or ""
+    """
+    🎯 THE NESTED DATA EXTRACTOR
+    Drills directly into GameSheet's nested 'home' and 'visitor' objects 
+    using the exact blueprint discovered in Cols.xlsx.
+    """
+    # 1. Drill into nested objects for teams and divisions
+    visitor_obj = game.get("visitor", {})
+    home_obj = game.get("home", {})
+    division_obj = visitor_obj.get("division", {})
+
+    visitor_name = visitor_obj.get("title") or ""
+    home_name = home_obj.get("title") or ""
+    div_name = division_obj.get("title") or game.get("divisionName") or "General"
     
-    # 2. Gather Division Names with deep-key fallbacks
-    div_name = game.get("divisionName") or game.get("division", {}).get("name") or game.get("divName") or "General"
-    
+    # Clean structural strings
     home_name = clean_team_name(home_name)
     visitor_name = clean_team_name(visitor_name)
     div_name = str(div_name).strip()
 
-    # Apply specialized tournament modifications
+    # Apply regional tournament overrides
     if id_number == 15090 and div_name and not div_name.startswith("Girls "):
         div_name = f"Girls {div_name}"
 
@@ -58,24 +65,23 @@ def transform_and_filter_game(game, id_number):
             if home_name == "Halton Hills Bulldogs": home_name = "Halton Hills Bulldogs 1"
             if visitor_name == "Halton Hills Bulldogs": visitor_name = "Halton Hills Bulldogs 1"
 
-    # 3. Gather Game Timing Meta
-    raw_date = game.get("date") or game.get("gameDate") or game.get("dateString") or ""
+    # 2. Extract nested metrics, dates, and game states
+    raw_date = game.get("date") or ""
     clean_date = format_date_string(raw_date)
     
-    # 4. Gather Core Game Metrics safely
-    visitor_score = game.get("visitorTeamScore") or game.get("visitorScore") or game.get("visitorGoals") or game.get("visitorTeam", {}).get("score", 0)
-    home_score = game.get("homeTeamScore") or game.get("homeScore") or game.get("homeGoals") or game.get("homeTeam", {}).get("score", 0)
+    visitor_score = visitor_obj.get("goals", 0)
+    home_score = home_obj.get("goals", 0)
     
-    raw_status = game.get("status") or game.get("gameState") or game.get("gameStatus") or "final"
-    game_type = game.get("type") or game.get("gameType") or "regular_season"
+    raw_status = game.get("status") or "final"
+    game_type = game.get("gameType") or "regular_season"
 
     return {
         "Date": clean_date,
         "Division": div_name,  
         "Visitor Team": visitor_name,
-        "Visitor Score": int(visitor_score) if visitor_score else 0,
+        "Visitor Score": int(visitor_score) if visitor_score is not None else 0,
         "Home Team": home_name,
-        "Home Score": int(home_score) if home_score else 0,
+        "Home Score": int(home_score) if home_score is not None else 0,
         "Status": str(raw_status).strip().lower(),
         "Type": str(game_type).lower()
     }
@@ -83,21 +89,16 @@ def transform_and_filter_game(game, id_number):
 def calculate_srs_rankings(games_list):
     """Processes games, calculates capped AGD, iterates SoS, and scales top team to 99.99."""
     division_games = {}
-    
-    # Acceptable strings indicating a completed match card row
     valid_completed_states = ["final", "official", "completed", "complete", "played", "2"]
 
     for g in games_list:
-        # Check if the game status matches our expanded array or if scores are already logged
-        is_completed = g["Status"] in valid_completed_states or (g["Home Score"] > 0 or g["Visitor Score"] > 0)
-        
-        if not is_completed:
+        # Filter: Only look at final/completed matches
+        if g["Status"] not in valid_completed_states:
             continue
             
         div = g["Division"]
-        if not div:
-            div = "Unassigned"
-            
+        if not div or div == "":
+            continue
         if div not in division_games:
             division_games[div] = []
         division_games[div].append(g)
@@ -111,6 +112,7 @@ def calculate_srs_rankings(games_list):
             if g["Visitor Team"]: teams.add(g["Visitor Team"])
         teams = list(teams)
         
+        # We need at least two teams in a division to calculate a relative ranking metric
         if not teams or len(teams) < 2: 
             continue
 
@@ -207,7 +209,7 @@ def print_rankings_preview(all_rankings):
         return
         
     print("\n" + "="*90, flush=True)
-    print("📋 SANITARY VERIFICATION PREVIEW - LIVE GENERATED STANDINGS", flush=True)
+    print("📋 LIVE GENERATED LEADERBOARDS (SRS ALGORITHM)", flush=True)
     print("="*90, flush=True)
     for div, teams in sorted(all_rankings.items()):
         print(f"\n🏆 DIVISION: {div} (Top 5 Snapshot)", flush=True)
@@ -228,10 +230,11 @@ def fetch_all_lacrosse_data():
     
     all_ids = []
     if isinstance(sources, dict):
-        if "leagues" in sources or "tournaments" in sources:
-            all_ids = list(sources.get("leagues", {}).values()) + list(sources.get("tournaments", {}).values())
-        else:
+        all_ids = list(sources.get("leagues", {}).values()) + list(sources.get("tournaments", {}).values())
+        if not all_ids:
             all_ids = list(sources.values())
+    elif isinstance(sources, list):
+        all_ids = sources
 
     print(f"🚀 Initializing Extraction. Found {len(all_ids)} GameSheet targets.", flush=True)
     final_clean_games = []
@@ -243,16 +246,11 @@ def fetch_all_lacrosse_data():
             with urllib.request.urlopen(req) as response:
                 games_list = json.loads(response.read().decode())
                 
-                target_list = []
-                if isinstance(games_list, list):
-                    target_list = games_list
-                elif isinstance(games_list, dict):
-                    target_list = games_list.get("games") or games_list.get("data") or games_list.get("unifiedGames") or []
-                
+                target_list = games_list if isinstance(games_list, list) else games_list.get("games") or games_list.get("data") or []
                 for game in target_list:
                     clean_item = transform_and_filter_game(game, id_number)
                     final_clean_games.append(clean_item)
-        except Exception as e:
+        except Exception:
             pass
 
     print(f"✅ Data Extraction Complete. Total valid matches stored: {len(final_clean_games)}", flush=True)
@@ -260,6 +258,11 @@ def fetch_all_lacrosse_data():
     
     rankings_output = calculate_srs_rankings(final_clean_games)
     print_rankings_preview(rankings_output)
+    
+    # Save the output to your JSON data payload file
+    output_filename = "MyLax_Rankings.json"
+    with open(output_filename, 'w') as out_file:
+        json.dump(rankings_output, out_file, indent=2)
 
 if __name__ == "__main__":
     fetch_all_lacrosse_data()

@@ -1,0 +1,19 @@
+name: Safe Sandbox Test
+
+on:
+  workflow_dispatch: # This adds a manual "Run Test" button to your screen!
+
+jobs:
+  run-test-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-python: '3.11'
+
+      - name: Run Lacrosse Engine
+        run: python engine.py

@@ -14,18 +14,13 @@ def load_division_map():
             DIVISION_MAP = json.load(f)
 
 def clean_team_name(name_string):
-    """Global cleanup for typos that happen everywhere."""
-    if not name_string:
-        return ""
+    if not name_string: return ""
     cleaned = name_string.strip()
-    if cleaned == "Clarington Gaels 1*":
-        return "Clarington Gaels 1"
+    if cleaned == "Clarington Gaels 1*": return "Clarington Gaels 1"
     return cleaned
 
 def format_date_string(raw_date):
-    """Converts ISO dates to match your standard date format."""
-    if not raw_date:
-        return ""
+    if not raw_date: return ""
     try:
         date_part = raw_date.split('T')[0]
         dt = datetime.strptime(date_part, "%Y-%m-%d")
@@ -34,7 +29,6 @@ def format_date_string(raw_date):
         return str(raw_date)
 
 def transform_and_filter_game(game, id_number):
-    """Cleans data and strips individual matches to your 8 required fields."""
     home_name = game.get("homeTeamName") or game.get("homeTeam", {}).get("name") or ""
     visitor_name = game.get("visitorTeamName") or game.get("visitorTeam", {}).get("name") or ""
     div_name = game.get("divisionName") or game.get("division", {}).get("name") or ""
@@ -75,7 +69,6 @@ def transform_and_filter_game(game, id_number):
     }
 
 def calculate_srs_rankings(games_list):
-    """Processes games, calculates capped AGD, iterates SoS, and scales top team to 99.99."""
     division_games = {}
     for g in games_list:
         if g["Status"] != "final":
@@ -96,8 +89,7 @@ def calculate_srs_rankings(games_list):
             teams.add(g["Visitor Team"])
         teams = list(teams)
         
-        if not teams:
-            continue
+        if not teams: continue
 
         team_records = {t: {"W": 0, "L": 0, "T": 0, "total_gd": 0, "matchups": []} for t in teams}
 
@@ -186,22 +178,19 @@ def calculate_srs_rankings(games_list):
     return all_division_rankings
 
 def print_rankings_preview(all_rankings):
-    """
-    🔍 AUDIT VISUALIZER
-    Prints the actual calculated top 5 teams for every single division 
-    directly into your GitHub Actions logs for validation.
-    """
+    if not all_rankings:
+        print("\n⚠️ SYSTEM NOTICE: The rankings dictionary is completely empty because 0 games were imported.")
+        return
+        
     print("\n" + "="*90)
     print("📋 SANITARY VERIFICATION PREVIEW - LIVE GENERATED STANDINGS")
     print("="*90)
-    
     for div, teams in sorted(all_rankings.items()):
         print(f"\n🏆 DIVISION: {div} (Top 5 Snapshot)")
         print(f"{'Rank'.ljust(5)} | {'Team Name'.ljust(30)} | {'W-L-T'.ljust(8)} | {'Rating'.ljust(7)} | {'AGD'.ljust(6)} | {'SoS'}")
         print("-"*90)
         for t in teams[:5]:
             print(f"{str(t['Rank']).ljust(5)} | {t['Team Name'].ljust(30)} | {t['W-L-T'].ljust(8)} | {str(t['Rating']).ljust(7)} | {str(t['AGD']).ljust(6)} | {t['SoS']}")
-    print("\n" + "="*90 + "\n")
 
 def fetch_all_lacrosse_data():
     if not os.path.exists('sources.json'):
@@ -212,35 +201,56 @@ def fetch_all_lacrosse_data():
         sources = json.load(f)
     
     load_division_map()
-    all_ids = list(sources.get("leagues", {}).values()) + list(sources.get("tournaments", {}).values())
-    final_clean_games = []
     
-    print(f"🚀 Lacrosse Data Pipeline Active. Compiling games...")
+    # Smart Extraction: Handle nested dicts OR flat list structures dynamically
+    all_ids = []
+    if isinstance(sources, dict):
+        if "leagues" in sources or "tournaments" in sources:
+            all_ids = list(sources.get("leagues", {}).values()) + list(sources.get("tournaments", {}).values())
+        else:
+            all_ids = list(sources.values())
+    elif isinstance(sources, list):
+        all_ids = sources
 
+    print(f"🚀 Diagnostics Engaged. Successfully extracted {len(all_ids)} GameSheet IDs from config.")
+    if len(all_ids) == 0:
+        print("⚠️ Warning: Your sources.json parsed as empty. Please verify your file contents layout.")
+        return
+
+    final_clean_games = []
+
+    # Run network connection diagnostics on your sources
     for id_number in all_ids:
         url = f"https://gamesheetstats.com/api/unified-games/{id_number}"
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
+        
         try:
             with urllib.request.urlopen(req) as response:
-                games_list = json.loads(response.read().decode())
+                raw_data = response.read().decode()
+                games_list = json.loads(raw_data)
+                
+                # Check wrapper structures
+                target_list = []
                 if isinstance(games_list, list):
-                    for game in games_list:
+                    target_list = games_list
+                elif isinstance(games_list, dict):
+                    target_list = games_list.get("games") or games_list.get("data") or []
+                
+                if target_list:
+                    print(f"  🔹 ID [{id_number}]: Connected. Imported {len(target_list)} matches.")
+                    for game in target_list:
                         clean_item = transform_and_filter_game(game, id_number)
                         final_clean_games.append(clean_item)
-        except Exception:
-            pass
+                else:
+                    print(f"  ⚠️ ID [{id_number}]: Connected, but returned no game objects.")
+                    
+        except Exception as e:
+            print(f"  ❌ Connection Failure on ID [{id_number}]: {e}")
 
-    print(f"✅ Downloaded and cleaned {len(final_clean_games)} total match cards.")
-    print("🧮 Running iterative SRS matrix loop across all divisions...")
+    print(f"\n✅ Diagnostic Processing Complete. Total valid games stored: {len(final_clean_games)}")
+    
     rankings_output = calculate_srs_rankings(final_clean_games)
-    
-    # Run our new console visualizer!
     print_rankings_preview(rankings_output)
-    
-    # Save output locally
-    output_filename = "MyLax_Rankings.json"
-    with open(output_filename, 'w') as out_file:
-        json.dump(rankings_output, out_file, indent=2)
 
 if __name__ == "__main__":
     fetch_all_lacrosse_data()

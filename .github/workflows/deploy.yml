@@ -28,7 +28,8 @@ jobs:
           git config --global user.email "bot@dailylax.ca"
           
           if [ -n "$(git status --porcelain)" ]; then
-            git add MyLax_Rankings.json site_metadata.json
+            # EDITED LINE TO INJECT HISTORY TRACKING:
+            git add MyLax_Rankings.json site_metadata.json rankings_history.json
             git commit -m "🏆 Nightly Standings Auto-Update (Ghost Site)"
             git push origin staging
           else

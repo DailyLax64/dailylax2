@@ -23,7 +23,8 @@
         .animate-marquee {
             display: flex;
             width: max-content;
-            animation: marquee 60s linear infinite;
+            /* 🏎️ SLOWED DOWN TO 75 SECONDS PER LOOP */
+            animation: marquee 75s linear infinite;
         }
         .animate-marquee:hover {
             animation-play-state: paused;
@@ -389,6 +390,7 @@
                 if (team.Rank === 2) { rankClass = "text-cyan-400 font-black"; rowBgClass = "bg-cyan-950/5"; }
                 if (team.Rank === 3) { rankClass = "text-lime-400 font-bold"; }
 
+                /* 🎯 HARDCODED TO 4 DECIMALS STRICT VIA TOFIXED(4) FOR RATING, AGD, AND SOS */
                 tr.innerHTML = `
                     <td class="py-4 px-6 text-center ${rankClass} ${rowBgClass}">${team.Rank}</td>
                     <td class="py-4 px-6 font-black text-neutral-200 tracking-tight ${rowBgClass}">${teamName}</td>

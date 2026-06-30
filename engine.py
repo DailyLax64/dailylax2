@@ -75,12 +75,7 @@ def transform_and_filter_game(game, id_number):
     }
 
 def calculate_srs_rankings(games_list):
-    """
-    🧮 THE MATRIX RANKING ENGINE (SRS ALGORITHM)
-    Processes games group-by-division, calculates capped AGD, 
-    iterates Strength of Schedule, and scales top team to 99.99.
-    """
-    # 1. Group games by division (only processing games marked 'final')
+    """Processes games, calculates capped AGD, iterates SoS, and scales top team to 99.99."""
     division_games = {}
     for g in games_list:
         if g["Status"] != "final":
@@ -94,9 +89,7 @@ def calculate_srs_rankings(games_list):
 
     all_division_rankings = {}
 
-    # 2. Process each division independently
     for div, games in division_games.items():
-        # Find all unique teams in this division
         teams = set()
         for g in games:
             teams.add(g["Home Team"])
@@ -106,7 +99,6 @@ def calculate_srs_rankings(games_list):
         if not teams:
             continue
 
-        # Set up stat ledgers
         team_records = {t: {"W": 0, "L": 0, "T": 0, "total_gd": 0, "matchups": []} for t in teams}
 
         for g in games:
@@ -115,15 +107,12 @@ def calculate_srs_rankings(games_list):
             h_score = g["Home Score"]
             v_score = g["Visitor Score"]
 
-            # Compute goal spread
             h_diff = h_score - v_score
             v_diff = v_score - h_score
 
-            # Cap differential rule: Max +10 for a win, Min -10 for a loss
             h_diff_capped = max(-10, min(10, h_diff))
             v_diff_capped = max(-10, min(10, v_diff))
 
-            # Record basic record wins/losses/ties
             if h_score > v_score:
                 team_records[home]["W"] += 1
                 team_records[visitor]["L"] += 1
@@ -134,32 +123,26 @@ def calculate_srs_rankings(games_list):
                 team_records[home]["T"] += 1
                 team_records[visitor]["T"] += 1
 
-            # Save data to calculate AGD and weight opponent frequencies
             team_records[home]["total_gd"] += h_diff_capped
             team_records[visitor]["total_gd"] += v_diff_capped
             team_records[home]["matchups"].append((visitor, h_diff_capped))
             team_records[visitor]["matchups"].append((home, v_diff_capped))
 
-        # Compute fixed Average Goal Differential (AGD)
         agd = {}
         for t in teams:
             gp = len(team_records[t]["matchups"])
             agd[t] = team_records[t]["total_gd"] / gp if gp > 0 else 0
 
-        # Initialize team ratings using their basic AGD as a baseline
         ratings = {t: agd[t] for t in teams}
 
-        # 3. Iterative Strength of Schedule calculation loop (200 cycles for perfect convergence)
         for _ in range(200):
             new_ratings = {}
             for t in teams:
                 opp_ratings = [ratings[opp] for opp, _ in team_records[t]["matchups"]]
-                # Automatically weights multiple games against the same opponent natively via list averaging
                 sos = sum(opp_ratings) / len(opp_ratings) if opp_ratings else 0
                 new_ratings[t] = sos + agd[t]
             ratings = new_ratings
 
-        # 4. Normalize and apply mathematical shift to scale highest-ranked team to exactly 99.99
         max_rating = max(ratings.values()) if ratings else 0
         shift = 99.99 - max_rating
 
@@ -167,7 +150,6 @@ def calculate_srs_rankings(games_list):
         for t in teams:
             final_rating = ratings[t] + shift
             final_agd = agd[t]
-            # Back-calculate final SoS to maintain absolute mathematical equilibrium (Rating = SoS + AGD)
             final_sos = final_rating - final_agd
 
             w = team_records[t]["W"]
@@ -183,14 +165,11 @@ def calculate_srs_rankings(games_list):
                 "SoS": round(final_sos, 2)
             })
 
-        # Sort division by rating descending
         div_leaderboard = sorted(div_leaderboard, key=lambda x: x["Rating"], reverse=True)
 
-        # Inject sequential Rank integers
         for index, item in enumerate(div_leaderboard):
             item["Rank"] = index + 1
 
-        # Enforce exact variable key layout order specified by instructions
         ordered_div_leaderboard = []
         for item in div_leaderboard:
             ordered_div_leaderboard.append({
@@ -206,6 +185,24 @@ def calculate_srs_rankings(games_list):
 
     return all_division_rankings
 
+def print_rankings_preview(all_rankings):
+    """
+    🔍 AUDIT VISUALIZER
+    Prints the actual calculated top 5 teams for every single division 
+    directly into your GitHub Actions logs for validation.
+    """
+    print("\n" + "="*90)
+    print("📋 SANITARY VERIFICATION PREVIEW - LIVE GENERATED STANDINGS")
+    print("="*90)
+    
+    for div, teams in sorted(all_rankings.items()):
+        print(f"\n🏆 DIVISION: {div} (Top 5 Snapshot)")
+        print(f"{'Rank'.ljust(5)} | {'Team Name'.ljust(30)} | {'W-L-T'.ljust(8)} | {'Rating'.ljust(7)} | {'AGD'.ljust(6)} | {'SoS'}")
+        print("-"*90)
+        for t in teams[:5]:
+            print(f"{str(t['Rank']).ljust(5)} | {t['Team Name'].ljust(30)} | {t['W-L-T'].ljust(8)} | {str(t['Rating']).ljust(7)} | {str(t['AGD']).ljust(6)} | {t['SoS']}")
+    print("\n" + "="*90 + "\n")
+
 def fetch_all_lacrosse_data():
     if not os.path.exists('sources.json'):
         print("❌ Error: sources.json file not found!")
@@ -218,7 +215,7 @@ def fetch_all_lacrosse_data():
     all_ids = list(sources.get("leagues", {}).values()) + list(sources.get("tournaments", {}).values())
     final_clean_games = []
     
-    print(f"🚀 Lacrosse Data Pipeline Active. Compiling games across Ontario...")
+    print(f"🚀 Lacrosse Data Pipeline Active. Compiling games...")
 
     for id_number in all_ids:
         url = f"https://gamesheetstats.com/api/unified-games/{id_number}"
@@ -234,22 +231,16 @@ def fetch_all_lacrosse_data():
             pass
 
     print(f"✅ Downloaded and cleaned {len(final_clean_games)} total match cards.")
-    
-    # Run the math matrix engine!
     print("🧮 Running iterative SRS matrix loop across all divisions...")
     rankings_output = calculate_srs_rankings(final_clean_games)
     
-    # Save the output directly into your live web data ledger file
+    # Run our new console visualizer!
+    print_rankings_preview(rankings_output)
+    
+    # Save output locally
     output_filename = "MyLax_Rankings.json"
     with open(output_filename, 'w') as out_file:
         json.dump(rankings_output, out_file, indent=2)
-        
-    print(f"\n==================================================")
-    print(f"🏆 RANKINGS MATH COMPUTATION COMPLETE")
-    print(f"==================================================")
-    print(f"Processed standings for {len(rankings_output.keys())} unique divisions.")
-    print(f"Saved rankings directly into live payload: '{output_filename}'")
-    print(f"==================================================")
 
 if __name__ == "__main__":
     fetch_all_lacrosse_data()

@@ -29,7 +29,7 @@ jobs:
           
           if [ -n "$(git status --porcelain)" ]; then
             git add MyLax_Rankings.json site_metadata.json
-            git commit -m "🏆 Nightly Standings Auto-Update (Ghost Site) [skip netlify]"
+            git commit -m "🏆 Nightly Standings Auto-Update (Ghost Site)"
             git push origin staging
           else
             echo "📊 No data changes detected tonight."

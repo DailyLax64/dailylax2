@@ -23,7 +23,7 @@
         .animate-marquee {
             display: flex;
             width: max-content;
-            animation: marquee 45s linear infinite;
+            animation: marquee 60s linear infinite;
         }
         .animate-marquee:hover {
             animation-play-state: paused;
@@ -282,9 +282,9 @@
                     metadata.recent_tournaments.forEach((name, index) => {
                         const color = colorPalette[index % colorPalette.length];
                         tourneyEl.innerHTML += `
-                            <li class="flex items-center space-x-2 bg-neutral-950 p-2.5 rounded border border-neutral-800">
-                                <span class="w-2 h-2 min-w-[8px] rounded-full ${color.bg} ${color.shadow}"></span>
-                                <span class="truncate">${name}</span>
+                            <li class="flex items-start space-x-2 bg-neutral-950 p-2.5 rounded border border-neutral-800">
+                                <span class="w-2 h-2 min-w-[8px] rounded-full mt-1 ${color.bg} ${color.shadow}"></span>
+                                <span class="leading-tight">\${name}</span>
                             </li>
                         `;
                     });

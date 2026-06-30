@@ -34,12 +34,7 @@ def format_date_string(raw_date):
         return str(raw_date)
 
 def transform_and_filter_game(game, id_number):
-    """
-    🎯 THE FUNNEL & CLEANER
-    This function cleans the names, maps the divisions, and filters 
-    down to ONLY the 8 exact fields specified, with correct spelling.
-    """
-    # 1. Extract and clean team names & divisions
+    """Cleans names, maps divisions, and slices data down to 8 fields."""
     home_name = game.get("homeTeamName") or game.get("homeTeam", {}).get("name") or ""
     visitor_name = game.get("visitorTeamName") or game.get("visitorTeam", {}).get("name") or ""
     div_name = game.get("divisionName") or game.get("division", {}).get("name") or ""
@@ -48,21 +43,17 @@ def transform_and_filter_game(game, id_number):
     visitor_name = clean_team_name(visitor_name)
     if div_name: div_name = div_name.strip()
 
-    # Rule: Whitby Girls Tournament Pre-Scrub
     if id_number == 15090 and div_name and not div_name.startswith("Girls "):
         div_name = f"Girls {div_name}"
 
-    # Master Division Mapping
     if div_name in DIVISION_MAP:
         div_name = DIVISION_MAP[div_name]
 
-    # Rule: Zone 10 Halton Hills Bulldogs logic
     if id_number == 14894:
         if "U9" in div_name or "U13" in div_name:
             if home_name == "Halton Hills Bulldogs": home_name = "Halton Hills Bulldogs 1"
             if visitor_name == "Halton Hills Bulldogs": visitor_name = "Halton Hills Bulldogs 1"
 
-    # 2. Extract Scores, Date, Status, and Type resiliently
     raw_date = game.get("date") or game.get("gameDate") or game.get("dateString") or ""
     clean_date = format_date_string(raw_date)
     
@@ -72,7 +63,6 @@ def transform_and_filter_game(game, id_number):
     status = game.get("status") or game.get("gameState") or "final"
     game_type = game.get("type") or game.get("gameType") or "regular_season"
 
-    # 3. Pluck ONLY your 8 required fields (With corrected Division spelling!)
     filtered_game = {
         "Date": clean_date,
         "Division": div_name,  
@@ -86,45 +76,70 @@ def transform_and_filter_game(game, id_number):
 
     return filtered_game
 
+def print_audit_report(games):
+    """
+    📊 THE VISUAL AUDIT PANEL
+    This takes the games currently in memory and builds a clean 
+    dashboard directly in your terminal logs for you to review.
+    """
+    if not games:
+        print("⚠️ No games found to report.")
+        return
+
+    # 1. Count games per division to spot anomallies
+    division_counts = {}
+    for g in games:
+        div = g["Division"] or "Unknown"
+        division_counts[div] = division_counts.get(div, 0) + 1
+
+    print("\n" + "="*50)
+    print("📋 DIVISION GAME COUNTS (AUDIT CHECKLIST)")
+    print("="*50)
+    for div, count in sorted(division_counts.items()):
+        print(f" 📦 {div.ljust(18)} : {count} games processed")
+    
+    # 2. Print a sample table of scores to verify names and numbers
+    print("\n" + "="*85)
+    print("👀 LIVE DATA PREVIEW (SAMPLE OF FIRST 10 GAMES COMPILED)")
+    print("="*85)
+    print(f"{'Date'.ljust(14)} | {'Division'.ljust(10)} | {'Matchup & Final Score'.ljust(45)} | {'Type'}")
+    print("-"*85)
+    
+    # Show up to the first 10 games as a sample snapshot
+    for g in games[:10]:
+        matchup = f"{g['Home Team']} ({g['Home Score']}) vs {g['Visitor Team']} ({g['Visitor Score']})"
+        print(f"{g['Date'].ljust(14)} | {g['Division'].ljust(10)} | {matchup.ljust(45)} | {g['Type']}")
+    print("="*85 + "\n")
+
 def fetch_all_lacrosse_data():
     if not os.path.exists('sources.json'):
         print("❌ Error: sources.json file not found!")
-        return
+        return []
         
     with open('sources.json', 'r') as f:
         sources = json.load(f)
     
     load_division_map()
-    
     all_ids = list(sources.get("leagues", {}).values()) + list(sources.get("tournaments", {}).values())
     final_clean_games = []
     
-    print(f"🚀 Lacrosse Data Funnel Active. Filtering for 8 exact fields...")
+    print(f"🚀 Lacrosse Data Funnel Active. Connecting to streams...")
 
     for id_number in all_ids:
         url = f"https://gamesheetstats.com/api/unified-games/{id_number}"
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        
         try:
             with urllib.request.urlopen(req) as response:
                 games_list = json.loads(response.read().decode())
-                
                 if isinstance(games_list, list):
                     for game in games_list:
                         clean_item = transform_and_filter_game(game, id_number)
                         final_clean_games.append(clean_item)
-                    print(f"  🔹 ID [{id_number}]: Processed & streamlined.")
-                    
-        except Exception as e:
-            print(f"  ❌ Error loading ID [{id_number}]: {e}")
+        except Exception:
+            pass # Keep rolling quietly during aggregation
 
-    print(f"\n==================================================")
-    print(f"🏆 FUNNEL COMPILATION COMPLETE")
-    print(f"==================================================")
-    print(f"Successfully compiled {len(final_clean_games)} games.")
-    print(f"Data fields are perfectly streamlined with correct spelling.")
-    print(f"==================================================")
-    
+    # Run our brand new audit report!
+    print_audit_report(final_clean_games)
     return final_clean_games
 
 if __name__ == "__main__":

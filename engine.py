@@ -171,7 +171,6 @@ def calculate_srs_rankings(games_list):
 
         for index, item in enumerate(div_leaderboard):
             item["Rank"] = index + 1
-            # 👑 FORCED 1ST PLACE OVERRIDE RULE:
             if index == 0:
                 item["Rating"] = 99.9999
 
@@ -274,6 +273,35 @@ def fetch_all_lacrosse_data():
     
     with open("MyLax_Rankings.json", 'w') as out_file:
         json.dump(rankings_output, out_file, indent=2)
+
+    # --- NEW: ROLLING 6-DAY HISTORY BLACK BOX ---
+    history_file = "rankings_history.json"
+    history_data = {}
+    
+    if os.path.exists(history_file):
+        try:
+            with open(history_file, 'r') as hf:
+                history_data = json.load(hf)
+        except Exception:
+            history_data = {}
+
+    # Convert today's standings into a tight, simple history map: { Division: { Team: Rank } }
+    today_key = datetime.now().strftime("%Y-%m-%d")
+    today_map = {}
+    for div, teams in rankings_output.items():
+        today_map[div] = {t["Team Name"]: t["Rank"] for t in teams}
+        
+    history_data[today_key] = today_map
+
+    # Enforce rolling 6-day ceiling (drop oldest dates if we overshoot)
+    sorted_history_days = sorted(history_data.keys())
+    while len(sorted_history_days) > 6:
+        oldest_day = sorted_history_days.pop(0)
+        history_data.pop(oldest_day, None)
+
+    with open(history_file, 'w') as hf:
+        json.dump(history_data, hf, indent=2)
+    print(f"📦 History log updated. Total archive days saved: {len(history_data)}/6", flush=True)
 
 if __name__ == "__main__":
     fetch_all_lacrosse_data()

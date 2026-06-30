@@ -248,4 +248,60 @@ def fetch_all_lacrosse_data():
     valid_dates = []
     valid_states = ["final", "official", "completed", "complete", "played", "2"]
     for g in final_clean_games:
-        if g["Status"] in valid_states and g
+        if g["Status"] in valid_states and g["Date"]:
+            try:
+                dt = datetime.strptime(g["Date"], "%b %d, %Y")
+                valid_dates.append(dt)
+            except Exception:
+                pass
+                
+    latest_date_str = "Unknown"
+    if valid_dates:
+        latest_date_str = max(valid_dates).strftime("%B %d, %Y")
+        print(f"📅 Most recent recorded game: {latest_date_str}", flush=True)
+
+    # WRITE METADATA JSON
+    metadata = {
+        "latest_game_date": latest_date_str,
+        "recent_tournaments": recent_tournaments
+    }
+    with open("site_metadata.json", "w") as f:
+        json.dump(metadata, f, indent=2)
+
+    print("🧮 Processing 200-loop SRS matrix rankings...", flush=True)
+    rankings_output = calculate_srs_rankings(final_clean_games)
+    
+    with open("MyLax_Rankings.json", 'w') as out_file:
+        json.dump(rankings_output, out_file, indent=2)
+
+    # --- ROLLING 6-DAY HISTORY WITH RANK AND RATING PROFILE ---
+    history_file = "rankings_history.json"
+    history_data = {}
+    
+    if os.path.exists(history_file):
+        try:
+            with open(history_file, 'r') as hf:
+                history_data = json.load(hf)
+        except Exception:
+            history_data = {}
+
+    today_key = datetime.now().strftime("%Y-%m-%d")
+    today_map = {}
+    
+    # Pack both Rank and Rating into the daily snapshot profile
+    for div, teams in rankings_output.items():
+        today_map[div] = {t["Team Name"]: {"Rank": t["Rank"], "Rating": t["Rating"]} for t in teams}
+        
+    history_data[today_key] = today_map
+
+    sorted_history_days = sorted(history_data.keys())
+    while len(sorted_history_days) > 6:
+        oldest_day = sorted_history_days.pop(0)
+        history_data.pop(oldest_day, None)
+
+    with open(history_file, 'w') as hf:
+        json.dump(history_data, hf, indent=2)
+    print(f"📦 Advanced profile history log updated. Days archived: {len(history_data)}/6", flush=True)
+
+if __name__ == "__main__":
+    fetch_all_lacrosse_data()

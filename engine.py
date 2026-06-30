@@ -171,6 +171,9 @@ def calculate_srs_rankings(games_list):
 
         for index, item in enumerate(div_leaderboard):
             item["Rank"] = index + 1
+            # 👑 FORCED 1ST PLACE OVERRIDE RULE:
+            if index == 0:
+                item["Rating"] = 99.9999
 
         ordered_div_leaderboard = []
         for item in div_leaderboard:

@@ -1,0 +1,36 @@
+name: Nightly Deployer (GHOST SITE)
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+  workflow_dispatch: 
+
+jobs:
+  update-rankings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+        with:
+          ref: staging # 👻 THIS LOCKS THE ROBOT TO THE GHOST BRANCH!
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Lacrosse Matrix Engine
+        run: python engine.py
+
+      - name: Commit and Push to Ghost Site
+        run: |
+          git config --global user.name "DailyLax Automation Bot"
+          git config --global user.email "bot@dailylax.ca"
+          
+          if [ -n "$(git status --porcelain MyLax_Rankings.json)" ]; then
+            git add MyLax_Rankings.json
+            git commit -m "🏆 Nightly Standings Auto-Update (Ghost Site)"
+            git push origin staging
+          else
+            echo "📊 No data changes detected tonight."
+          fi

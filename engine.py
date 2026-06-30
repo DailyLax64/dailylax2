@@ -162,7 +162,6 @@ def calculate_srs_rankings(games_list):
             div_leaderboard.append({
                 "Team Name": t,
                 "W-L-T": wlt_string,
-                # INCREASED PRECISION TO 4 DECIMALS HERE:
                 "Rating": round(final_rating, 4),
                 "AGD": round(final_agd, 4),
                 "SoS": round(final_sos, 4)
@@ -191,7 +190,6 @@ def calculate_srs_rankings(games_list):
         "U7", "U9", "U11", "Girls U11", "U13", "Girls U13", 
         "U15", "Girls U15", "U17", "Girls U17", "U22", "Girls U22"
     ]
-    # Assign a high rank (999) to any division not in the custom list so it falls to the bottom
     order_map = {div: index for index, div in enumerate(custom_order)}
     
     sorted_rankings = {}
@@ -218,7 +216,6 @@ def fetch_all_lacrosse_data():
         if not all_ids:
             all_ids = list(sources.values())
             
-        # Extract the last 6 tournaments for the website metadata
         if "tournaments" in sources:
             tournament_names = list(sources["tournaments"].keys())
             recent_tournaments = tournament_names[-6:]

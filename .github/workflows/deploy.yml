@@ -1,37 +1,31 @@
-name: Nightly Deployer (GHOST SITE)
+name: Nightly Deployer (LIVE SITE)
 
 on:
   schedule:
-    - cron: '0 7 * * *'
-  workflow_dispatch: 
+    - cron: '0 6 * * *' # Runs automatically every night at 2:00 AM EST
+  workflow_dispatch: # Allows you to press the green button manually
 
 jobs:
-  update-rankings:
+  run-matrix-engine:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository code
-        uses: actions/checkout@v4
-        with:
-          ref: staging
+    - name: Checkout Live Repository Code
+      uses: actions/checkout@v4
+      with:
+        ref: main # 👈 FORCES THE BOT TO RUN ON YOUR LIVE MAIN BRANCH
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+    - name: Set up Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
 
-      - name: Run Lacrosse Matrix Engine
-        run: python engine.py
+    - name: Execute High-Precision Matrix Engine
+      run: python engine.py
 
-      - name: Commit and Push to Ghost Site
-        run: |
-          git config --global user.name "DailyLax Automation Bot"
-          git config --global user.email "bot@dailylax.ca"
-          
-          if [ -n "$(git status --porcelain)" ]; then
-            # EDITED LINE TO INJECT HISTORY TRACKING:
-            git add MyLax_Rankings.json site_metadata.json rankings_history.json
-            git commit -m "🏆 Nightly Standings Auto-Update (Ghost Site)"
-            git push origin staging
-          else
-            echo "📊 No data changes detected tonight."
-          fi
+    - name: Commit and Push Generated Live Data
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add MyLax_Rankings.json site_metadata.json rankings_history.json
+        git commit -m "🤖 Live Matrix Engine Auto-Update [Skip CI]" || echo "No data updates detected."
+        git push origin main

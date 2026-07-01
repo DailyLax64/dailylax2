@@ -237,6 +237,7 @@
                             <span>-10.0</span>
                         </div>
                     </div>
+
                 </div>
             </div>
 
@@ -323,6 +324,10 @@
         </section>
 
     </main>
+
+    <footer class="bg-neutral-900 text-center py-6 text-[10px] font-mono text-neutral-500 border-t border-neutral-800 mt-auto tracking-wider uppercase">
+        &copy; 2026 <a href="https://dailylax.ca" class="text-neutral-400 hover:text-cyan-400 underline">dailylax.ca</a> Engine Core. Daily processing framework active.
+    </footer>
 
     <script>
         let allRankingsData = {};
@@ -809,33 +814,49 @@
             });
         }
 
+        // 🛡️ REBUILT, BULLETPROOF INITIALIZATION & FORM INTERCEPTOR
         document.addEventListener('DOMContentLoaded', async () => {
+            
+            // 1. Fire up the site analytics natively
             fetchSiteMetadata();
             await fetchHistoryData(); 
             fetchRankingsData();
 
+            // 2. Lock down the Netlify Form Submission
             const form = document.getElementById('netlify-contact-form');
             if (form) {
                 form.addEventListener('submit', async (e) => {
                     e.preventDefault(); 
                     
+                    // Failsafe 1: Don't crash out local testers
                     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
                     if (isLocal) {
                         alert("⚠️ NETLIFY ENVIRONMENT REQUIRED\n\nNetlify Forms cannot process on a local computer. Push your code to GitHub and test this form on your live Netlify staging link!");
                         return;
                     }
 
+                    // Failsafe 2: Build a bulletproof URL Encoded Payload to bypass the Netlify 404
                     const formData = new FormData(form);
+                    const dataParams = new URLSearchParams();
+                    for (const [key, value] of formData) {
+                        dataParams.append(key, value);
+                    }
+                    
+                    // Hard-inject the form-name target just in case the browser missed the hidden tag
+                    if (!dataParams.has('form-name')) {
+                        dataParams.append('form-name', 'contact');
+                    }
+
                     try {
                         const response = await fetch("/", {
                             method: "POST",
                             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                            body: new URLSearchParams(formData).toString()
+                            body: dataParams.toString()
                         });
                         
                         if (response.ok) {
                             form.innerHTML = `
-                                <div class="text-center py-8 space-y-4">
+                                <div class="text-center py-8 space-y-4 animate-fadeIn">
                                     <div class="w-12 h-12 rounded-full bg-cyan-950 border border-cyan-400 flex items-center justify-center mx-auto shadow-lg neon-glow-cyan text-cyan-400 font-bold text-xl">✓</div>
                                     <h4 class="text-white font-black text-sm uppercase tracking-wider">Transmission Logged Successfully</h4>
                                     <p class="text-xs text-neutral-400 max-w-xs mx-auto leading-relaxed normal-case">The matrix audit desk has processed your metadata query. Core analysts will cross-examine the schedule coordinates shortly.</p>

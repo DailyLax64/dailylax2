@@ -38,6 +38,12 @@
 </head>
 <body class="bg-neutral-950 text-neutral-100 font-sans antialiased min-h-screen flex flex-col selection:bg-fuchsia-500 selection:text-white">
 
+    <!-- GHOST SITE WARNING HEADER (COMMENTED OUT FOR LIVE DEPLOYMENT)
+    <div class="bg-[#d4ff00] text-neutral-950 text-center py-2 text-[10px] sm:text-xs font-black uppercase tracking-widest border-b-2 border-yellow-400 sticky top-0 z-[60] shadow-xl animate-pulse">
+        ⚠️ WARNING: GHOST SITE (STAGING PREVIEW) — DATA ACCURACY TESTING ENVIRONMENT ⚠️
+    </div>
+    -->
+
     <div id="ticker-banner" class="bg-neutral-900 text-neutral-200 font-extrabold uppercase tracking-widest text-xs sm:text-sm py-4 overflow-hidden border-b border-cyan-500/30 shadow-lg">
         <div id="ticker-content" class="animate-marquee whitespace-nowrap flex space-x-20">
             <span>⚡ Ingesting live lacrosse data feeds...</span>
@@ -187,12 +193,13 @@
             </div>
         </section>
 
+        <!-- ⚔️ MATCHUP SIMULATOR MODULE WITH GAUGE -->
         <section id="content-matchup" class="tab-content hidden max-w-4xl mx-auto space-y-8">
             <div class="text-center py-2">
-                <div class="inline-flex items-center space-x-2 bg-fuchsia-950/60 border border-fuchsia-500/30 rounded-full px-5 py-2.5 text-sm font-black text-fuchsia-400 uppercase tracking-widest">
+                <div class="inline-flex items-center space-x-2 bg-fuchsia-950/60 border border-fuchsia-500/30 rounded-full px-5 py-2.5 text-sm font-black text-fuchsia-400 uppercase tracking-widest shadow-lg neon-glow-fuchsia">
                     <span>⚔️ Matchup Simulator</span>
                 </div>
-                </div>
+            </div>
 
             <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 shadow-xl space-y-6">
                 <div>
@@ -204,13 +211,13 @@
                     <div class="relative">
                         <label class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">2. Primary Squad (Home / Team 1)</label>
                         <input type="text" id="matchup-t1-search" oninput="filterMatchupSearch('t1')" onfocus="showMatchupDropdown('t1')" placeholder="🔍 Type or select Team 1..." class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3.5 text-xs font-bold uppercase tracking-wider text-white focus:outline-none focus:border-cyan-400 placeholder-neutral-700">
-                        <div id="matchup-t1-list" class="hidden absolute left-0 right-0 mt-1 max-h-48 overflow-y-auto bg-neutral-950 border border-neutral-800 rounded-xl z-50 divide-y divide-neutral-900 scrollbar-thin"></div>
+                        <div id="matchup-t1-list" class="hidden absolute left-0 right-0 mt-1 max-h-48 overflow-y-auto bg-neutral-950 border border-neutral-800 rounded-xl z-50 divide-y divide-neutral-900 scrollbar-thin shadow-2xl"></div>
                     </div>
 
                     <div class="relative">
                         <label class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">3. Opposing Squad (Away / Team 2)</label>
                         <input type="text" id="matchup-t2-search" oninput="filterMatchupSearch('t2')" onfocus="showMatchupDropdown('t2')" placeholder="🔍 Type or select Team 2..." class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3.5 text-xs font-bold uppercase tracking-wider text-white focus:outline-none focus:border-cyan-400 placeholder-neutral-700">
-                        <div id="matchup-t2-list" class="hidden absolute left-0 right-0 mt-1 max-h-48 overflow-y-auto bg-neutral-950 border border-neutral-800 rounded-xl z-50 divide-y divide-neutral-900 scrollbar-thin"></div>
+                        <div id="matchup-t2-list" class="hidden absolute left-0 right-0 mt-1 max-h-48 overflow-y-auto bg-neutral-950 border border-neutral-800 rounded-xl z-50 divide-y divide-neutral-900 scrollbar-thin shadow-2xl"></div>
                     </div>
                 </div>
             </div>
@@ -221,7 +228,25 @@
                     <span class="text-[10px] font-mono uppercase tracking-widest text-neutral-500 font-bold">Algorithmic Projections</span>
                     <h4 class="text-xs uppercase tracking-widest font-black text-cyan-400">Theoretical Spread</h4>
                     <div id="matchup-spread-display" class="text-5xl sm:text-7xl font-black font-mono tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-neutral-100 to-fuchsia-400 py-2">0.0000</div>
+                    
+                    <!-- 🎯 NEW FEATURE: DYNAMIC CENTER-OUT LINEAR GAUGE -->
+                    <div class="w-full max-w-lg mx-auto pt-4 space-y-2">
+                        <div class="flex justify-between text-[10px] font-black uppercase tracking-widest">
+                            <span id="matchup-t2-label" class="text-fuchsia-500 truncate w-2/5 text-left opacity-80">Team 2</span>
+                            <span class="text-neutral-600 w-1/5 text-center">Even</span>
+                            <span id="matchup-t1-label" class="text-cyan-400 truncate w-2/5 text-right opacity-80">Team 1</span>
+                        </div>
+                        <div class="relative w-full h-3 bg-neutral-950 rounded-full overflow-hidden border border-neutral-800 shadow-inner">
+                            <div class="absolute top-0 bottom-0 left-1/2 w-0.5 bg-neutral-700 z-10 -translate-x-1/2"></div>
+                            <div id="matchup-gauge-fill" class="absolute top-0 bottom-0 transition-all duration-700 ease-out" style="left: 50%; width: 0%;"></div>
+                        </div>
+                        <div class="flex justify-between text-[9px] font-mono text-neutral-600 font-bold">
+                            <span>-10.0</span>
+                            <span>+10.0</span>
+                        </div>
                     </div>
+
+                </div>
             </div>
 
             <div id="matchup-data-sheets" class="grid grid-cols-1 md:grid-cols-2 gap-6 hidden">
@@ -263,13 +288,8 @@
                     <div class="absolute left-0 top-0 bottom-0 w-1 bg-fuchsia-500"></div>
                     <div class="text-[10px] font-mono uppercase tracking-widest text-fuchsia-400 font-bold">🏆 Bracket Aggregator</div>
                     <h4 class="font-black text-lg mt-2 text-white uppercase tracking-tight">Latest Tournaments Added</h4>
-                    
-                    <ul id="dynamic-tournaments" class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs uppercase tracking-wider font-extrabold text-neutral-200">
-                        </ul>
-                    
-                    <p class="text-xs text-neutral-400 mt-4 normal-case leading-relaxed">
-                        All weekend games and corresponding point allocations from these tournaments have been compiled. These new game records have caused massive positional shifts across both localized and regional division ranks.
-                    </p>
+                    <ul id="dynamic-tournaments" class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs uppercase tracking-wider font-extrabold text-neutral-200"></ul>
+                    <p class="text-xs text-neutral-400 mt-4 normal-case leading-relaxed">All weekend games and corresponding point allocations from these tournaments have been compiled. These new game records have caused massive positional shifts across both localized and regional division ranks.</p>
                 </div>
             </div>
         </section>
@@ -706,6 +726,7 @@
             }
         });
 
+        // 🧠 UPDATED MATCHUP ENGINE FEATURING LINEAR GAUGE MATH
         function runMatchupSimulationPipeline() {
             const divEl = document.getElementById('matchup-division-select');
             const t1El = document.getElementById('matchup-t1-search');
@@ -735,18 +756,48 @@
             dataSheets.classList.remove('hidden');
 
             const spreadDisplay = document.getElementById('matchup-spread-display');
+            const gaugeFill = document.getElementById('matchup-gauge-fill');
+            const t1Label = document.getElementById('matchup-t1-label');
+            const t2Label = document.getElementById('matchup-t2-label');
+            
             if (!spreadDisplay) return;
 
             if (t1Name === t2Name) {
                 spreadDisplay.innerText = "0.0000";
                 spreadDisplay.className = "text-3xl font-black text-fuchsia-400 font-mono tracking-tight py-2";
+                if (gaugeFill) gaugeFill.style.width = '0%';
+                if (t1Label) t1Label.innerText = "Team 1";
+                if (t2Label) t2Label.innerText = "Team 2";
                 return;
             }
 
+            // GAUGE COMPUTATION LOGIC
             const spread = t1Data.Rating - t2Data.Rating;
+            const cappedSpread = Math.max(-10, Math.min(10, spread)); 
+            const percentage = (Math.abs(cappedSpread) / 10) * 50; 
 
             spreadDisplay.innerText = spread >= 0 ? `+${spread.toFixed(4)}` : `${spread.toFixed(4)}`;
             spreadDisplay.className = "text-5xl sm:text-7xl font-black font-mono tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-neutral-100 to-fuchsia-400 py-2";
+
+            if (t1Label) t1Label.innerText = `${t1Name} ▶`;
+            if (t2Label) t2Label.innerText = `◀ ${t2Name}`;
+
+            if (gaugeFill) {
+                if (spread > 0) {
+                    // Team 1 Edge (Right fill, Cyan)
+                    gaugeFill.style.left = '50%';
+                    gaugeFill.style.width = `${percentage}%`;
+                    gaugeFill.className = "absolute top-0 bottom-0 bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)] transition-all duration-700 ease-out";
+                } else if (spread < 0) {
+                    // Team 2 Edge (Left fill, Fuchsia)
+                    gaugeFill.style.left = `${50 - percentage}%`;
+                    gaugeFill.style.width = `${percentage}%`;
+                    gaugeFill.className = "absolute top-0 bottom-0 bg-fuchsia-500 shadow-[0_0_12px_rgba(217,70,239,0.8)] transition-all duration-700 ease-out";
+                } else {
+                    // Perfect Tie
+                    gaugeFill.style.width = '0%';
+                }
+            }
 
             // Fill individual card panels securely
             const sets = {

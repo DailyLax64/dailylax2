@@ -38,12 +38,6 @@
 </head>
 <body class="bg-neutral-950 text-neutral-100 font-sans antialiased min-h-screen flex flex-col selection:bg-fuchsia-500 selection:text-white">
 
-    <!-- GHOST SITE WARNING HEADER (COMMENTED OUT FOR LIVE DEPLOYMENT)
-    <div class="bg-[#d4ff00] text-neutral-950 text-center py-2 text-[10px] sm:text-xs font-black uppercase tracking-widest border-b-2 border-yellow-400 sticky top-0 z-[60] shadow-xl animate-pulse">
-        ⚠️ WARNING: GHOST SITE (STAGING PREVIEW) — DATA ACCURACY TESTING ENVIRONMENT ⚠️
-    </div>
-    -->
-
     <div id="ticker-banner" class="bg-neutral-900 text-neutral-200 font-extrabold uppercase tracking-widest text-xs sm:text-sm py-4 overflow-hidden border-b border-cyan-500/30 shadow-lg">
         <div id="ticker-content" class="animate-marquee whitespace-nowrap flex space-x-20">
             <span>⚡ Ingesting live lacrosse data feeds...</span>
@@ -193,7 +187,6 @@
             </div>
         </section>
 
-        <!-- ⚔️ MATCHUP SIMULATOR MODULE WITH GAUGE -->
         <section id="content-matchup" class="tab-content hidden max-w-4xl mx-auto space-y-8">
             <div class="text-center py-2">
                 <div class="inline-flex items-center space-x-2 bg-fuchsia-950/60 border border-fuchsia-500/30 rounded-full px-5 py-2.5 text-sm font-black text-fuchsia-400 uppercase tracking-widest shadow-lg neon-glow-fuchsia">
@@ -225,24 +218,23 @@
             <div id="matchup-forecast-box" class="relative group hidden">
                 <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-fuchsia-500 rounded-2xl blur opacity-25"></div>
                 <div class="relative bg-neutral-900 border border-neutral-800 rounded-2xl p-8 text-center space-y-4">
-                    <span class="text-[10px] font-mono uppercase tracking-widest text-neutral-500 font-bold">Algorithmic Projections</span>
-                    <h4 class="text-xs uppercase tracking-widest font-black text-cyan-400">Theoretical Spread</h4>
-                    <div id="matchup-spread-display" class="text-5xl sm:text-7xl font-black font-mono tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-neutral-100 to-fuchsia-400 py-2">0.0000</div>
+                    <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 font-bold">Algorithmic Projections</span>
+                    <h4 class="text-sm uppercase tracking-widest font-black text-cyan-400">Theoretical Spread</h4>
+                    <div id="matchup-spread-display" class="text-4xl sm:text-6xl font-black font-mono tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-neutral-100 to-fuchsia-400 py-2">0.0000</div>
                     
-                    <!-- 🎯 NEW FEATURE: DYNAMIC CENTER-OUT LINEAR GAUGE -->
                     <div class="w-full max-w-lg mx-auto pt-4 space-y-2">
-                        <div class="flex justify-between text-[10px] font-black uppercase tracking-widest">
-                            <span id="matchup-t2-label" class="text-fuchsia-500 truncate w-2/5 text-left opacity-80">Team 2</span>
+                        <div class="flex justify-between text-xs font-black uppercase tracking-widest">
+                            <span id="matchup-t1-label" class="text-cyan-400 truncate w-2/5 text-left opacity-80">Team 1</span>
                             <span class="text-neutral-600 w-1/5 text-center">Even</span>
-                            <span id="matchup-t1-label" class="text-cyan-400 truncate w-2/5 text-right opacity-80">Team 1</span>
+                            <span id="matchup-t2-label" class="text-fuchsia-500 truncate w-2/5 text-right opacity-80">Team 2</span>
                         </div>
                         <div class="relative w-full h-3 bg-neutral-950 rounded-full overflow-hidden border border-neutral-800 shadow-inner">
                             <div class="absolute top-0 bottom-0 left-1/2 w-0.5 bg-neutral-700 z-10 -translate-x-1/2"></div>
                             <div id="matchup-gauge-fill" class="absolute top-0 bottom-0 transition-all duration-700 ease-out" style="left: 50%; width: 0%;"></div>
                         </div>
-                        <div class="flex justify-between text-[9px] font-mono text-neutral-600 font-bold">
-                            <span>-10.0</span>
+                        <div class="flex justify-between text-[10px] font-mono text-neutral-600 font-bold">
                             <span>+10.0</span>
+                            <span>-10.0</span>
                         </div>
                     </div>
 
@@ -726,7 +718,6 @@
             }
         });
 
-        // 🧠 UPDATED MATCHUP ENGINE FEATURING LINEAR GAUGE MATH
         function runMatchupSimulationPipeline() {
             const divEl = document.getElementById('matchup-division-select');
             const t1El = document.getElementById('matchup-t1-search');
@@ -771,35 +762,32 @@
                 return;
             }
 
-            // GAUGE COMPUTATION LOGIC
             const spread = t1Data.Rating - t2Data.Rating;
             const cappedSpread = Math.max(-10, Math.min(10, spread)); 
             const percentage = (Math.abs(cappedSpread) / 10) * 50; 
 
             spreadDisplay.innerText = spread >= 0 ? `+${spread.toFixed(4)}` : `${spread.toFixed(4)}`;
-            spreadDisplay.className = "text-5xl sm:text-7xl font-black font-mono tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-neutral-100 to-fuchsia-400 py-2";
+            spreadDisplay.className = "text-4xl sm:text-6xl font-black font-mono tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-neutral-100 to-fuchsia-400 py-2";
 
-            if (t1Label) t1Label.innerText = `${t1Name} ▶`;
-            if (t2Label) t2Label.innerText = `◀ ${t2Name}`;
+            // 🎯 TEAM 1 LABEL ON LEFT, TEAM 2 ON RIGHT
+            if (t1Label) t1Label.innerText = `◀ ${t1Name}`;
+            if (t2Label) t2Label.innerText = `${t2Name} ▶`;
 
+            // 🎯 GAUGE FLIP: POSITIVE SPREAD (TEAM 1 ADVANTAGE) FILLS TO THE LEFT
             if (gaugeFill) {
                 if (spread > 0) {
-                    // Team 1 Edge (Right fill, Cyan)
-                    gaugeFill.style.left = '50%';
+                    gaugeFill.style.left = `${50 - percentage}%`;
                     gaugeFill.style.width = `${percentage}%`;
                     gaugeFill.className = "absolute top-0 bottom-0 bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)] transition-all duration-700 ease-out";
                 } else if (spread < 0) {
-                    // Team 2 Edge (Left fill, Fuchsia)
-                    gaugeFill.style.left = `${50 - percentage}%`;
+                    gaugeFill.style.left = '50%';
                     gaugeFill.style.width = `${percentage}%`;
                     gaugeFill.className = "absolute top-0 bottom-0 bg-fuchsia-500 shadow-[0_0_12px_rgba(217,70,239,0.8)] transition-all duration-700 ease-out";
                 } else {
-                    // Perfect Tie
                     gaugeFill.style.width = '0%';
                 }
             }
 
-            // Fill individual card panels securely
             const sets = {
                 t1: { name: t1Name, src: t1Data },
                 t2: { name: t2Name, src: t2Data }

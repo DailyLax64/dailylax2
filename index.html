@@ -38,6 +38,12 @@
 </head>
 <body class="bg-neutral-950 text-neutral-100 font-sans antialiased min-h-screen flex flex-col selection:bg-fuchsia-500 selection:text-white">
 
+    <!-- GHOST SITE WARNING HEADER (COMMENTED OUT FOR LIVE DEPLOYMENT)
+    <div class="bg-[#d4ff00] text-neutral-950 text-center py-2 text-[10px] sm:text-xs font-black uppercase tracking-widest border-b-2 border-yellow-400 sticky top-0 z-[60] shadow-xl animate-pulse">
+        ⚠️ WARNING: GHOST SITE (STAGING PREVIEW) — DATA ACCURACY TESTING ENVIRONMENT ⚠️
+    </div>
+    -->
+
     <div id="ticker-banner" class="bg-neutral-900 text-neutral-200 font-extrabold uppercase tracking-widest text-xs sm:text-sm py-4 overflow-hidden border-b border-cyan-500/30 shadow-lg">
         <div id="ticker-content" class="animate-marquee whitespace-nowrap flex space-x-20">
             <span>⚡ Ingesting live lacrosse data feeds...</span>
@@ -165,7 +171,8 @@
                                 <th class="py-4 px-6">Team Name</th>
                                 <th class="py-4 px-6 text-center">W-L-T</th>
                                 <th class="py-4 px-6 text-center">Rating</th>
-                                <th class="py-4 px-6 text-center text-cyan-400">Chg (24h)</th> <th class="py-4 px-6 text-center">AGD</th>
+                                <th class="py-4 px-6 text-center text-cyan-400">24H Change</th> <!-- 👈 TWEAK #1: NEW COLUMN TITLE -->
+                                <th class="py-4 px-6 text-center">AGD</th>
                                 <th class="py-4 px-6 text-center">SoS</th>
                             </tr>
                         </thead>
@@ -252,7 +259,7 @@
 
     <script>
         let allRankingsData = {};
-        let historyData = {}; // 👈 CACHES HISTORICAL MATRIX PLACEMENTS
+        let historyData = {};
 
         // FETCH METADATA (DATE & TOURNAMENTS)
         async function fetchSiteMetadata() {
@@ -261,13 +268,11 @@
                 if (!response.ok) return;
                 const metadata = await response.json();
                 
-                // 1. Inject the latest date
                 const dateEl = document.getElementById('dynamic-date');
                 if (dateEl && metadata.latest_game_date) {
                     dateEl.innerText = metadata.latest_game_date;
                 }
 
-                // 2. Inject the latest tournaments with alternating neon colors
                 const tourneyEl = document.getElementById('dynamic-tournaments');
                 if (tourneyEl && metadata.recent_tournaments) {
                     tourneyEl.innerHTML = ''; 
@@ -382,13 +387,27 @@
             tbody.innerHTML = '';
             let printedRowsCount = 0;
 
-            // 🔍 COMPUTE DYNAMIC TARGET DATE FROM HISTORICAL LOG KEYS
             const sortedDates = Object.keys(historyData).sort();
             let prevDate = null;
             if (sortedDates.length >= 2) {
-                prevDate = sortedDates[sortedDates.length - 2]; // Grabs exactly yesterday's array block
+                prevDate = sortedDates[sortedDates.length - 2];
             }
 
+            // 📊 TWEAK #2: FIRST PASS — DEFINE THE HIGHEST ABSOLUTE SWING IN THIS SPECIFIC DIVISION
+            let maxAbsDiff = 0;
+            allRankingsData[selectedDivision].forEach(team => {
+                const teamName = team["Team Name"];
+                if (prevDate && historyData[prevDate] && historyData[prevDate][selectedDivision] && historyData[prevDate][selectedDivision][teamName]) {
+                    const prevRating = historyData[prevDate][selectedDivision][teamName].Rating;
+                    const currentRating = team.Rating;
+                    const currentDiff = Math.abs(currentRating - prevRating);
+                    if (currentDiff > maxAbsDiff) {
+                        maxAbsDiff = currentDiff;
+                    }
+                }
+            });
+
+            // SECOND PASS — RENDER THE HEATED TIERS
             allRankingsData[selectedDivision].forEach(team => {
                 const teamName = team["Team Name"];
                 if (searchQuery && !teamName.toLowerCase().includes(searchQuery)) {
@@ -405,7 +424,6 @@
                 if (team.Rank === 2) { rankClass = "text-cyan-400 font-black"; rowBgClass = "bg-cyan-950/5"; }
                 if (team.Rank === 3) { rankClass = "text-lime-400 font-bold"; }
 
-                // 🧠 COMPUTE 24-HOUR SCORE DIFFERENTIAL
                 let changeText = "0.0000";
                 let changeClass = "text-neutral-600";
                 
@@ -413,13 +431,29 @@
                     const prevRating = historyData[prevDate][selectedDivision][teamName].Rating;
                     const currentRating = team.Rating;
                     const diff = currentRating - prevRating;
+                    const absDiff = Math.abs(diff);
                     
+                    // Dynamic scaling ratio relative to maximum division movement
+                    const relativeRangeRatio = maxAbsDiff > 0 ? (absDiff / maxAbsDiff) : 1;
+
                     if (diff > 0) {
                         changeText = `+${diff.toFixed(4)}`;
-                        changeClass = "text-lime-400 font-black"; // Green Surge
+                        if (relativeRangeRatio > 0.65) {
+                            changeClass = "text-lime-400 font-black drop-shadow-[0_0_10px_rgba(163,230,53,0.15)]"; // Tier 1: Hot Surge
+                        } else if (relativeRangeRatio > 0.30) {
+                            changeClass = "text-lime-500 font-bold"; // Tier 2: Normal Climb
+                        } else {
+                            changeClass = "text-lime-600/70 font-medium"; // Tier 3: Minor Tick
+                        }
                     } else if (diff < 0) {
-                        changeText = `${diff.toFixed(4)}`; // Includes native minus sign
-                        changeClass = "text-rose-500 font-black"; // Red Slide
+                        changeText = `${diff.toFixed(4)}`;
+                        if (relativeRangeRatio > 0.65) {
+                            changeClass = "text-rose-400 font-black drop-shadow-[0_0_10px_rgba(244,63,94,0.15)]"; // Tier 1: Severe Crash
+                        } else if (relativeRangeRatio > 0.30) {
+                            changeClass = "text-rose-500 font-bold"; // Tier 2: Normal Drop
+                        } else {
+                            changeClass = "text-rose-700/70 font-medium"; // Tier 3: Minor Edge
+                        }
                     }
                 }
 
@@ -459,10 +493,9 @@
             }
         }
 
-        // ASYNC DOM ENGINE INITIALIZATION
         window.addEventListener('DOMContentLoaded', async () => {
             fetchSiteMetadata();
-            await fetchHistoryData(); // Synchronously load the vault matrices first
+            await fetchHistoryData(); 
             fetchRankingsData();
         });
     </script>

@@ -303,20 +303,25 @@
                 <h3 class="text-2xl font-black uppercase tracking-tight text-white">Data Control Center</h3>
                 <p class="text-xs text-neutral-500 uppercase tracking-widest">Flag missing results or statistical adjustments.</p>
             </div>
-            <form class="space-y-4 bg-neutral-900 p-6 rounded-xl border border-neutral-800 shadow-2xl" onsubmit="event.preventDefault(); alert('Transmission simulated successfully.');">
+            
+            <!-- ⚡ NETLIFY FORMS INTEGRATION -->
+            <form name="contact" method="POST" data-netlify="true" class="space-y-4 bg-neutral-900 p-6 rounded-xl border border-neutral-800 shadow-2xl">
+                <!-- Hidden input required by Netlify for routing -->
+                <input type="hidden" name="form-name" value="contact" />
+                
                 <div>
-                    <label class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">Representative Name</label>
-                    <input type="text" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-xs font-bold uppercase text-white focus:outline-none focus:border-cyan-400 transition-all placeholder-neutral-700" placeholder="Coach / Manager Name">
+                    <label for="name" class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">Name</label>
+                    <input type="text" id="name" name="name" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-xs font-bold uppercase text-white focus:outline-none focus:border-cyan-400 transition-all placeholder-neutral-700" placeholder="Your Name">
                 </div>
                 <div>
-                    <label class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">Email Destination</label>
-                    <input type="email" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-xs font-bold text-white focus:outline-none focus:border-cyan-400 transition-all placeholder-neutral-700" placeholder="name@club.com">
+                    <label for="email" class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-xs font-bold text-white focus:outline-none focus:border-cyan-400 transition-all placeholder-neutral-700" placeholder="your.email@club.com">
                 </div>
                 <div>
-                    <label class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">Message Specification</label>
-                    <textarea required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-xs font-bold text-white focus:outline-none focus:border-cyan-400 transition-all h-32 placeholder-neutral-700" placeholder="Please clarify the division, team, and date coordinates..."></textarea>
+                    <label for="message" class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">Message</label>
+                    <textarea id="message" name="message" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-xs font-bold text-white focus:outline-none focus:border-cyan-400 transition-all h-32 placeholder-neutral-700" placeholder="Please clarify the division, team, and date coordinates..."></textarea>
                 </div>
-                <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-cyan-500 to-fuchsia-600 text-neutral-950 font-black uppercase text-xs tracking-widest rounded-lg hover:from-cyan-400 hover:to-fuchsia-500 transition-all shadow-lg">Submit Verification Request</button>
+                <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-cyan-500 to-fuchsia-600 text-neutral-950 font-black uppercase text-xs tracking-widest rounded-lg hover:from-cyan-400 hover:to-fuchsia-500 transition-all shadow-lg">Submit Message</button>
             </form>
         </section>
 

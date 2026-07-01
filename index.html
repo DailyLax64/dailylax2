@@ -172,7 +172,6 @@
                                 <th class="py-4 px-6 text-center">W-L-T</th>
                                 <th class="py-4 px-6 text-center">Rating</th>
                                 <th class="py-4 px-6 text-center text-cyan-400">24H Change</th> 
-                                <!-- 🧹 HIDE/REMOVE AGD AND SOS HEADERS FROM THE MAIN ARRAY GRID VIEW -->
                             </tr>
                         </thead>
                         <tbody id="rankings-tbody" class="divide-y divide-neutral-800/50 text-xs font-bold uppercase tracking-wider">
@@ -375,18 +374,21 @@
             tickerContainer.innerHTML = marqueeString + marqueeString;
         }
 
-        // 🦾 DYNAMIC ACCORDION EXPANSION CONTROL LOOPS
         function toggleTeamDetails(division, index) {
             const detailsRow = document.getElementById(`details-${division}-${index}`);
             if (!detailsRow) return;
 
             const isHidden = detailsRow.classList.contains('hidden');
             
-            // Close any open details row in this table to maintain neat formatting
-            document.querySelectorAll('.expanded-detail-row').forEach(row => row.classList.add('hidden'));
+            // Close any open details row in this specific table view to prevent vertical stretching
+            document.querySelectorAll('.expanded-detail-row').forEach(row => {
+                if (row.id !== detailsRow.id) row.classList.add('hidden');
+            });
             
             if (isHidden) {
                 detailsRow.classList.remove('hidden');
+            } else {
+                detailsRow.classList.add('hidden');
             }
         }
 
@@ -407,7 +409,7 @@
                 prevDate = sortedDates[sortedDates.length - 2];
             }
 
-            // FIRST PASS — COMPUTE PERCENTILE MATRIX
+            // PASS 1 — COMPILE ABSOLUTE MOVEMENT FOR DISCRETE PERCENTILE ASSIGNMENTS
             let absDiffs = [];
             allRankingsData[selectedDivision].forEach(team => {
                 const teamName = team["Team Name"];
@@ -430,7 +432,7 @@
                 highCutoff = absDiffs[q75Index];
             }
 
-            // SECOND PASS — APPEND ACTIVE DOM ROWS WITH EXPANSION SLOTS
+            // PASS 2 — EXECUTE CELL RENDERS WITH EXPANDED HORIZONTAL GRID COMPONENT
             allRankingsData[selectedDivision].forEach(team => {
                 const teamName = team["Team Name"];
                 if (searchQuery && !teamName.toLowerCase().includes(searchQuery)) {
@@ -470,12 +472,19 @@
                     }
                 }
 
-                // 📦 1. MAIN DISPLAY ROW (CLEAN INTERFACE, ONLY 5 VISIBLE COLUMNS)
+                // 🧠 DERIVE EXTRA STAGE PROFILE METRICS FROM RECORD (W-L-T)
+                const recordParts = team["W-L-T"].split('-');
+                const wins = parseInt(recordParts[0]) || 0;
+                const losses = parseInt(recordParts[1]) || 0;
+                const ties = parseInt(recordParts[2]) || 0;
+                const totalGames = wins + losses + ties;
+                const winPercentage = totalGames > 0 ? ((wins + (ties * 0.5)) / totalGames).toFixed(3) : "0.000";
+
+                // 🏢 1. COMPACT LIST VIEW ROW
                 const mainTr = document.createElement('tr');
                 mainTr.className = "group hover:bg-neutral-800/40 transition-colors border-b border-neutral-800/40";
                 mainTr.innerHTML = `
                     <td class="py-4 px-6 text-center ${rankClass} ${rowBgClass}">${team.Rank}</td>
-                    <!-- 📑 CLICKABLE TEAM NAME CELL WITH HOVER INTERACTIVE BADGE -->
                     <td class="py-4 px-6 font-black text-neutral-200 tracking-tight cursor-pointer hover:text-cyan-400 transition-colors ${rowBgClass}" onclick="toggleTeamDetails('${selectedDivision}', ${currentRowIndex})">
                         <span>${teamName}</span>
                         <span class="text-[9px] text-neutral-600/70 font-mono tracking-normal ml-2 font-normal uppercase group-hover:text-cyan-400/80 transition-colors select-none">▸ Details</span>
@@ -486,31 +495,53 @@
                 `;
                 tbody.appendChild(mainTr);
 
-                // 📂 2. ACCORDION SUB-ROW SLOTTED DIRECTLY UNDERNEATH (SPANNING ALL 5 COLUMNS)
+                // 📑 2. UPGRADED ACCORDION EXPANSION GRID (FILLS ENTIRE ROW SPAN SEAMLESSLY FROM LEFT TO RIGHT)
                 const detailsTr = document.createElement('tr');
                 detailsTr.id = `details-${selectedDivision}-${currentRowIndex}`;
                 detailsTr.className = "expanded-detail-row hidden bg-neutral-950/40 border-b border-neutral-800/30";
                 detailsTr.innerHTML = `
-                    <td colspan="5" class="py-5 px-8">
-                        <div class="flex flex-col sm:flex-row gap-6 sm:gap-16 justify-start sm:justify-center items-start sm:items-center max-w-xl mx-auto">
+                    <td colspan="5" class="py-5 px-6">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
                             
-                            <!-- DYNAMIC AGD CARD -->
-                            <div class="flex items-center space-x-3 bg-neutral-900/60 p-3 rounded-xl border border-neutral-800/60 w-full sm:w-auto min-w-[210px]">
-                                <div class="p-2 bg-neutral-950 rounded-lg text-xs font-mono font-bold text-neutral-500">AGD</div>
+                            <!-- CAPSULE 1: RECORD BREAKDOWN MATRIX -->
+                            <div class="flex items-center space-x-3 bg-neutral-900/60 p-3 rounded-xl border border-neutral-800/60">
+                                <div class="p-2 bg-neutral-950 rounded-lg text-[10px] font-mono font-bold text-neutral-500 w-10 text-center">REC</div>
+                                <div class="truncate">
+                                    <span class="block text-[9px] uppercase font-black tracking-widest text-neutral-500 leading-none">Record Split</span>
+                                    <span class="text-xs font-mono font-bold mt-1 block text-neutral-300 truncate">
+                                        W: <span class="text-neutral-100">${wins}</span> | L: <span class="text-neutral-100">${losses}</span> | T: <span class="text-neutral-100">${ties}</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- CAPSULE 2: CALCULATED WIN RATE -->
+                            <div class="flex items-center space-x-3 bg-neutral-900/60 p-3 rounded-xl border border-neutral-800/60">
+                                <div class="p-2 bg-neutral-950 rounded-lg text-[10px] font-mono font-bold text-neutral-500 w-10 text-center">PCT</div>
                                 <div>
-                                    <span class="block text-[9px] uppercase font-black tracking-widest text-neutral-500 leading-none">Avg Goal Differential</span>
-                                    <span class="text-sm font-mono font-bold mt-1 block ${team.AGD > 0 ? 'text-lime-400' : 'text-neutral-400'}">
+                                    <span class="block text-[9px] uppercase font-black tracking-widest text-neutral-500 leading-none">Win Percentage</span>
+                                    <span class="text-sm font-mono font-bold mt-0.5 block text-fuchsia-400">
+                                        .${winPercentage.split('.')[1]}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- CAPSULE 3: SCORING MARGIN (AGD) -->
+                            <div class="flex items-center space-x-3 bg-neutral-900/60 p-3 rounded-xl border border-neutral-800/60">
+                                <div class="p-2 bg-neutral-950 rounded-lg text-[10px] font-mono font-bold text-neutral-500 w-10 text-center">AGD</div>
+                                <div>
+                                    <span class="block text-[9px] uppercase font-black tracking-widest text-neutral-500 leading-none">Avg Goal Diff</span>
+                                    <span class="text-sm font-mono font-bold mt-0.5 block ${team.AGD > 0 ? 'text-lime-400' : 'text-neutral-400'}">
                                         ${team.AGD > 0 ? '+' + team.AGD.toFixed(4) : team.AGD.toFixed(4)}
                                     </span>
                                 </div>
                             </div>
 
-                            <!-- DYNAMIC SOS CARD -->
-                            <div class="flex items-center space-x-3 bg-neutral-900/60 p-3 rounded-xl border border-neutral-800/60 w-full sm:w-auto min-w-[210px]">
-                                <div class="p-2 bg-neutral-950 rounded-lg text-xs font-mono font-bold text-neutral-500">SOS</div>
+                            <!-- CAPSULE 4: WEIGHT INDEX (SOS) -->
+                            <div class="flex items-center space-x-3 bg-neutral-900/60 p-3 rounded-xl border border-neutral-800/60">
+                                <div class="p-2 bg-neutral-950 rounded-lg text-[10px] font-mono font-bold text-neutral-500 w-10 text-center">SOS</div>
                                 <div>
-                                    <span class="block text-[9px] uppercase font-black tracking-widest text-neutral-500 leading-none">Strength of Schedule</span>
-                                    <span class="text-sm font-mono font-bold mt-1 block text-neutral-300">
+                                    <span class="block text-[9px] uppercase font-black tracking-widest text-neutral-500 leading-none">Schedule Strength</span>
+                                    <span class="text-sm font-mono font-bold mt-0.5 block text-cyan-400">
                                         ${team.SoS.toFixed(4)}
                                     </span>
                                 </div>

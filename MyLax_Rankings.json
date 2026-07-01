@@ -11,410 +11,410 @@
     {
       "Rank": 2,
       "Team Name": "St. Catharines Athletics",
-      "W-L-T": "12-2-1",
-      "Rating": 94.3879,
-      "AGD": 5.7333,
-      "SoS": 88.6546
+      "W-L-T": "13-2-1",
+      "Rating": 94.3713,
+      "AGD": 6.0,
+      "SoS": 88.3713
     },
     {
       "Rank": 3,
       "Team Name": "Sarnia Pacers",
       "W-L-T": "11-2-0",
-      "Rating": 93.9928,
+      "Rating": 93.9703,
       "AGD": 5.6923,
-      "SoS": 88.3005
+      "SoS": 88.2779
     },
     {
       "Rank": 4,
       "Team Name": "Peterborough Lakers 1",
       "W-L-T": "13-3-0",
-      "Rating": 92.6341,
+      "Rating": 92.6351,
       "AGD": 4.8125,
-      "SoS": 87.8216
+      "SoS": 87.8226
     },
     {
       "Rank": 5,
       "Team Name": "Whitby Warriors 1",
       "W-L-T": "8-2-0",
-      "Rating": 91.7634,
+      "Rating": 91.7665,
       "AGD": 5.9,
-      "SoS": 85.8634
+      "SoS": 85.8665
     },
     {
       "Rank": 6,
-      "Team Name": "Wallaceburg Griffins",
-      "W-L-T": "4-2-0",
-      "Rating": 91.6082,
-      "AGD": 0.6667,
-      "SoS": 90.9415
+      "Team Name": "Hamilton Bengals",
+      "W-L-T": "6-6-1",
+      "Rating": 91.6154,
+      "AGD": 0.1538,
+      "SoS": 91.4615
     },
     {
       "Rank": 7,
-      "Team Name": "Hamilton Bengals",
-      "W-L-T": "6-6-1",
-      "Rating": 91.6055,
-      "AGD": 0.1538,
-      "SoS": 91.4516
+      "Team Name": "Wallaceburg Griffins",
+      "W-L-T": "4-2-0",
+      "Rating": 91.5856,
+      "AGD": 0.6667,
+      "SoS": 90.919
     },
     {
       "Rank": 8,
       "Team Name": "Halton Hills Bulldogs",
       "W-L-T": "9-3-0",
-      "Rating": 90.8722,
+      "Rating": 90.87,
       "AGD": 4.5833,
-      "SoS": 86.2889
+      "SoS": 86.2867
     },
     {
       "Rank": 9,
       "Team Name": "Mimico Mountaineers 1",
       "W-L-T": "7-4-1",
-      "Rating": 90.5025,
+      "Rating": 90.4933,
       "AGD": 1.0,
-      "SoS": 89.5025
+      "SoS": 89.4933
     },
     {
       "Rank": 10,
       "Team Name": "Windsor Warlocks",
       "W-L-T": "1-2-0",
-      "Rating": 90.0697,
+      "Rating": 90.0472,
       "AGD": -2.3333,
-      "SoS": 92.403
+      "SoS": 92.3805
     },
     {
       "Rank": 11,
       "Team Name": "Centre Wellington Riverhawks",
-      "W-L-T": "9-2-1",
-      "Rating": 90.0696,
-      "AGD": 4.4167,
-      "SoS": 85.653
+      "W-L-T": "10-2-1",
+      "Rating": 89.9924,
+      "AGD": 4.8462,
+      "SoS": 85.1463
     },
     {
       "Rank": 12,
-      "Team Name": "Uxbridge Enforcers",
-      "W-L-T": "7-1-1",
-      "Rating": 89.9046,
-      "AGD": 5.2222,
-      "SoS": 84.6824
+      "Team Name": "Milton Mavericks",
+      "W-L-T": "9-2-0",
+      "Rating": 89.9225,
+      "AGD": 4.0909,
+      "SoS": 85.8316
     },
     {
       "Rank": 13,
-      "Team Name": "Huntsville Hawks",
-      "W-L-T": "5-2-0",
-      "Rating": 89.9,
-      "AGD": 3.8571,
-      "SoS": 86.0429
+      "Team Name": "Uxbridge Enforcers",
+      "W-L-T": "7-1-1",
+      "Rating": 89.9085,
+      "AGD": 5.2222,
+      "SoS": 84.6863
     },
     {
       "Rank": 14,
-      "Team Name": "Milton Mavericks",
-      "W-L-T": "8-2-0",
-      "Rating": 89.8724,
-      "AGD": 4.3,
-      "SoS": 85.5724
+      "Team Name": "Huntsville Hawks",
+      "W-L-T": "5-2-0",
+      "Rating": 89.9053,
+      "AGD": 3.8571,
+      "SoS": 86.0481
     },
     {
       "Rank": 15,
       "Team Name": "Pelham Raiders 1",
       "W-L-T": "5-2-1",
-      "Rating": 89.5319,
+      "Rating": 89.5504,
       "AGD": 4.0,
-      "SoS": 85.5319
+      "SoS": 85.5504
     },
     {
       "Rank": 16,
       "Team Name": "Oakville Hawks",
       "W-L-T": "2-3-1",
-      "Rating": 89.3423,
+      "Rating": 89.3457,
       "AGD": 0.0,
-      "SoS": 89.3423
+      "SoS": 89.3457
     },
     {
       "Rank": 17,
       "Team Name": "Orillia Kings",
       "W-L-T": "10-2-0",
-      "Rating": 89.2207,
+      "Rating": 89.2318,
       "AGD": 5.0833,
-      "SoS": 84.1373
+      "SoS": 84.1485
     },
     {
       "Rank": 18,
       "Team Name": "Six Nations",
       "W-L-T": "4-3-1",
-      "Rating": 88.7842,
+      "Rating": 88.788,
       "AGD": 1.5,
-      "SoS": 87.2842
+      "SoS": 87.288
     },
     {
       "Rank": 19,
       "Team Name": "Kawartha Lakes Fury 1",
       "W-L-T": "6-6-0",
-      "Rating": 88.6118,
+      "Rating": 88.6103,
       "AGD": 0.75,
-      "SoS": 87.8618
+      "SoS": 87.8603
     },
     {
       "Rank": 20,
       "Team Name": "Owen Sound North Stars",
       "W-L-T": "6-2-1",
-      "Rating": 88.4362,
+      "Rating": 88.4836,
       "AGD": 3.8889,
-      "SoS": 84.5473
+      "SoS": 84.5947
     },
     {
       "Rank": 21,
       "Team Name": "Oakville Hawks 1",
-      "W-L-T": "2-1-0",
-      "Rating": 88.42,
-      "AGD": 4.3333,
-      "SoS": 84.0867
+      "W-L-T": "2-2-0",
+      "Rating": 88.283,
+      "AGD": 2.75,
+      "SoS": 85.533
     },
     {
       "Rank": 22,
       "Team Name": "West Grey Rampage",
       "W-L-T": "2-1-0",
-      "Rating": 88.1906,
+      "Rating": 88.1294,
       "AGD": -1.3333,
-      "SoS": 89.5239
+      "SoS": 89.4627
     },
     {
       "Rank": 23,
-      "Team Name": "Pickering Ironheads",
-      "W-L-T": "7-4-2",
-      "Rating": 86.5291,
-      "AGD": 1.3846,
-      "SoS": 85.1445
+      "Team Name": "Kitchener Kodiaks",
+      "W-L-T": "6-4-0",
+      "Rating": 86.6691,
+      "AGD": 1.4,
+      "SoS": 85.2691
     },
     {
       "Rank": 24,
-      "Team Name": "Kitchener Kodiaks",
-      "W-L-T": "5-4-0",
-      "Rating": 86.4631,
-      "AGD": 1.2222,
-      "SoS": 85.2409
+      "Team Name": "Pickering Ironheads",
+      "W-L-T": "7-4-2",
+      "Rating": 86.5332,
+      "AGD": 1.3846,
+      "SoS": 85.1486
     },
     {
       "Rank": 25,
       "Team Name": "Barrie Bombers",
       "W-L-T": "3-5-0",
-      "Rating": 86.0586,
+      "Rating": 86.0718,
       "AGD": 0.25,
-      "SoS": 85.8086
+      "SoS": 85.8218
     },
     {
       "Rank": 26,
       "Team Name": "Guelph Regals",
-      "W-L-T": "4-5-0",
-      "Rating": 85.9673,
-      "AGD": 0.7778,
-      "SoS": 85.1895
+      "W-L-T": "4-6-0",
+      "Rating": 85.8077,
+      "AGD": 0.4,
+      "SoS": 85.4077
     },
     {
       "Rank": 27,
       "Team Name": "Lincoln Redcoats",
       "W-L-T": "3-7-2",
-      "Rating": 85.4139,
+      "Rating": 85.4209,
       "AGD": -3.5833,
-      "SoS": 88.9972
+      "SoS": 89.0042
     },
     {
       "Rank": 28,
       "Team Name": "Stayner Hitmen",
       "W-L-T": "3-5-0",
-      "Rating": 84.5985,
+      "Rating": 84.5997,
       "AGD": -0.875,
-      "SoS": 85.4735
+      "SoS": 85.4747
     },
     {
       "Rank": 29,
       "Team Name": "Akwesasne Storm",
       "W-L-T": "2-1-1",
-      "Rating": 84.2444,
+      "Rating": 84.2483,
       "AGD": -0.25,
-      "SoS": 84.4944
+      "SoS": 84.4983
     },
     {
       "Rank": 30,
       "Team Name": "Clarington Gaels 1",
       "W-L-T": "0-8-1",
-      "Rating": 84.2039,
+      "Rating": 84.2085,
       "AGD": -5.5556,
-      "SoS": 89.7595
+      "SoS": 89.764
     },
     {
       "Rank": 31,
       "Team Name": "Fort Erie Hawks",
-      "W-L-T": "5-4-0",
-      "Rating": 84.1037,
-      "AGD": 0.7778,
-      "SoS": 83.3259
+      "W-L-T": "5-5-0",
+      "Rating": 84.1438,
+      "AGD": -0.3,
+      "SoS": 84.4438
     },
     {
       "Rank": 32,
       "Team Name": "Newmarket Redbirds",
       "W-L-T": "1-7-0",
-      "Rating": 84.0117,
+      "Rating": 84.0135,
       "AGD": -4.125,
-      "SoS": 88.1367
+      "SoS": 88.1385
     },
     {
       "Rank": 33,
       "Team Name": "Orangeville Northmen 1",
       "W-L-T": "2-6-0",
-      "Rating": 83.9585,
+      "Rating": 83.9373,
       "AGD": -4.375,
-      "SoS": 88.3335
+      "SoS": 88.3123
     },
     {
       "Rank": 34,
       "Team Name": "Tyendinaga Thunderbirds",
       "W-L-T": "4-1-1",
-      "Rating": 83.6131,
+      "Rating": 83.616,
       "AGD": 2.5,
-      "SoS": 81.1131
+      "SoS": 81.116
     },
     {
       "Rank": 35,
       "Team Name": "London Blue Devils",
       "W-L-T": "0-3-0",
-      "Rating": 83.5312,
+      "Rating": 83.5087,
       "AGD": -9.6667,
-      "SoS": 93.1979
+      "SoS": 93.1754
     },
     {
       "Rank": 36,
       "Team Name": "Peterborough Lakers 2",
       "W-L-T": "7-5-1",
-      "Rating": 83.0704,
+      "Rating": 83.0809,
       "AGD": 0.6923,
-      "SoS": 82.3781
+      "SoS": 82.3886
     },
     {
       "Rank": 37,
       "Team Name": "Kawartha Lakes Fury 2",
       "W-L-T": "4-7-1",
-      "Rating": 82.8323,
+      "Rating": 82.8428,
       "AGD": -2.1667,
-      "SoS": 84.999
+      "SoS": 85.0095
     },
     {
       "Rank": 38,
       "Team Name": "St Catharines #2",
       "W-L-T": "0-3-1",
-      "Rating": 82.2658,
+      "Rating": 82.2754,
       "AGD": -7.25,
-      "SoS": 89.5158
+      "SoS": 89.5254
     },
     {
       "Rank": 39,
       "Team Name": "Simcoe Timberwolves",
       "W-L-T": "2-4-0",
-      "Rating": 81.8263,
+      "Rating": 81.8301,
       "AGD": -2.6667,
-      "SoS": 84.4929
+      "SoS": 84.4968
     },
     {
       "Rank": 40,
-      "Team Name": "Mimico Mountaineers 2",
-      "W-L-T": "2-6-0",
-      "Rating": 81.6519,
-      "AGD": -4.375,
-      "SoS": 86.0269
+      "Team Name": "Whitby Warriors 2",
+      "W-L-T": "2-5-0",
+      "Rating": 81.6698,
+      "AGD": -2.8571,
+      "SoS": 84.527
     },
     {
       "Rank": 41,
-      "Team Name": "Whitby Warriors 2",
-      "W-L-T": "2-5-0",
-      "Rating": 81.6335,
-      "AGD": -2.8571,
-      "SoS": 84.4907
+      "Team Name": "Mimico Mountaineers 2",
+      "W-L-T": "2-6-0",
+      "Rating": 81.6598,
+      "AGD": -4.375,
+      "SoS": 86.0348
     },
     {
       "Rank": 42,
       "Team Name": "Toronto Beaches",
       "W-L-T": "1-6-0",
-      "Rating": 81.5876,
+      "Rating": 81.5923,
       "AGD": -6.1429,
-      "SoS": 87.7304
+      "SoS": 87.7352
     },
     {
       "Rank": 43,
       "Team Name": "Quinte Bayhawks",
       "W-L-T": "0-3-1",
-      "Rating": 80.5517,
+      "Rating": 80.5529,
       "AGD": -5.75,
-      "SoS": 86.3017
+      "SoS": 86.3029
     },
     {
       "Rank": 44,
       "Team Name": "Midland Titans",
       "W-L-T": "2-3-0",
-      "Rating": 80.4853,
+      "Rating": 80.4927,
       "AGD": -1.8,
-      "SoS": 82.2853
+      "SoS": 82.2927
     },
     {
       "Rank": 45,
       "Team Name": "Kingston Krossfire",
       "W-L-T": "0-2-2",
-      "Rating": 80.3478,
+      "Rating": 80.3502,
       "AGD": -2.5,
-      "SoS": 82.8478
+      "SoS": 82.8502
     },
     {
       "Rank": 46,
       "Team Name": "Oakville Hawks 2",
       "W-L-T": "0-1-0",
-      "Rating": 79.8724,
+      "Rating": 79.9225,
       "AGD": -10.0,
-      "SoS": 89.8724
+      "SoS": 89.9225
     },
     {
       "Rank": 47,
       "Team Name": "NOTL Thunderhawks",
       "W-L-T": "0-10-0",
-      "Rating": 78.6059,
+      "Rating": 78.6297,
       "AGD": -8.7,
-      "SoS": 87.3059
+      "SoS": 87.3297
     },
     {
       "Rank": 48,
       "Team Name": "Cambridge Highlanders 1",
-      "W-L-T": "0-7-0",
-      "Rating": 78.135,
+      "W-L-T": "0-8-0",
+      "Rating": 78.3565,
       "AGD": -10.0,
-      "SoS": 88.135
+      "SoS": 88.3565
     },
     {
       "Rank": 49,
       "Team Name": "Orangeville Northmen 2",
       "W-L-T": "0-11-0",
-      "Rating": 77.7991,
+      "Rating": 77.7789,
       "AGD": -8.8182,
-      "SoS": 86.6173
+      "SoS": 86.597
     },
     {
       "Rank": 50,
       "Team Name": "Melancthon Vets",
       "W-L-T": "1-6-0",
-      "Rating": 77.7612,
+      "Rating": 77.7673,
       "AGD": -6.4286,
-      "SoS": 84.1897
+      "SoS": 84.1959
     },
     {
       "Rank": 51,
       "Team Name": "Cambridge Highlanders 2",
       "W-L-T": "0-6-0",
-      "Rating": 76.6444,
+      "Rating": 76.6545,
       "AGD": -9.5,
-      "SoS": 86.1444
+      "SoS": 86.1545
     },
     {
       "Rank": 52,
       "Team Name": "Clarington Gaels 2",
       "W-L-T": "0-11-0",
-      "Rating": 75.6733,
+      "Rating": 75.6801,
       "AGD": -9.0,
-      "SoS": 84.6733
+      "SoS": 84.6801
     }
   ],
   "U9": [
@@ -430,1491 +430,1491 @@
       "Rank": 2,
       "Team Name": "Whitby Warriors 1",
       "W-L-T": "10-2-0",
-      "Rating": 98.6651,
+      "Rating": 98.6524,
       "AGD": 3.4167,
-      "SoS": 95.2484
+      "SoS": 95.2357
     },
     {
       "Rank": 3,
       "Team Name": "Pickering Ironheads 1",
       "W-L-T": "14-2-1",
-      "Rating": 98.5283,
+      "Rating": 98.4966,
       "AGD": 4.8824,
-      "SoS": 93.6459
+      "SoS": 93.6143
     },
     {
       "Rank": 4,
       "Team Name": "Fort Erie Hawks 1",
-      "W-L-T": "20-5-2",
-      "Rating": 97.9264,
-      "AGD": 5.1852,
-      "SoS": 92.7412
+      "W-L-T": "21-5-2",
+      "Rating": 97.8416,
+      "AGD": 5.1429,
+      "SoS": 92.6988
     },
     {
       "Rank": 5,
       "Team Name": "Pelham Raiders 1",
       "W-L-T": "20-4-1",
-      "Rating": 97.8394,
+      "Rating": 97.7891,
       "AGD": 3.96,
-      "SoS": 93.8794
+      "SoS": 93.8291
     },
     {
       "Rank": 6,
       "Team Name": "West Grey Rampage 1",
       "W-L-T": "26-1-1",
-      "Rating": 97.6936,
+      "Rating": 97.6132,
       "AGD": 6.2857,
-      "SoS": 91.4079
+      "SoS": 91.3275
     },
     {
       "Rank": 7,
       "Team Name": "Kitchener Kodiaks 1",
       "W-L-T": "13-6-2",
-      "Rating": 96.5457,
+      "Rating": 96.511,
       "AGD": 1.2857,
-      "SoS": 95.26
+      "SoS": 95.2253
     },
     {
       "Rank": 8,
       "Team Name": "Burlington Blaze 1",
-      "W-L-T": "10-9-1",
-      "Rating": 95.8354,
-      "AGD": -0.05,
-      "SoS": 95.8854
+      "W-L-T": "11-9-1",
+      "Rating": 95.9879,
+      "AGD": 0.1905,
+      "SoS": 95.7974
     },
     {
       "Rank": 9,
       "Team Name": "Centre Wellington Riverhawks 1",
       "W-L-T": "14-9-3",
-      "Rating": 95.7057,
+      "Rating": 95.6431,
       "AGD": 1.5,
-      "SoS": 94.2057
+      "SoS": 94.1431
     },
     {
       "Rank": 10,
       "Team Name": "Hamilton Bengals",
-      "W-L-T": "20-5-1",
-      "Rating": 95.0177,
-      "AGD": 3.0385,
-      "SoS": 91.9792
+      "W-L-T": "20-6-1",
+      "Rating": 94.7844,
+      "AGD": 2.7407,
+      "SoS": 92.0437
     },
     {
       "Rank": 11,
       "Team Name": "Sarnia Pacers 1",
       "W-L-T": "9-9-1",
-      "Rating": 94.7662,
+      "Rating": 94.7441,
       "AGD": 1.0,
-      "SoS": 93.7662
+      "SoS": 93.7441
     },
     {
       "Rank": 12,
       "Team Name": "Peterborough Lakers 1",
       "W-L-T": "4-10-1",
-      "Rating": 94.0129,
+      "Rating": 93.9969,
       "AGD": -2.6,
-      "SoS": 96.6129
+      "SoS": 96.5969
     },
     {
       "Rank": 13,
       "Team Name": "Milton Mavericks",
       "W-L-T": "15-4-1",
-      "Rating": 93.8564,
+      "Rating": 93.806,
       "AGD": 3.8,
-      "SoS": 90.0564
+      "SoS": 90.006
     },
     {
       "Rank": 14,
       "Team Name": "Nepean Knights",
       "W-L-T": "17-4-0",
-      "Rating": 93.6001,
+      "Rating": 93.5542,
       "AGD": 6.2857,
-      "SoS": 87.3143
+      "SoS": 87.2685
     },
     {
       "Rank": 15,
       "Team Name": "Halton Hills Bulldogs 1",
-      "W-L-T": "19-4-0",
-      "Rating": 93.4355,
-      "AGD": 3.7826,
-      "SoS": 89.6529
+      "W-L-T": "20-4-0",
+      "Rating": 93.5523,
+      "AGD": 3.9167,
+      "SoS": 89.6356
     },
     {
       "Rank": 16,
       "Team Name": "Six Nations 1",
-      "W-L-T": "4-11-4",
-      "Rating": 93.2076,
-      "AGD": -2.2632,
-      "SoS": 95.4707
+      "W-L-T": "4-12-4",
+      "Rating": 93.2274,
+      "AGD": -2.35,
+      "SoS": 95.5774
     },
     {
       "Rank": 17,
       "Team Name": "Orillia Kings 1",
-      "W-L-T": "12-6-0",
-      "Rating": 92.7235,
-      "AGD": 2.1667,
-      "SoS": 90.5569
+      "W-L-T": "13-6-0",
+      "Rating": 92.4991,
+      "AGD": 2.1053,
+      "SoS": 90.3939
     },
     {
       "Rank": 18,
       "Team Name": "Guelph Regals 1",
       "W-L-T": "7-10-3",
-      "Rating": 92.4773,
+      "Rating": 92.3975,
       "AGD": 0.55,
-      "SoS": 91.9273
+      "SoS": 91.8475
     },
     {
       "Rank": 19,
       "Team Name": "Clarington Gaels 1",
       "W-L-T": "2-11-2",
-      "Rating": 92.2437,
+      "Rating": 92.2238,
       "AGD": -3.8,
-      "SoS": 96.0437
+      "SoS": 96.0238
     },
     {
       "Rank": 20,
-      "Team Name": "Owen Sound North Stars 1",
-      "W-L-T": "8-14-0",
-      "Rating": 91.6919,
-      "AGD": 0.2727,
-      "SoS": 91.4191
+      "Team Name": "St. Catharines Athletics 1",
+      "W-L-T": "10-14-0",
+      "Rating": 91.7675,
+      "AGD": -0.25,
+      "SoS": 92.0175
     },
     {
       "Rank": 21,
-      "Team Name": "Arthur Aces 1",
-      "W-L-T": "10-9-1",
-      "Rating": 91.6384,
-      "AGD": 1.3,
-      "SoS": 90.3384
+      "Team Name": "Owen Sound North Stars 1",
+      "W-L-T": "8-14-0",
+      "Rating": 91.612,
+      "AGD": 0.2727,
+      "SoS": 91.3393
     },
     {
       "Rank": 22,
-      "Team Name": "St. Catharines Athletics 1",
-      "W-L-T": "9-14-0",
-      "Rating": 91.6276,
-      "AGD": -0.6957,
-      "SoS": 92.3233
+      "Team Name": "Orangeville Northmen 1",
+      "W-L-T": "8-13-1",
+      "Rating": 91.4423,
+      "AGD": -1.0,
+      "SoS": 92.4423
     },
     {
       "Rank": 23,
-      "Team Name": "Orangeville Northmen 1",
-      "W-L-T": "8-13-1",
-      "Rating": 91.4915,
-      "AGD": -1.0,
-      "SoS": 92.4915
+      "Team Name": "Arthur Aces 1",
+      "W-L-T": "10-10-1",
+      "Rating": 91.3099,
+      "AGD": 0.9048,
+      "SoS": 90.4051
     },
     {
       "Rank": 24,
-      "Team Name": "Lincoln Redcoats 1",
-      "W-L-T": "15-5-0",
-      "Rating": 91.464,
-      "AGD": 4.4,
-      "SoS": 87.064
+      "Team Name": "Huntsville Hawks 1",
+      "W-L-T": "7-9-0",
+      "Rating": 91.0451,
+      "AGD": -1.625,
+      "SoS": 92.6701
     },
     {
       "Rank": 25,
-      "Team Name": "Huntsville Hawks 1",
-      "W-L-T": "7-9-0",
-      "Rating": 91.1335,
-      "AGD": -1.625,
-      "SoS": 92.7585
+      "Team Name": "Lincoln Redcoats 1",
+      "W-L-T": "15-5-1",
+      "Rating": 90.9989,
+      "AGD": 4.1905,
+      "SoS": 86.8084
     },
     {
       "Rank": 26,
       "Team Name": "Mimico Mountaineers 1",
       "W-L-T": "2-12-1",
-      "Rating": 90.8848,
+      "Rating": 90.8813,
       "AGD": -2.7333,
-      "SoS": 93.6181
+      "SoS": 93.6146
     },
     {
       "Rank": 27,
-      "Team Name": "Midland Titans 1",
-      "W-L-T": "2-2-0",
-      "Rating": 90.8587,
-      "AGD": 1.25,
-      "SoS": 89.6087
+      "Team Name": "Whitby Warriors 2",
+      "W-L-T": "12-5-2",
+      "Rating": 90.7643,
+      "AGD": 2.3158,
+      "SoS": 88.4485
     },
     {
       "Rank": 28,
-      "Team Name": "Whitby Warriors 2",
-      "W-L-T": "12-5-2",
-      "Rating": 90.7943,
-      "AGD": 2.3158,
-      "SoS": 88.4785
+      "Team Name": "Midland Titans 1",
+      "W-L-T": "2-2-0",
+      "Rating": 90.7245,
+      "AGD": 1.25,
+      "SoS": 89.4745
     },
     {
       "Rank": 29,
       "Team Name": "Peterborough Lakers 2",
       "W-L-T": "15-4-0",
-      "Rating": 90.4538,
+      "Rating": 90.4063,
       "AGD": 4.2105,
-      "SoS": 86.2433
+      "SoS": 86.1957
     },
     {
       "Rank": 30,
       "Team Name": "Wallaceburg Griffins 1",
       "W-L-T": "9-7-0",
-      "Rating": 90.178,
+      "Rating": 90.0973,
       "AGD": 2.0,
-      "SoS": 88.178
+      "SoS": 88.0973
     },
     {
       "Rank": 31,
       "Team Name": "Midland Titans",
       "W-L-T": "10-6-1",
-      "Rating": 89.9223,
+      "Rating": 89.8585,
       "AGD": 1.1765,
-      "SoS": 88.7458
+      "SoS": 88.682
     },
     {
       "Rank": 32,
       "Team Name": "St. Catharines Athletics 2",
       "W-L-T": "14-8-0",
-      "Rating": 89.2082,
+      "Rating": 89.1503,
       "AGD": 2.3636,
-      "SoS": 86.8446
+      "SoS": 86.7866
     },
     {
       "Rank": 33,
       "Team Name": "Brampton Excelsiors",
       "W-L-T": "8-7-0",
-      "Rating": 88.9838,
+      "Rating": 88.9043,
       "AGD": 0.6,
-      "SoS": 88.3838
+      "SoS": 88.3043
     },
     {
       "Rank": 34,
       "Team Name": "Barrie Bombers",
-      "W-L-T": "0-10-1",
-      "Rating": 88.0435,
-      "AGD": -3.7273,
-      "SoS": 91.7707
+      "W-L-T": "0-11-1",
+      "Rating": 88.2593,
+      "AGD": -3.5,
+      "SoS": 91.7593
     },
     {
       "Rank": 35,
       "Team Name": "Burlington Blaze 2",
-      "W-L-T": "12-7-0",
-      "Rating": 87.8973,
-      "AGD": 1.8947,
-      "SoS": 86.0026
+      "W-L-T": "12-8-0",
+      "Rating": 87.4967,
+      "AGD": 1.3,
+      "SoS": 86.1967
     },
     {
       "Rank": 36,
       "Team Name": "London Blue Devils 1",
       "W-L-T": "9-6-1",
-      "Rating": 87.5627,
+      "Rating": 87.4624,
       "AGD": 2.125,
-      "SoS": 85.4377
+      "SoS": 85.3374
     },
     {
       "Rank": 37,
       "Team Name": "NOTL Thunderhawks",
       "W-L-T": "10-8-0",
-      "Rating": 87.2231,
+      "Rating": 87.0752,
       "AGD": 0.1667,
-      "SoS": 87.0565
+      "SoS": 86.9085
     },
     {
       "Rank": 38,
       "Team Name": "Brantford Warriors",
-      "W-L-T": "14-6-0",
-      "Rating": 86.8316,
-      "AGD": 2.45,
-      "SoS": 84.3816
+      "W-L-T": "15-6-0",
+      "Rating": 86.6567,
+      "AGD": 2.4762,
+      "SoS": 84.1805
     },
     {
       "Rank": 39,
       "Team Name": "Toronto Beaches",
       "W-L-T": "9-5-1",
-      "Rating": 86.4377,
+      "Rating": 86.4012,
       "AGD": 1.8,
-      "SoS": 84.6377
+      "SoS": 84.6012
     },
     {
       "Rank": 40,
       "Team Name": "Akwesasne Storm 1",
       "W-L-T": "8-8-0",
-      "Rating": 86.2076,
+      "Rating": 86.1429,
       "AGD": 0.25,
-      "SoS": 85.9576
+      "SoS": 85.8929
     },
     {
       "Rank": 41,
       "Team Name": "Cambridge Highlanders",
       "W-L-T": "14-9-0",
-      "Rating": 86.163,
+      "Rating": 85.9871,
       "AGD": 0.2609,
-      "SoS": 85.9022
+      "SoS": 85.7263
     },
     {
       "Rank": 42,
       "Team Name": "Uxbridge Enforcers",
-      "W-L-T": "6-7-2",
-      "Rating": 85.597,
-      "AGD": -2.0,
-      "SoS": 87.597
+      "W-L-T": "7-7-2",
+      "Rating": 85.5376,
+      "AGD": -1.625,
+      "SoS": 87.1626
     },
     {
       "Rank": 43,
       "Team Name": "Oshawa Blue Knights",
-      "W-L-T": "7-10-1",
-      "Rating": 84.9832,
-      "AGD": -1.0556,
-      "SoS": 86.0388
+      "W-L-T": "8-10-1",
+      "Rating": 85.0185,
+      "AGD": -0.8421,
+      "SoS": 85.8606
     },
     {
       "Rank": 44,
       "Team Name": "Pelham Raiders 2",
       "W-L-T": "7-11-1",
-      "Rating": 84.529,
+      "Rating": 84.4281,
       "AGD": -0.5789,
-      "SoS": 85.108
+      "SoS": 85.007
     },
     {
       "Rank": 45,
       "Team Name": "Windsor Warlocks",
       "W-L-T": "4-14-0",
-      "Rating": 84.486,
+      "Rating": 84.4177,
       "AGD": -4.9444,
-      "SoS": 89.4305
+      "SoS": 89.3621
     },
     {
       "Rank": 46,
-      "Team Name": "Kawartha Lakes Fury",
-      "W-L-T": "6-10-2",
-      "Rating": 84.3228,
-      "AGD": -2.1111,
-      "SoS": 86.4339
+      "Team Name": "Halton Hills Bulldogs 2",
+      "W-L-T": "11-5-2",
+      "Rating": 84.1834,
+      "AGD": 1.7778,
+      "SoS": 82.4057
     },
     {
       "Rank": 47,
-      "Team Name": "Sudbury Rockhounds",
-      "W-L-T": "6-4-0",
-      "Rating": 84.2798,
-      "AGD": 2.2,
-      "SoS": 82.0798
+      "Team Name": "Kawartha Lakes Fury",
+      "W-L-T": "6-11-2",
+      "Rating": 84.1806,
+      "AGD": -2.1579,
+      "SoS": 86.3385
     },
     {
       "Rank": 48,
-      "Team Name": "Halton Hills Bulldogs 2",
-      "W-L-T": "11-5-2",
-      "Rating": 84.2791,
-      "AGD": 1.7778,
-      "SoS": 82.5014
+      "Team Name": "Sudbury Rockhounds",
+      "W-L-T": "6-4-0",
+      "Rating": 84.1757,
+      "AGD": 2.2,
+      "SoS": 81.9757
     },
     {
       "Rank": 49,
       "Team Name": "Centre Wellington Riverhawks 2",
-      "W-L-T": "12-10-2",
-      "Rating": 84.1435,
-      "AGD": 0.625,
-      "SoS": 83.5185
+      "W-L-T": "12-11-2",
+      "Rating": 83.9759,
+      "AGD": 0.48,
+      "SoS": 83.4959
     },
     {
       "Rank": 50,
       "Team Name": "Kingston Krossfire",
       "W-L-T": "11-5-0",
-      "Rating": 83.98,
+      "Rating": 83.9216,
       "AGD": 2.9375,
-      "SoS": 81.0425
+      "SoS": 80.9841
     },
     {
       "Rank": 51,
-      "Team Name": "Strathroy Screaming Eagles",
-      "W-L-T": "8-3-1",
-      "Rating": 83.9485,
-      "AGD": 2.4167,
-      "SoS": 81.5318
+      "Team Name": "Gloucester Griffins",
+      "W-L-T": "5-8-0",
+      "Rating": 83.845,
+      "AGD": -3.1538,
+      "SoS": 86.9989
     },
     {
       "Rank": 52,
-      "Team Name": "Gloucester Griffins",
-      "W-L-T": "5-8-0",
-      "Rating": 83.8977,
-      "AGD": -3.1538,
-      "SoS": 87.0515
+      "Team Name": "Strathroy Screaming Eagles",
+      "W-L-T": "8-3-1",
+      "Rating": 83.8374,
+      "AGD": 2.4167,
+      "SoS": 81.4208
     },
     {
       "Rank": 53,
-      "Team Name": "Melancthon Vets",
-      "W-L-T": "10-8-0",
-      "Rating": 83.423,
-      "AGD": 0.3333,
-      "SoS": 83.0897
+      "Team Name": "Fort Erie Hawks 2",
+      "W-L-T": "11-6-3",
+      "Rating": 83.4514,
+      "AGD": 1.3,
+      "SoS": 82.1514
     },
     {
       "Rank": 54,
-      "Team Name": "Mimico Mountaineers 2",
-      "W-L-T": "8-9-0",
-      "Rating": 83.2002,
-      "AGD": -0.6471,
-      "SoS": 83.8472
+      "Team Name": "Melancthon Vets",
+      "W-L-T": "10-8-0",
+      "Rating": 83.31,
+      "AGD": 0.3333,
+      "SoS": 82.9767
     },
     {
       "Rank": 55,
-      "Team Name": "Fort Erie Hawks 2",
-      "W-L-T": "11-6-2",
-      "Rating": 83.1721,
-      "AGD": 1.3684,
-      "SoS": 81.8037
+      "Team Name": "Mimico Mountaineers 2",
+      "W-L-T": "8-9-0",
+      "Rating": 83.0718,
+      "AGD": -0.6471,
+      "SoS": 83.7188
     },
     {
       "Rank": 56,
       "Team Name": "Tyendinaga Thunderbirds",
       "W-L-T": "6-5-0",
-      "Rating": 83.0919,
+      "Rating": 83.0303,
       "AGD": 0.1818,
-      "SoS": 82.91
+      "SoS": 82.8485
     },
     {
       "Rank": 57,
       "Team Name": "Kitchener Kodiaks 2",
       "W-L-T": "7-6-0",
-      "Rating": 82.9692,
+      "Rating": 82.8386,
       "AGD": 1.5385,
-      "SoS": 81.4308
+      "SoS": 81.3001
     },
     {
       "Rank": 58,
-      "Team Name": "Peterborough Lakers 3",
-      "W-L-T": "4-3-2",
-      "Rating": 82.8468,
-      "AGD": 1.6667,
-      "SoS": 81.1801
+      "Team Name": "Cornwall Celtics",
+      "W-L-T": "6-12-0",
+      "Rating": 82.7294,
+      "AGD": -2.3889,
+      "SoS": 85.1182
     },
     {
       "Rank": 59,
-      "Team Name": "Cornwall Celtics",
-      "W-L-T": "6-12-0",
-      "Rating": 82.7816,
-      "AGD": -2.3889,
-      "SoS": 85.1705
+      "Team Name": "Northumberland Nemesis",
+      "W-L-T": "4-14-1",
+      "Rating": 82.6065,
+      "AGD": -3.7895,
+      "SoS": 86.396
     },
     {
       "Rank": 60,
-      "Team Name": "Northumberland Nemesis",
-      "W-L-T": "4-14-1",
-      "Rating": 82.7403,
-      "AGD": -3.7895,
-      "SoS": 86.5297
+      "Team Name": "Guelph Regals 2",
+      "W-L-T": "14-5-2",
+      "Rating": 82.0055,
+      "AGD": 2.1429,
+      "SoS": 79.8626
     },
     {
       "Rank": 61,
-      "Team Name": "Guelph Regals 2",
-      "W-L-T": "14-5-2",
-      "Rating": 82.1126,
-      "AGD": 2.1429,
-      "SoS": 79.9697
+      "Team Name": "Peterborough Lakers 3",
+      "W-L-T": "4-4-2",
+      "Rating": 81.9699,
+      "AGD": 1.3,
+      "SoS": 80.6699
     },
     {
       "Rank": 62,
-      "Team Name": "Lincoln Redcoats 2",
-      "W-L-T": "9-9-1",
-      "Rating": 81.9637,
-      "AGD": 0.1053,
-      "SoS": 81.8584
+      "Team Name": "Six Nations 2",
+      "W-L-T": "2-20-0",
+      "Rating": 81.7581,
+      "AGD": -5.8636,
+      "SoS": 87.6217
     },
     {
       "Rank": 63,
-      "Team Name": "Six Nations 2",
-      "W-L-T": "1-20-0",
-      "Rating": 81.7259,
-      "AGD": -6.3333,
-      "SoS": 88.0592
+      "Team Name": "Lincoln Redcoats 2",
+      "W-L-T": "9-10-1",
+      "Rating": 81.6714,
+      "AGD": -0.1,
+      "SoS": 81.7714
     },
     {
       "Rank": 64,
       "Team Name": "Oakville Hawks 2",
       "W-L-T": "5-10-1",
-      "Rating": 81.6272,
+      "Rating": 81.5398,
       "AGD": -1.875,
-      "SoS": 83.5022
+      "SoS": 83.4148
     },
     {
       "Rank": 65,
       "Team Name": "Newmarket Redbirds",
       "W-L-T": "0-13-0",
-      "Rating": 81.4485,
+      "Rating": 81.34,
       "AGD": -9.1538,
-      "SoS": 90.6023
+      "SoS": 90.4939
     },
     {
       "Rank": 66,
       "Team Name": "Kahnawake Mohawks 1",
       "W-L-T": "4-10-0",
-      "Rating": 81.2792,
+      "Rating": 81.2228,
       "AGD": -4.9286,
-      "SoS": 86.2078
+      "SoS": 86.1514
     },
     {
       "Rank": 67,
-      "Team Name": "West Grey Rampage 2",
-      "W-L-T": "5-7-0",
-      "Rating": 80.2962,
-      "AGD": 0.0,
-      "SoS": 80.2962
+      "Team Name": "Clarington Gaels 2",
+      "W-L-T": "3-7-0",
+      "Rating": 80.2208,
+      "AGD": -3.0,
+      "SoS": 83.2208
     },
     {
       "Rank": 68,
-      "Team Name": "Clarington Gaels 2",
-      "W-L-T": "3-6-0",
-      "Rating": 80.2119,
-      "AGD": -2.8889,
-      "SoS": 83.1008
+      "Team Name": "West Grey Rampage 2",
+      "W-L-T": "6-7-0",
+      "Rating": 80.0189,
+      "AGD": 0.0769,
+      "SoS": 79.9419
     },
     {
       "Rank": 69,
       "Team Name": "Orangeville Northmen 2",
       "W-L-T": "3-10-0",
-      "Rating": 79.617,
+      "Rating": 79.5203,
       "AGD": -3.3846,
-      "SoS": 83.0017
+      "SoS": 82.905
     },
     {
       "Rank": 70,
       "Team Name": "Simcoe Timberwolves",
       "W-L-T": "5-8-0",
-      "Rating": 79.4284,
+      "Rating": 79.2845,
       "AGD": -1.8462,
-      "SoS": 81.2745
+      "SoS": 81.1307
     },
     {
       "Rank": 71,
       "Team Name": "Sarnia Pacers 2",
       "W-L-T": "3-8-0",
-      "Rating": 79.3095,
+      "Rating": 79.198,
       "AGD": -2.6364,
-      "SoS": 81.9459
+      "SoS": 81.8344
     },
     {
       "Rank": 72,
       "Team Name": "Orillia Kings 2",
       "W-L-T": "3-7-2",
-      "Rating": 79.1889,
+      "Rating": 79.0508,
       "AGD": -2.25,
-      "SoS": 81.4389
+      "SoS": 81.3008
     },
     {
       "Rank": 73,
       "Team Name": "Owen Sound North Stars 2",
       "W-L-T": "7-8-0",
-      "Rating": 79.0147,
+      "Rating": 78.9229,
       "AGD": 0.0667,
-      "SoS": 78.9481
+      "SoS": 78.8563
     },
     {
       "Rank": 74,
       "Team Name": "Stayner Hitmen",
       "W-L-T": "1-9-0",
-      "Rating": 78.9052,
+      "Rating": 78.8298,
       "AGD": -5.0,
-      "SoS": 83.9052
+      "SoS": 83.8298
     },
     {
       "Rank": 75,
       "Team Name": "Pelham Raiders 3",
       "W-L-T": "7-10-1",
-      "Rating": 78.5874,
+      "Rating": 78.5513,
       "AGD": -2.0556,
-      "SoS": 80.6429
+      "SoS": 80.6069
     },
     {
       "Rank": 76,
       "Team Name": "Pickering Ironheads 2",
       "W-L-T": "2-9-0",
-      "Rating": 78.0526,
+      "Rating": 78.1796,
       "AGD": -4.1818,
-      "SoS": 82.2345
+      "SoS": 82.3614
     },
     {
       "Rank": 77,
       "Team Name": "Huntsville Hawks 2",
       "W-L-T": "1-6-2",
-      "Rating": 77.4576,
+      "Rating": 77.3477,
       "AGD": -5.2222,
-      "SoS": 82.6798
+      "SoS": 82.5699
     },
     {
       "Rank": 78,
       "Team Name": "Centre Wellington Riverhawks 3",
-      "W-L-T": "2-13-0",
-      "Rating": 76.8277,
-      "AGD": -3.9333,
-      "SoS": 80.761
+      "W-L-T": "2-14-0",
+      "Rating": 76.8617,
+      "AGD": -3.75,
+      "SoS": 80.6117
     },
     {
       "Rank": 79,
       "Team Name": "Akwesasne Storm 2",
       "W-L-T": "5-8-0",
-      "Rating": 76.4743,
+      "Rating": 76.3792,
       "AGD": -1.0769,
-      "SoS": 77.5513
+      "SoS": 77.4561
     },
     {
       "Rank": 80,
       "Team Name": "Wallaceburg Griffins 2",
       "W-L-T": "2-7-1",
-      "Rating": 75.7839,
+      "Rating": 75.5887,
       "AGD": -4.1,
-      "SoS": 79.8839
+      "SoS": 79.6887
     },
     {
       "Rank": 81,
-      "Team Name": "North Perth Outlaws",
-      "W-L-T": "2-11-0",
-      "Rating": 75.2948,
-      "AGD": -6.7692,
-      "SoS": 82.0641
+      "Team Name": "Clarington Gaels 3",
+      "W-L-T": "1-5-0",
+      "Rating": 75.3362,
+      "AGD": -6.3333,
+      "SoS": 81.6695
     },
     {
       "Rank": 82,
-      "Team Name": "Six Nations 3",
-      "W-L-T": "0-16-0",
-      "Rating": 74.3771,
-      "AGD": -8.3125,
-      "SoS": 82.6896
+      "Team Name": "North Perth Outlaws",
+      "W-L-T": "2-11-0",
+      "Rating": 75.1892,
+      "AGD": -6.7692,
+      "SoS": 81.9584
     },
     {
       "Rank": 83,
-      "Team Name": "London Blue Devils 2",
-      "W-L-T": "1-9-1",
-      "Rating": 73.9478,
-      "AGD": -5.1818,
-      "SoS": 79.1296
+      "Team Name": "Six Nations 3",
+      "W-L-T": "0-16-0",
+      "Rating": 74.2995,
+      "AGD": -8.3125,
+      "SoS": 82.612
     },
     {
       "Rank": 84,
-      "Team Name": "Clarington Gaels 3",
-      "W-L-T": "0-5-0",
-      "Rating": 73.7744,
-      "AGD": -8.0,
-      "SoS": 81.7744
+      "Team Name": "London Blue Devils 2",
+      "W-L-T": "1-9-1",
+      "Rating": 73.8501,
+      "AGD": -5.1818,
+      "SoS": 79.0319
     },
     {
       "Rank": 85,
       "Team Name": "Arthur Aces 2",
       "W-L-T": "0-15-0",
-      "Rating": 72.902,
+      "Rating": 72.7619,
       "AGD": -7.5333,
-      "SoS": 80.4354
+      "SoS": 80.2953
     },
     {
       "Rank": 86,
       "Team Name": "Kahnawake Mohawks 2",
       "W-L-T": "0-7-0",
-      "Rating": 69.1619,
+      "Rating": 69.0781,
       "AGD": -9.2857,
-      "SoS": 78.4476
+      "SoS": 78.3638
     }
   ],
   "U11": [
     {
       "Rank": 1,
       "Team Name": "Orangeville Northmen 1",
-      "W-L-T": "23-1-0",
+      "W-L-T": "24-1-0",
       "Rating": 99.9999,
-      "AGD": 6.0417,
-      "SoS": 93.9483
+      "AGD": 6.2,
+      "SoS": 93.79
     },
     {
       "Rank": 2,
       "Team Name": "Whitby Warriors 1",
-      "W-L-T": "16-1-0",
-      "Rating": 99.8258,
-      "AGD": 6.3529,
-      "SoS": 93.4729
+      "W-L-T": "17-1-0",
+      "Rating": 99.4579,
+      "AGD": 6.2778,
+      "SoS": 93.1801
     },
     {
       "Rank": 3,
       "Team Name": "Oakville Hawks 1",
-      "W-L-T": "11-5-0",
-      "Rating": 97.9937,
-      "AGD": 3.625,
-      "SoS": 94.3687
+      "W-L-T": "12-5-0",
+      "Rating": 97.9623,
+      "AGD": 3.6471,
+      "SoS": 94.3152
     },
     {
       "Rank": 4,
       "Team Name": "Six Nations 1",
-      "W-L-T": "16-5-1",
-      "Rating": 96.9003,
-      "AGD": 2.4545,
-      "SoS": 94.4458
+      "W-L-T": "17-5-1",
+      "Rating": 96.8719,
+      "AGD": 2.7826,
+      "SoS": 94.0893
     },
     {
       "Rank": 5,
       "Team Name": "Peterborough Lakers 1",
       "W-L-T": "10-6-0",
-      "Rating": 96.6533,
+      "Rating": 96.4193,
       "AGD": 1.125,
-      "SoS": 95.5283
+      "SoS": 95.2943
     },
     {
       "Rank": 6,
       "Team Name": "Guelph Regals 1",
-      "W-L-T": "13-4-1",
-      "Rating": 96.124,
-      "AGD": 2.6111,
-      "SoS": 93.5129
+      "W-L-T": "13-5-1",
+      "Rating": 95.7222,
+      "AGD": 2.2632,
+      "SoS": 93.459
     },
     {
       "Rank": 7,
-      "Team Name": "Pelham Raiders 1",
-      "W-L-T": "16-8-1",
-      "Rating": 95.9041,
-      "AGD": 1.16,
-      "SoS": 94.7441
+      "Team Name": "Sarnia Pacers 1",
+      "W-L-T": "15-8-0",
+      "Rating": 95.5276,
+      "AGD": 2.4783,
+      "SoS": 93.0493
     },
     {
       "Rank": 8,
-      "Team Name": "Sarnia Pacers 1",
-      "W-L-T": "15-8-0",
-      "Rating": 95.7785,
-      "AGD": 2.4783,
-      "SoS": 93.3002
+      "Team Name": "Pelham Raiders 1",
+      "W-L-T": "16-9-1",
+      "Rating": 95.4468,
+      "AGD": 0.7308,
+      "SoS": 94.7161
     },
     {
       "Rank": 9,
       "Team Name": "Centre Wellington Riverhawks 1",
-      "W-L-T": "13-9-1",
-      "Rating": 95.631,
-      "AGD": 1.3478,
-      "SoS": 94.2831
+      "W-L-T": "14-9-1",
+      "Rating": 95.2726,
+      "AGD": 1.375,
+      "SoS": 93.8976
     },
     {
       "Rank": 10,
       "Team Name": "Mimico Mountaineers 1",
       "W-L-T": "8-6-2",
-      "Rating": 95.2293,
+      "Rating": 95.051,
       "AGD": 0.4375,
-      "SoS": 94.7918
+      "SoS": 94.6135
     },
     {
       "Rank": 11,
       "Team Name": "Halton Hills Bulldogs 1",
       "W-L-T": "12-6-1",
-      "Rating": 95.0861,
+      "Rating": 94.8597,
       "AGD": 1.1053,
-      "SoS": 93.9809
+      "SoS": 93.7544
     },
     {
       "Rank": 12,
       "Team Name": "Burlington Blaze 1",
-      "W-L-T": "6-12-0",
-      "Rating": 93.9961,
-      "AGD": -0.8333,
-      "SoS": 94.8295
+      "W-L-T": "7-12-0",
+      "Rating": 93.9582,
+      "AGD": -0.5263,
+      "SoS": 94.4845
     },
     {
       "Rank": 13,
       "Team Name": "Owen Sound North Stars 1",
       "W-L-T": "14-6-0",
-      "Rating": 93.4837,
+      "Rating": 93.2094,
       "AGD": 1.5,
-      "SoS": 91.9837
+      "SoS": 91.7094
     },
     {
       "Rank": 14,
       "Team Name": "St. Catharines Athletics 1",
-      "W-L-T": "4-14-3",
-      "Rating": 93.0123,
-      "AGD": -1.2381,
-      "SoS": 94.2504
+      "W-L-T": "4-15-3",
+      "Rating": 92.5131,
+      "AGD": -1.4091,
+      "SoS": 93.9222
     },
     {
       "Rank": 15,
-      "Team Name": "Lincoln Redcoats 1",
-      "W-L-T": "20-4-0",
-      "Rating": 92.9814,
-      "AGD": 4.625,
-      "SoS": 88.3564
+      "Team Name": "Clarington Gaels 1",
+      "W-L-T": "5-10-0",
+      "Rating": 92.4483,
+      "AGD": -0.6667,
+      "SoS": 93.115
     },
     {
       "Rank": 16,
-      "Team Name": "Newmarket Redbirds",
-      "W-L-T": "5-3-0",
-      "Rating": 92.6587,
-      "AGD": 4.375,
-      "SoS": 88.2837
+      "Team Name": "Lincoln Redcoats 1",
+      "W-L-T": "20-5-0",
+      "Rating": 92.3973,
+      "AGD": 4.04,
+      "SoS": 88.3573
     },
     {
       "Rank": 17,
-      "Team Name": "Clarington Gaels 1",
-      "W-L-T": "5-9-0",
-      "Rating": 92.5601,
-      "AGD": -0.3571,
-      "SoS": 92.9173
+      "Team Name": "Newmarket Redbirds",
+      "W-L-T": "5-3-0",
+      "Rating": 92.2856,
+      "AGD": 4.375,
+      "SoS": 87.9106
     },
     {
       "Rank": 18,
       "Team Name": "Arthur Aces 1",
       "W-L-T": "11-10-1",
-      "Rating": 91.9027,
+      "Rating": 91.6195,
       "AGD": 0.9545,
-      "SoS": 90.9482
+      "SoS": 90.6649
     },
     {
       "Rank": 19,
       "Team Name": "Wallaceburg Griffins 1",
       "W-L-T": "12-2-0",
-      "Rating": 91.8526,
+      "Rating": 91.5751,
       "AGD": 4.2857,
-      "SoS": 87.5669
+      "SoS": 87.2894
     },
     {
       "Rank": 20,
       "Team Name": "Hamilton Bengals 1",
-      "W-L-T": "9-14-1",
-      "Rating": 91.1293,
-      "AGD": 0.375,
-      "SoS": 90.7543
+      "W-L-T": "10-14-1",
+      "Rating": 90.8782,
+      "AGD": 0.76,
+      "SoS": 90.1182
     },
     {
       "Rank": 21,
-      "Team Name": "West Grey Rampage 1",
-      "W-L-T": "17-9-0",
-      "Rating": 91.0368,
-      "AGD": 1.7692,
-      "SoS": 89.2676
+      "Team Name": "Oshawa Blue Knights",
+      "W-L-T": "15-6-0",
+      "Rating": 90.7402,
+      "AGD": 2.0,
+      "SoS": 88.7402
     },
     {
       "Rank": 22,
-      "Team Name": "Oshawa Blue Knights",
-      "W-L-T": "15-6-0",
-      "Rating": 91.0293,
-      "AGD": 2.0,
-      "SoS": 89.0293
+      "Team Name": "West Grey Rampage 1",
+      "W-L-T": "17-9-0",
+      "Rating": 90.7379,
+      "AGD": 1.7692,
+      "SoS": 88.9687
     },
     {
       "Rank": 23,
       "Team Name": "Newmarket Redbirds 1",
       "W-L-T": "7-5-0",
-      "Rating": 90.9489,
+      "Rating": 90.6919,
       "AGD": 1.8333,
-      "SoS": 89.1155
+      "SoS": 88.8586
     },
     {
       "Rank": 24,
-      "Team Name": "Orillia Kings 1",
-      "W-L-T": "11-3-0",
-      "Rating": 90.8302,
-      "AGD": 3.6429,
-      "SoS": 87.1874
+      "Team Name": "London Blue Devils 1",
+      "W-L-T": "4-12-0",
+      "Rating": 90.599,
+      "AGD": -3.3125,
+      "SoS": 93.9115
     },
     {
       "Rank": 25,
-      "Team Name": "London Blue Devils 1",
-      "W-L-T": "4-12-0",
-      "Rating": 90.8003,
-      "AGD": -3.3125,
-      "SoS": 94.1128
+      "Team Name": "Orillia Kings 1",
+      "W-L-T": "11-3-0",
+      "Rating": 90.4935,
+      "AGD": 3.6429,
+      "SoS": 86.8506
     },
     {
       "Rank": 26,
       "Team Name": "Cambridge Highlanders",
-      "W-L-T": "3-14-0",
-      "Rating": 90.5416,
-      "AGD": -4.1176,
-      "SoS": 94.6592
+      "W-L-T": "3-15-0",
+      "Rating": 90.432,
+      "AGD": -4.0,
+      "SoS": 94.432
     },
     {
       "Rank": 27,
       "Team Name": "Brampton Excelsiors",
       "W-L-T": "12-9-2",
-      "Rating": 90.4224,
+      "Rating": 90.1551,
       "AGD": 0.2174,
-      "SoS": 90.205
+      "SoS": 89.9377
     },
     {
       "Rank": 28,
       "Team Name": "Kahnawake Mohawks 1",
       "W-L-T": "11-10-1",
-      "Rating": 90.3606,
+      "Rating": 90.089,
       "AGD": 0.2727,
-      "SoS": 90.0879
+      "SoS": 89.8162
     },
     {
       "Rank": 29,
       "Team Name": "Burlington Blaze 2",
-      "W-L-T": "14-1-0",
-      "Rating": 90.0671,
-      "AGD": 6.3333,
-      "SoS": 83.7338
+      "W-L-T": "15-1-0",
+      "Rating": 89.738,
+      "AGD": 6.25,
+      "SoS": 83.488
     },
     {
       "Rank": 30,
       "Team Name": "Clarington Gaels 2",
       "W-L-T": "8-4-0",
-      "Rating": 89.7049,
+      "Rating": 89.4377,
       "AGD": 2.5,
-      "SoS": 87.2049
+      "SoS": 86.9377
     },
     {
       "Rank": 31,
       "Team Name": "Midland Titans",
       "W-L-T": "12-7-0",
-      "Rating": 89.623,
+      "Rating": 89.3316,
       "AGD": 0.1579,
-      "SoS": 89.4651
+      "SoS": 89.1737
     },
     {
       "Rank": 32,
       "Team Name": "Peterborough Lakers 2",
       "W-L-T": "8-7-0",
-      "Rating": 89.5232,
+      "Rating": 89.2091,
       "AGD": 0.6,
-      "SoS": 88.9232
+      "SoS": 88.6091
     },
     {
       "Rank": 33,
       "Team Name": "Toronto Beaches 1",
       "W-L-T": "7-6-1",
-      "Rating": 89.4556,
+      "Rating": 89.178,
       "AGD": 0.5714,
-      "SoS": 88.8842
+      "SoS": 88.6066
     },
     {
       "Rank": 34,
       "Team Name": "Kitchener Kodiaks 1",
       "W-L-T": "5-12-0",
-      "Rating": 88.9968,
+      "Rating": 88.6826,
       "AGD": -2.2353,
-      "SoS": 91.2321
+      "SoS": 90.9179
     },
     {
       "Rank": 35,
       "Team Name": "Uxbridge Enforcers",
       "W-L-T": "1-6-0",
-      "Rating": 88.9243,
+      "Rating": 88.6473,
       "AGD": -4.1429,
-      "SoS": 93.0672
+      "SoS": 92.7901
     },
     {
       "Rank": 36,
-      "Team Name": "Nepean Knights 1",
-      "W-L-T": "11-8-0",
-      "Rating": 88.8789,
-      "AGD": 0.3158,
-      "SoS": 88.5631
+      "Team Name": "Orangeville Northmen 2",
+      "W-L-T": "13-4-0",
+      "Rating": 88.5314,
+      "AGD": 2.7647,
+      "SoS": 85.7667
     },
     {
       "Rank": 37,
-      "Team Name": "Orangeville Northmen 2",
-      "W-L-T": "13-4-0",
-      "Rating": 88.8133,
-      "AGD": 2.7647,
-      "SoS": 86.0486
+      "Team Name": "Nepean Knights 1",
+      "W-L-T": "11-8-0",
+      "Rating": 88.5285,
+      "AGD": 0.3158,
+      "SoS": 88.2127
     },
     {
       "Rank": 38,
       "Team Name": "Pickering Ironheads 1",
       "W-L-T": "9-6-1",
-      "Rating": 88.7877,
+      "Rating": 88.4275,
       "AGD": 2.4375,
-      "SoS": 86.3502
+      "SoS": 85.99
     },
     {
       "Rank": 39,
       "Team Name": "Northumberland Nemesis",
       "W-L-T": "5-5-0",
-      "Rating": 88.3874,
+      "Rating": 88.0819,
       "AGD": -0.6,
-      "SoS": 88.9874
+      "SoS": 88.6819
     },
     {
       "Rank": 40,
       "Team Name": "Milton Mavericks",
       "W-L-T": "3-11-0",
-      "Rating": 88.2234,
+      "Rating": 88.0002,
       "AGD": -3.6429,
-      "SoS": 91.8662
+      "SoS": 91.6431
     },
     {
       "Rank": 41,
       "Team Name": "Barrie Bombers 1",
       "W-L-T": "8-7-3",
-      "Rating": 88.1406,
+      "Rating": 87.8359,
       "AGD": 0.3333,
-      "SoS": 87.8073
+      "SoS": 87.5026
     },
     {
       "Rank": 42,
       "Team Name": "Quinte Bayhawks 1",
-      "W-L-T": "5-4-1",
-      "Rating": 87.4884,
-      "AGD": 1.4,
-      "SoS": 86.0884
+      "W-L-T": "5-4-2",
+      "Rating": 86.7083,
+      "AGD": 1.2727,
+      "SoS": 85.4356
     },
     {
       "Rank": 43,
       "Team Name": "Windsor Warlocks",
       "W-L-T": "6-17-1",
-      "Rating": 86.9093,
+      "Rating": 86.6008,
       "AGD": -3.0417,
-      "SoS": 89.951
+      "SoS": 89.6425
     },
     {
       "Rank": 44,
-      "Team Name": "Huntsville Hawks 1",
-      "W-L-T": "5-6-1",
-      "Rating": 86.9075,
-      "AGD": -0.3333,
-      "SoS": 87.2408
+      "Team Name": "Melancthon Vets",
+      "W-L-T": "12-5-1",
+      "Rating": 86.5622,
+      "AGD": 2.4444,
+      "SoS": 84.1178
     },
     {
       "Rank": 45,
-      "Team Name": "Melancthon Vets",
-      "W-L-T": "11-5-1",
-      "Rating": 86.7811,
-      "AGD": 2.2353,
-      "SoS": 84.5458
+      "Team Name": "Huntsville Hawks 1",
+      "W-L-T": "5-6-1",
+      "Rating": 86.5247,
+      "AGD": -0.3333,
+      "SoS": 86.8581
     },
     {
       "Rank": 46,
       "Team Name": "Brantford Warriors",
       "W-L-T": "16-7-0",
-      "Rating": 86.7718,
+      "Rating": 86.4613,
       "AGD": 2.8261,
-      "SoS": 83.9457
+      "SoS": 83.6352
     },
     {
       "Rank": 47,
       "Team Name": "Uxbridge Enforcers U11",
       "W-L-T": "0-4-0",
-      "Rating": 86.3663,
+      "Rating": 86.0504,
       "AGD": -9.25,
-      "SoS": 95.6163
+      "SoS": 95.3004
     },
     {
       "Rank": 48,
       "Team Name": "NOTL Thunderhawks",
-      "W-L-T": "11-6-1",
-      "Rating": 86.1695,
-      "AGD": 1.5,
-      "SoS": 84.6695
+      "W-L-T": "11-7-1",
+      "Rating": 85.7637,
+      "AGD": 1.1579,
+      "SoS": 84.6058
     },
     {
       "Rank": 49,
       "Team Name": "Whitby Warriors 2",
       "W-L-T": "4-10-0",
-      "Rating": 86.0303,
+      "Rating": 85.7237,
       "AGD": -1.4286,
-      "SoS": 87.4589
+      "SoS": 87.1523
     },
     {
       "Rank": 50,
-      "Team Name": "Cornwall Celtics 1",
-      "W-L-T": "8-11-0",
-      "Rating": 86.02,
-      "AGD": -1.4211,
-      "SoS": 87.4411
+      "Team Name": "Sarnia Pacers 2",
+      "W-L-T": "12-4-1",
+      "Rating": 85.678,
+      "AGD": 3.1176,
+      "SoS": 82.5604
     },
     {
       "Rank": 51,
-      "Team Name": "Sarnia Pacers 2",
-      "W-L-T": "12-4-1",
-      "Rating": 86.0122,
-      "AGD": 3.1176,
-      "SoS": 82.8946
+      "Team Name": "Cornwall Celtics 1",
+      "W-L-T": "8-11-0",
+      "Rating": 85.6362,
+      "AGD": -1.4211,
+      "SoS": 87.0572
     },
     {
       "Rank": 52,
       "Team Name": "Guelph Regals 2",
-      "W-L-T": "10-6-0",
-      "Rating": 85.7485,
-      "AGD": 3.3125,
-      "SoS": 82.436
+      "W-L-T": "11-6-0",
+      "Rating": 85.5108,
+      "AGD": 3.3529,
+      "SoS": 82.1579
     },
     {
       "Rank": 53,
       "Team Name": "Tyendinaga Thunderbirds 1",
       "W-L-T": "9-3-1",
-      "Rating": 85.3915,
+      "Rating": 84.9919,
       "AGD": 3.4615,
-      "SoS": 81.93
+      "SoS": 81.5304
     },
     {
       "Rank": 54,
       "Team Name": "Stayner Hitmen",
       "W-L-T": "11-7-1",
-      "Rating": 85.1343,
+      "Rating": 84.8363,
       "AGD": 1.5263,
-      "SoS": 83.608
+      "SoS": 83.31
     },
     {
       "Rank": 55,
       "Team Name": "Newmarket Redbirds 2",
       "W-L-T": "3-2-2",
-      "Rating": 85.098,
+      "Rating": 84.8075,
       "AGD": 1.8571,
-      "SoS": 83.2409
+      "SoS": 82.9503
     },
     {
       "Rank": 56,
       "Team Name": "Strathroy Screaming Eagles",
       "W-L-T": "9-8-1",
-      "Rating": 85.0321,
+      "Rating": 84.6986,
       "AGD": 1.8333,
-      "SoS": 83.1988
+      "SoS": 82.8652
     },
     {
       "Rank": 57,
       "Team Name": "Akwesasne Storm 1",
       "W-L-T": "6-13-0",
-      "Rating": 84.8497,
+      "Rating": 84.4818,
       "AGD": -2.5263,
-      "SoS": 87.376
+      "SoS": 87.0081
     },
     {
       "Rank": 58,
       "Team Name": "Huntsville Hawks 2",
       "W-L-T": "7-3-1",
-      "Rating": 84.3619,
+      "Rating": 84.05,
       "AGD": 0.7273,
-      "SoS": 83.6347
+      "SoS": 83.3227
     },
     {
       "Rank": 59,
       "Team Name": "Mimico Mountaineers 2",
       "W-L-T": "11-4-2",
-      "Rating": 84.2646,
+      "Rating": 83.9705,
       "AGD": 1.1176,
-      "SoS": 83.147
+      "SoS": 82.8529
     },
     {
       "Rank": 60,
       "Team Name": "North Perth Outlaws",
       "W-L-T": "6-8-1",
-      "Rating": 83.9417,
+      "Rating": 83.6631,
       "AGD": 0.2667,
-      "SoS": 83.675
+      "SoS": 83.3964
     },
     {
       "Rank": 61,
       "Team Name": "Oakville Hawks 2",
       "W-L-T": "4-8-2",
-      "Rating": 83.7091,
+      "Rating": 83.4325,
       "AGD": -0.3571,
-      "SoS": 84.0663
+      "SoS": 83.7896
     },
     {
       "Rank": 62,
       "Team Name": "Kawartha Lakes Fury 1",
       "W-L-T": "4-7-1",
-      "Rating": 83.5073,
+      "Rating": 83.1879,
       "AGD": -1.8333,
-      "SoS": 85.3406
+      "SoS": 85.0212
     },
     {
       "Rank": 63,
       "Team Name": "Centre Wellington Riverhawks 2",
-      "W-L-T": "7-7-4",
-      "Rating": 83.1936,
-      "AGD": 0.6667,
-      "SoS": 82.527
+      "W-L-T": "7-8-4",
+      "Rating": 82.8101,
+      "AGD": 0.4211,
+      "SoS": 82.3891
     },
     {
       "Rank": 64,
       "Team Name": "Gloucester Griffins 1",
       "W-L-T": "5-5-1",
-      "Rating": 83.1214,
+      "Rating": 82.7603,
       "AGD": 0.1818,
-      "SoS": 82.9396
+      "SoS": 82.5784
     },
     {
       "Rank": 65,
       "Team Name": "Orillia Kings 2",
       "W-L-T": "3-11-1",
-      "Rating": 82.9853,
+      "Rating": 82.6769,
       "AGD": -3.6,
-      "SoS": 86.5853
+      "SoS": 86.2769
     },
     {
       "Rank": 66,
-      "Team Name": "Fort Erie Hawks",
-      "W-L-T": "8-10-2",
-      "Rating": 82.9501,
-      "AGD": -1.7,
-      "SoS": 84.6501
+      "Team Name": "Peterborough Lakers 3",
+      "W-L-T": "9-4-1",
+      "Rating": 82.5996,
+      "AGD": 4.0,
+      "SoS": 78.5996
     },
     {
       "Rank": 67,
-      "Team Name": "Owen Sound North Stars 2",
-      "W-L-T": "7-4-0",
-      "Rating": 82.7312,
-      "AGD": 1.7273,
-      "SoS": 81.0039
+      "Team Name": "Fort Erie Hawks",
+      "W-L-T": "8-11-2",
+      "Rating": 82.5139,
+      "AGD": -2.0952,
+      "SoS": 84.6091
     },
     {
       "Rank": 68,
-      "Team Name": "Barrie Bombers 2",
-      "W-L-T": "3-10-2",
-      "Rating": 82.6054,
-      "AGD": -0.4,
-      "SoS": 83.0054
+      "Team Name": "Owen Sound North Stars 2",
+      "W-L-T": "7-4-0",
+      "Rating": 82.4335,
+      "AGD": 1.7273,
+      "SoS": 80.7063
     },
     {
       "Rank": 69,
-      "Team Name": "Peterborough Lakers 3",
-      "W-L-T": "9-4-0",
-      "Rating": 82.4691,
-      "AGD": 4.3077,
-      "SoS": 78.1614
+      "Team Name": "Barrie Bombers 2",
+      "W-L-T": "3-11-2",
+      "Rating": 82.1783,
+      "AGD": -0.75,
+      "SoS": 82.9283
     },
     {
       "Rank": 70,
       "Team Name": "Pelham Raiders 2",
-      "W-L-T": "9-10-1",
-      "Rating": 82.0677,
-      "AGD": 0.05,
-      "SoS": 82.0177
+      "W-L-T": "10-10-1",
+      "Rating": 81.7337,
+      "AGD": 0.1429,
+      "SoS": 81.5908
     },
     {
       "Rank": 71,
       "Team Name": "Six Nations 2",
-      "W-L-T": "5-13-0",
-      "Rating": 81.6808,
-      "AGD": -2.1111,
-      "SoS": 83.7919
+      "W-L-T": "6-13-0",
+      "Rating": 81.266,
+      "AGD": -1.8947,
+      "SoS": 83.1608
     },
     {
       "Rank": 72,
       "Team Name": "Burlington Blaze 3",
-      "W-L-T": "9-9-1",
-      "Rating": 81.2442,
-      "AGD": 0.3158,
-      "SoS": 80.9284
+      "W-L-T": "9-10-1",
+      "Rating": 80.8396,
+      "AGD": 0.2,
+      "SoS": 80.6396
     },
     {
       "Rank": 73,
       "Team Name": "Kitchener Kodiaks 2",
       "W-L-T": "3-13-1",
-      "Rating": 80.8465,
+      "Rating": 80.5662,
       "AGD": -5.8824,
-      "SoS": 86.7289
+      "SoS": 86.4486
     },
     {
       "Rank": 74,
       "Team Name": "Halton Hills Bulldogs 2",
       "W-L-T": "3-8-1",
-      "Rating": 80.6163,
+      "Rating": 80.3377,
       "AGD": -2.3333,
-      "SoS": 82.9497
+      "SoS": 82.6711
     },
     {
       "Rank": 75,
-      "Team Name": "Nepean Knights 2",
-      "W-L-T": "10-10-0",
-      "Rating": 79.7621,
-      "AGD": 1.2,
-      "SoS": 78.5621
+      "Team Name": "Sudbury Rockhounds",
+      "W-L-T": "3-4-0",
+      "Rating": 79.4726,
+      "AGD": 0.4286,
+      "SoS": 79.044
     },
     {
       "Rank": 76,
-      "Team Name": "Sudbury Rockhounds",
-      "W-L-T": "3-4-0",
-      "Rating": 79.7574,
-      "AGD": 0.4286,
-      "SoS": 79.3288
+      "Team Name": "Nepean Knights 2",
+      "W-L-T": "10-10-0",
+      "Rating": 79.403,
+      "AGD": 1.2,
+      "SoS": 78.203
     },
     {
       "Rank": 77,
       "Team Name": "Kahnawake Mohawks 2",
       "W-L-T": "5-9-0",
-      "Rating": 79.336,
+      "Rating": 78.9539,
       "AGD": -3.0714,
-      "SoS": 82.4074
+      "SoS": 82.0253
     },
     {
       "Rank": 78,
       "Team Name": "Arthur Aces 2",
       "W-L-T": "5-7-1",
-      "Rating": 79.0105,
+      "Rating": 78.7181,
       "AGD": -2.2308,
-      "SoS": 81.2413
+      "SoS": 80.9488
     },
     {
       "Rank": 79,
       "Team Name": "Wallaceburg Griffins 2",
       "W-L-T": "1-6-0",
-      "Rating": 78.9398,
+      "Rating": 78.6098,
       "AGD": -4.2857,
-      "SoS": 83.2255
+      "SoS": 82.8955
     },
     {
       "Rank": 80,
       "Team Name": "St. Catharines Athletics 2",
       "W-L-T": "3-13-1",
-      "Rating": 78.7414,
+      "Rating": 78.3643,
       "AGD": -5.8235,
-      "SoS": 84.5649
+      "SoS": 84.1878
     },
     {
       "Rank": 81,
-      "Team Name": "Simcoe Timberwolves",
-      "W-L-T": "3-5-3",
-      "Rating": 78.5828,
-      "AGD": -0.6364,
-      "SoS": 79.2192
+      "Team Name": "Mimico Mountaineers 3",
+      "W-L-T": "3-5-1",
+      "Rating": 78.1933,
+      "AGD": -1.4444,
+      "SoS": 79.6378
     },
     {
       "Rank": 82,
       "Team Name": "Kingston Krossfire",
       "W-L-T": "13-7-1",
-      "Rating": 78.5311,
+      "Rating": 78.1525,
       "AGD": 1.5714,
-      "SoS": 76.9596
+      "SoS": 76.5811
     },
     {
       "Rank": 83,
       "Team Name": "Quinte Bayhawks 2",
       "W-L-T": "3-5-0",
-      "Rating": 78.5178,
+      "Rating": 78.15,
       "AGD": 0.125,
-      "SoS": 78.3928
+      "SoS": 78.025
     },
     {
       "Rank": 84,
-      "Team Name": "Mimico Mountaineers 3",
-      "W-L-T": "3-5-1",
-      "Rating": 78.5125,
-      "AGD": -1.4444,
-      "SoS": 79.957
+      "Team Name": "Simcoe Timberwolves",
+      "W-L-T": "3-6-3",
+      "Rating": 78.01,
+      "AGD": -0.75,
+      "SoS": 78.76
     },
     {
       "Rank": 85,
       "Team Name": "Pickering Ironheads 2",
       "W-L-T": "4-5-0",
-      "Rating": 77.7876,
+      "Rating": 77.6267,
       "AGD": -1.5556,
-      "SoS": 79.3432
+      "SoS": 79.1823
     },
     {
       "Rank": 86,
       "Team Name": "Lincoln Redcoats 2",
-      "W-L-T": "5-13-2",
-      "Rating": 77.6267,
-      "AGD": -2.25,
-      "SoS": 79.8767
+      "W-L-T": "5-14-2",
+      "Rating": 77.3599,
+      "AGD": -2.2381,
+      "SoS": 79.598
     },
     {
       "Rank": 87,
-      "Team Name": "London Blue Devils 2",
-      "W-L-T": "3-10-0",
-      "Rating": 77.2389,
-      "AGD": -6.3846,
-      "SoS": 83.6235
+      "Team Name": "Hamilton Bengals 2",
+      "W-L-T": "5-10-2",
+      "Rating": 77.0549,
+      "AGD": -2.5294,
+      "SoS": 79.5843
     },
     {
       "Rank": 88,
-      "Team Name": "Hamilton Bengals 2",
-      "W-L-T": "4-10-2",
-      "Rating": 77.212,
-      "AGD": -2.8125,
-      "SoS": 80.0245
+      "Team Name": "Guelph Regals 3",
+      "W-L-T": "4-10-0",
+      "Rating": 77.0225,
+      "AGD": -0.7143,
+      "SoS": 77.7368
     },
     {
       "Rank": 89,
-      "Team Name": "Guelph Regals 3",
+      "Team Name": "London Blue Devils 2",
       "W-L-T": "3-10-0",
-      "Rating": 77.1789,
-      "AGD": -1.1538,
-      "SoS": 78.3327
+      "Rating": 76.9187,
+      "AGD": -6.3846,
+      "SoS": 83.3033
     },
     {
       "Rank": 90,
       "Team Name": "Centre Wellington Riverhawks 3",
       "W-L-T": "3-9-2",
-      "Rating": 75.408,
+      "Rating": 75.1542,
       "AGD": -4.7143,
-      "SoS": 80.1223
+      "SoS": 79.8684
     },
     {
       "Rank": 91,
       "Team Name": "Sault Ste Marie Spartans",
       "W-L-T": "1-6-0",
-      "Rating": 74.5929,
+      "Rating": 74.2725,
       "AGD": -4.2857,
-      "SoS": 78.8786
+      "SoS": 78.5582
     },
     {
       "Rank": 92,
-      "Team Name": "West Grey Rampage 2",
-      "W-L-T": "0-9-1",
-      "Rating": 74.1464,
-      "AGD": -8.1,
-      "SoS": 82.2464
+      "Team Name": "Toronto Beaches 2",
+      "W-L-T": "2-8-0",
+      "Rating": 73.7559,
+      "AGD": -5.6,
+      "SoS": 79.3559
     },
     {
       "Rank": 93,
-      "Team Name": "Innisfil Wolfpack",
-      "W-L-T": "0-7-0",
-      "Rating": 73.9427,
-      "AGD": -10.0,
-      "SoS": 83.9427
+      "Team Name": "West Grey Rampage 2",
+      "W-L-T": "0-10-1",
+      "Rating": 73.7037,
+      "AGD": -7.8182,
+      "SoS": 81.5219
     },
     {
       "Rank": 94,
-      "Team Name": "Toronto Beaches 2",
-      "W-L-T": "2-8-0",
-      "Rating": 73.8828,
-      "AGD": -5.6,
-      "SoS": 79.4828
+      "Team Name": "Innisfil Wolfpack",
+      "W-L-T": "0-7-0",
+      "Rating": 73.627,
+      "AGD": -10.0,
+      "SoS": 83.627
     },
     {
       "Rank": 95,
       "Team Name": "Cornwall Celtics 2",
       "W-L-T": "5-6-0",
-      "Rating": 73.498,
+      "Rating": 73.1825,
       "AGD": -3.0909,
-      "SoS": 76.5889
+      "SoS": 76.2734
     },
     {
       "Rank": 96,
       "Team Name": "Gloucester Griffins 2",
       "W-L-T": "4-4-0",
-      "Rating": 73.1523,
+      "Rating": 72.8005,
       "AGD": -1.75,
-      "SoS": 74.9023
+      "SoS": 74.5505
     },
     {
       "Rank": 97,
       "Team Name": "Clarington Gaels 3",
       "W-L-T": "0-3-1",
-      "Rating": 71.4716,
+      "Rating": 71.491,
       "AGD": -6.75,
-      "SoS": 78.2216
+      "SoS": 78.241
     },
     {
       "Rank": 98,
       "Team Name": "Akwesasne Storm 2",
       "W-L-T": "1-12-0",
-      "Rating": 70.8551,
+      "Rating": 70.4918,
       "AGD": -5.9231,
-      "SoS": 76.7782
+      "SoS": 76.4149
     },
     {
       "Rank": 99,
-      "Team Name": "Tyendinaga Thunderbirds 2",
-      "W-L-T": "3-12-0",
-      "Rating": 70.3834,
-      "AGD": -3.5333,
-      "SoS": 73.9168
+      "Team Name": "Kawartha Lakes Fury 2",
+      "W-L-T": "0-5-1",
+      "Rating": 70.1381,
+      "AGD": -6.8333,
+      "SoS": 76.9714
     },
     {
       "Rank": 100,
-      "Team Name": "Kawartha Lakes Fury 2",
-      "W-L-T": "0-5-1",
-      "Rating": 70.1605,
-      "AGD": -6.8333,
-      "SoS": 76.9938
+      "Team Name": "Tyendinaga Thunderbirds 2",
+      "W-L-T": "3-12-0",
+      "Rating": 70.0432,
+      "AGD": -3.5333,
+      "SoS": 73.5765
     },
     {
       "Rank": 101,
       "Team Name": "Kahnawake Mohawks 3",
       "W-L-T": "1-8-0",
-      "Rating": 69.6546,
+      "Rating": 69.2936,
       "AGD": -5.8889,
-      "SoS": 75.5435
+      "SoS": 75.1825
     }
   ],
   "Girls U11": [
@@ -1930,97 +1930,97 @@
       "Rank": 2,
       "Team Name": "Centre Wellington",
       "W-L-T": "10-1-0",
-      "Rating": 97.0369,
+      "Rating": 97.019,
       "AGD": 7.3636,
-      "SoS": 89.6732
+      "SoS": 89.6554
     },
     {
       "Rank": 3,
       "Team Name": "Six Nations",
       "W-L-T": "15-4-0",
-      "Rating": 96.6978,
+      "Rating": 96.6969,
       "AGD": 5.0,
-      "SoS": 91.6978
+      "SoS": 91.6969
     },
     {
       "Rank": 4,
       "Team Name": "Pelham Raiders",
-      "W-L-T": "6-7-0",
-      "Rating": 93.4371,
-      "AGD": 0.5385,
-      "SoS": 92.8987
+      "W-L-T": "7-7-0",
+      "Rating": 93.4989,
+      "AGD": 1.2143,
+      "SoS": 92.2846
     },
     {
       "Rank": 5,
       "Team Name": "Akwesasne Storm",
       "W-L-T": "4-4-4",
-      "Rating": 93.2005,
+      "Rating": 93.1877,
       "AGD": 0.5,
-      "SoS": 92.7005
+      "SoS": 92.6877
     },
     {
       "Rank": 6,
       "Team Name": "Cornwall Celtics",
       "W-L-T": "6-2-2",
-      "Rating": 92.9052,
+      "Rating": 92.8854,
       "AGD": 1.3,
-      "SoS": 91.6052
+      "SoS": 91.5854
     },
     {
       "Rank": 7,
       "Team Name": "Oakville Hawks",
       "W-L-T": "4-4-0",
-      "Rating": 92.7927,
+      "Rating": 92.8035,
       "AGD": -1.25,
-      "SoS": 94.0427
+      "SoS": 94.0535
     },
     {
       "Rank": 8,
       "Team Name": "Peterborough Lakers",
       "W-L-T": "3-5-0",
-      "Rating": 92.1032,
+      "Rating": 92.0932,
       "AGD": -1.0,
-      "SoS": 93.1032
+      "SoS": 93.0932
     },
     {
       "Rank": 9,
       "Team Name": "Midland Titans",
       "W-L-T": "4-4-1",
-      "Rating": 91.858,
+      "Rating": 91.8465,
       "AGD": -0.7778,
-      "SoS": 92.6358
+      "SoS": 92.6243
     },
     {
       "Rank": 10,
       "Team Name": "Nepean Knights",
       "W-L-T": "1-6-1",
-      "Rating": 90.5786,
+      "Rating": 90.5872,
       "AGD": -3.625,
-      "SoS": 94.2036
+      "SoS": 94.2122
     },
     {
       "Rank": 11,
       "Team Name": "Barrie Bombers",
       "W-L-T": "1-8-0",
-      "Rating": 89.0728,
+      "Rating": 89.0485,
       "AGD": -3.4444,
-      "SoS": 92.5172
+      "SoS": 92.493
     },
     {
       "Rank": 12,
       "Team Name": "Guelph Regals",
       "W-L-T": "1-13-0",
-      "Rating": 86.4789,
+      "Rating": 86.4735,
       "AGD": -8.3571,
-      "SoS": 94.836
+      "SoS": 94.8307
     },
     {
       "Rank": 13,
       "Team Name": "Burlington Blaze",
-      "W-L-T": "0-8-0",
-      "Rating": 84.503,
-      "AGD": -9.125,
-      "SoS": 93.628
+      "W-L-T": "0-9-0",
+      "Rating": 84.3906,
+      "AGD": -9.2222,
+      "SoS": 93.6128
     }
   ],
   "U13": [
@@ -2036,1581 +2036,1581 @@
       "Rank": 2,
       "Team Name": "Orangeville Northmen 1",
       "W-L-T": "17-4-0",
-      "Rating": 99.2349,
+      "Rating": 99.2205,
       "AGD": 2.8571,
-      "SoS": 96.3777
+      "SoS": 96.3634
     },
     {
       "Rank": 3,
       "Team Name": "Whitby Warriors 1",
-      "W-L-T": "16-4-0",
-      "Rating": 99.1548,
-      "AGD": 3.45,
-      "SoS": 95.7048
+      "W-L-T": "17-4-0",
+      "Rating": 99.1635,
+      "AGD": 3.5238,
+      "SoS": 95.6397
     },
     {
       "Rank": 4,
       "Team Name": "Toronto Beaches 1",
       "W-L-T": "12-2-1",
-      "Rating": 98.6236,
+      "Rating": 98.5957,
       "AGD": 3.4,
-      "SoS": 95.2236
+      "SoS": 95.1957
     },
     {
       "Rank": 5,
       "Team Name": "St. Catharines Athletics 1",
       "W-L-T": "12-8-2",
-      "Rating": 97.4751,
+      "Rating": 97.4739,
       "AGD": 2.5,
-      "SoS": 94.9751
+      "SoS": 94.9739
     },
     {
       "Rank": 6,
       "Team Name": "Nepean Knights 1",
       "W-L-T": "11-3-2",
-      "Rating": 97.0754,
+      "Rating": 97.0566,
       "AGD": 2.6875,
-      "SoS": 94.3879
+      "SoS": 94.3691
     },
     {
       "Rank": 7,
       "Team Name": "Burlington Blaze 1",
       "W-L-T": "8-9-1",
-      "Rating": 96.5803,
+      "Rating": 96.5753,
       "AGD": 1.1111,
-      "SoS": 95.4692
+      "SoS": 95.4642
     },
     {
       "Rank": 8,
       "Team Name": "Kitchener Kodiaks 1",
-      "W-L-T": "18-3-1",
-      "Rating": 96.4284,
-      "AGD": 2.8636,
-      "SoS": 93.5648
+      "W-L-T": "19-3-1",
+      "Rating": 96.5301,
+      "AGD": 3.1739,
+      "SoS": 93.3562
     },
     {
       "Rank": 9,
       "Team Name": "Oakville Hawks 1",
       "W-L-T": "9-12-0",
-      "Rating": 96.0858,
+      "Rating": 96.0728,
       "AGD": 0.381,
-      "SoS": 95.7048
+      "SoS": 95.6918
     },
     {
       "Rank": 10,
       "Team Name": "Halton Hills Bulldogs 1",
       "W-L-T": "22-5-0",
-      "Rating": 95.013,
+      "Rating": 94.9613,
       "AGD": 3.4815,
-      "SoS": 91.5315
+      "SoS": 91.4798
     },
     {
       "Rank": 11,
       "Team Name": "Newmarket Redbirds",
       "W-L-T": "5-11-1",
-      "Rating": 94.3925,
+      "Rating": 94.3806,
       "AGD": -0.9412,
-      "SoS": 95.3337
+      "SoS": 95.3218
     },
     {
       "Rank": 12,
       "Team Name": "Centre Wellington Riverhawks 1",
       "W-L-T": "10-12-3",
-      "Rating": 94.3677,
+      "Rating": 94.3496,
       "AGD": 0.36,
-      "SoS": 94.0077
+      "SoS": 93.9896
     },
     {
       "Rank": 13,
       "Team Name": "Peterborough Lakers 1",
-      "W-L-T": "6-9-2",
-      "Rating": 94.1501,
-      "AGD": -1.1176,
-      "SoS": 95.2677
+      "W-L-T": "6-10-2",
+      "Rating": 94.137,
+      "AGD": -1.3333,
+      "SoS": 95.4704
     },
     {
       "Rank": 14,
       "Team Name": "Mimico Mountaineers 1",
       "W-L-T": "6-14-0",
-      "Rating": 93.9062,
+      "Rating": 93.8911,
       "AGD": -2.6,
-      "SoS": 96.5062
+      "SoS": 96.4911
     },
     {
       "Rank": 15,
       "Team Name": "Sarnia Pacers 1",
       "W-L-T": "8-8-0",
-      "Rating": 93.4159,
+      "Rating": 93.4025,
       "AGD": -0.0625,
-      "SoS": 93.4784
+      "SoS": 93.465
     },
     {
       "Rank": 16,
       "Team Name": "Cornwall Celtics 1",
       "W-L-T": "5-6-0",
-      "Rating": 93.281,
+      "Rating": 93.2639,
       "AGD": -2.0,
-      "SoS": 95.281
+      "SoS": 95.2639
     },
     {
       "Rank": 17,
       "Team Name": "Gloucester Griffins 1",
       "W-L-T": "12-10-0",
-      "Rating": 93.2786,
+      "Rating": 93.2535,
       "AGD": 0.5,
-      "SoS": 92.7786
+      "SoS": 92.7535
     },
     {
       "Rank": 18,
       "Team Name": "U13 Cornwall Celtics 1",
       "W-L-T": "5-0-0",
-      "Rating": 93.2683,
+      "Rating": 93.237,
       "AGD": 2.6,
-      "SoS": 90.6683
+      "SoS": 90.637
     },
     {
       "Rank": 19,
-      "Team Name": "Uxbridge Enforcers 1",
-      "W-L-T": "14-6-0",
-      "Rating": 93.0198,
-      "AGD": 3.85,
-      "SoS": 89.1698
+      "Team Name": "Owen Sound North Stars 1",
+      "W-L-T": "11-8-1",
+      "Rating": 92.978,
+      "AGD": 0.85,
+      "SoS": 92.128
     },
     {
       "Rank": 20,
-      "Team Name": "Owen Sound North Stars 1",
-      "W-L-T": "11-8-1",
-      "Rating": 93.0115,
-      "AGD": 0.85,
-      "SoS": 92.1615
+      "Team Name": "Akwesasne Storm 1",
+      "W-L-T": "8-7-0",
+      "Rating": 92.8197,
+      "AGD": 1.4667,
+      "SoS": 91.353
     },
     {
       "Rank": 21,
-      "Team Name": "Akwesasne Storm 1",
-      "W-L-T": "8-7-0",
-      "Rating": 92.8649,
-      "AGD": 1.4667,
-      "SoS": 91.3982
+      "Team Name": "Uxbridge Enforcers 1",
+      "W-L-T": "14-7-0",
+      "Rating": 92.7751,
+      "AGD": 3.5238,
+      "SoS": 89.2513
     },
     {
       "Rank": 22,
       "Team Name": "Six Nations 2",
       "W-L-T": "7-10-3",
-      "Rating": 92.3538,
+      "Rating": 92.3442,
       "AGD": -1.5,
-      "SoS": 93.8538
+      "SoS": 93.8442
     },
     {
       "Rank": 23,
       "Team Name": "Cambridge Highlanders",
       "W-L-T": "15-9-0",
-      "Rating": 92.0845,
+      "Rating": 92.068,
       "AGD": 0.9167,
-      "SoS": 91.1678
+      "SoS": 91.1514
     },
     {
       "Rank": 24,
       "Team Name": "Brampton Excelsiors",
       "W-L-T": "18-5-2",
-      "Rating": 91.9009,
+      "Rating": 91.8522,
       "AGD": 3.52,
-      "SoS": 88.3809
+      "SoS": 88.3322
     },
     {
       "Rank": 25,
       "Team Name": "Guelph Regals 1",
       "W-L-T": "8-11-3",
-      "Rating": 91.7874,
+      "Rating": 91.7468,
       "AGD": -0.3636,
-      "SoS": 92.151
+      "SoS": 92.1105
     },
     {
       "Rank": 26,
       "Team Name": "Pelham Raiders 1",
-      "W-L-T": "8-9-1",
-      "Rating": 91.3176,
-      "AGD": -1.2778,
-      "SoS": 92.5954
+      "W-L-T": "9-9-1",
+      "Rating": 91.3269,
+      "AGD": -1.1579,
+      "SoS": 92.4848
     },
     {
       "Rank": 27,
       "Team Name": "Clarington Gaels 1",
-      "W-L-T": "6-7-3",
-      "Rating": 91.0851,
-      "AGD": 0.5,
-      "SoS": 90.5851
+      "W-L-T": "7-7-3",
+      "Rating": 91.3084,
+      "AGD": 0.6471,
+      "SoS": 90.6613
     },
     {
       "Rank": 28,
       "Team Name": "Kitchener Kodiaks 2",
       "W-L-T": "12-7-3",
-      "Rating": 91.079,
+      "Rating": 91.0297,
       "AGD": 2.8182,
-      "SoS": 88.2609
+      "SoS": 88.2115
     },
     {
       "Rank": 29,
       "Team Name": "NOTL Thunderhawks 1",
-      "W-L-T": "9-11-1",
-      "Rating": 90.9378,
-      "AGD": -0.7619,
-      "SoS": 91.6997
+      "W-L-T": "9-12-1",
+      "Rating": 90.891,
+      "AGD": -0.7727,
+      "SoS": 91.6638
     },
     {
       "Rank": 30,
       "Team Name": "London Blue Devils",
       "W-L-T": "10-9-1",
-      "Rating": 90.6679,
+      "Rating": 90.6378,
       "AGD": 0.85,
-      "SoS": 89.8179
+      "SoS": 89.7878
     },
     {
       "Rank": 31,
       "Team Name": "Windsor Warlocks",
       "W-L-T": "6-9-1",
-      "Rating": 90.4539,
+      "Rating": 90.4439,
       "AGD": -0.75,
-      "SoS": 91.2039
+      "SoS": 91.1939
     },
     {
       "Rank": 32,
       "Team Name": "Pickering Ironheads 1",
       "W-L-T": "13-5-1",
-      "Rating": 90.329,
+      "Rating": 90.2909,
       "AGD": 0.5789,
-      "SoS": 89.75
+      "SoS": 89.7119
     },
     {
       "Rank": 33,
       "Team Name": "Orillia Kings 1",
       "W-L-T": "13-6-0",
-      "Rating": 90.109,
+      "Rating": 90.0607,
       "AGD": 2.6842,
-      "SoS": 87.4248
+      "SoS": 87.3765
     },
     {
       "Rank": 34,
       "Team Name": "Kahnawake Mohawks 1",
       "W-L-T": "1-9-0",
-      "Rating": 89.6532,
+      "Rating": 89.6248,
       "AGD": -3.4,
-      "SoS": 93.0532
+      "SoS": 93.0248
     },
     {
       "Rank": 35,
       "Team Name": "Arthur Aces",
-      "W-L-T": "5-12-1",
-      "Rating": 89.5358,
-      "AGD": -1.0,
-      "SoS": 90.5358
+      "W-L-T": "5-13-1",
+      "Rating": 89.3555,
+      "AGD": -1.4737,
+      "SoS": 90.8291
     },
     {
       "Rank": 36,
       "Team Name": "Kawartha Lakes Fury 1",
-      "W-L-T": "9-6-1",
-      "Rating": 89.0831,
-      "AGD": 0.875,
-      "SoS": 88.2081
+      "W-L-T": "10-6-1",
+      "Rating": 89.1082,
+      "AGD": 1.1176,
+      "SoS": 87.9905
     },
     {
       "Rank": 37,
       "Team Name": "Lincoln Redcoats 1",
-      "W-L-T": "12-9-1",
-      "Rating": 88.7579,
-      "AGD": 0.9545,
-      "SoS": 87.8034
+      "W-L-T": "13-9-1",
+      "Rating": 88.6486,
+      "AGD": 0.9565,
+      "SoS": 87.6921
     },
     {
       "Rank": 38,
-      "Team Name": "Midland Titans 1",
-      "W-L-T": "14-2-0",
-      "Rating": 88.41,
-      "AGD": 4.8125,
-      "SoS": 83.5975
+      "Team Name": "Oshawa Blue Knights 1",
+      "W-L-T": "13-2-0",
+      "Rating": 88.5569,
+      "AGD": 6.2667,
+      "SoS": 82.2902
     },
     {
       "Rank": 39,
-      "Team Name": "Oshawa Blue Knights 1",
-      "W-L-T": "12-2-0",
-      "Rating": 88.4053,
-      "AGD": 6.0,
-      "SoS": 82.4053
+      "Team Name": "Midland Titans 1",
+      "W-L-T": "15-2-0",
+      "Rating": 88.4647,
+      "AGD": 4.7647,
+      "SoS": 83.7
     },
     {
       "Rank": 40,
       "Team Name": "Hamilton Bengals",
-      "W-L-T": "10-10-2",
-      "Rating": 88.2558,
-      "AGD": -0.0455,
-      "SoS": 88.3013
+      "W-L-T": "11-10-2",
+      "Rating": 88.2587,
+      "AGD": 0.3913,
+      "SoS": 87.8674
     },
     {
       "Rank": 41,
       "Team Name": "Huntsville Hawks 1",
-      "W-L-T": "6-7-0",
-      "Rating": 88.0645,
-      "AGD": 1.3846,
-      "SoS": 86.6799
+      "W-L-T": "7-7-0",
+      "Rating": 88.0674,
+      "AGD": 2.0,
+      "SoS": 86.0674
     },
     {
       "Rank": 42,
       "Team Name": "Orangeville Northmen 2",
       "W-L-T": "7-4-1",
-      "Rating": 88.0058,
+      "Rating": 87.9216,
       "AGD": 1.4167,
-      "SoS": 86.5891
+      "SoS": 86.505
     },
     {
       "Rank": 43,
       "Team Name": "West Grey Rampage 1",
       "W-L-T": "4-15-0",
-      "Rating": 86.9035,
+      "Rating": 86.8503,
       "AGD": -3.8421,
-      "SoS": 90.7456
+      "SoS": 90.6925
     },
     {
       "Rank": 44,
       "Team Name": "Wallaceburg Griffins",
       "W-L-T": "7-4-0",
-      "Rating": 86.3853,
+      "Rating": 86.3112,
       "AGD": 2.2727,
-      "SoS": 84.1126
+      "SoS": 84.0385
     },
     {
       "Rank": 45,
       "Team Name": "Milton Mavericks 1",
       "W-L-T": "12-7-0",
-      "Rating": 86.3591,
+      "Rating": 86.2774,
       "AGD": 1.6316,
-      "SoS": 84.7275
+      "SoS": 84.6458
     },
     {
       "Rank": 46,
       "Team Name": "Nepean Knights 2",
       "W-L-T": "19-1-1",
-      "Rating": 86.2779,
+      "Rating": 86.2275,
       "AGD": 6.5238,
-      "SoS": 79.7541
+      "SoS": 79.7037
     },
     {
       "Rank": 47,
-      "Team Name": "Barrie Bombers 1",
-      "W-L-T": "9-11-0",
-      "Rating": 86.0734,
-      "AGD": -1.05,
-      "SoS": 87.1234
+      "Team Name": "Simcoe Timberwolves 1",
+      "W-L-T": "8-11-1",
+      "Rating": 85.9644,
+      "AGD": 0.0,
+      "SoS": 85.9644
     },
     {
       "Rank": 48,
-      "Team Name": "Peterborough Lakers 2",
-      "W-L-T": "2-11-2",
-      "Rating": 85.9591,
-      "AGD": -2.7333,
-      "SoS": 88.6924
+      "Team Name": "Barrie Bombers 1",
+      "W-L-T": "9-12-0",
+      "Rating": 85.9506,
+      "AGD": -1.1905,
+      "SoS": 87.1411
     },
     {
       "Rank": 49,
-      "Team Name": "Simcoe Timberwolves 1",
-      "W-L-T": "8-10-1",
-      "Rating": 85.9371,
-      "AGD": 0.0526,
-      "SoS": 85.8845
+      "Team Name": "Peterborough Lakers 2",
+      "W-L-T": "2-12-2",
+      "Rating": 85.8133,
+      "AGD": -2.875,
+      "SoS": 88.6883
     },
     {
       "Rank": 50,
       "Team Name": "Toronto Beaches 2",
       "W-L-T": "11-7-0",
-      "Rating": 85.3113,
+      "Rating": 85.2421,
       "AGD": 0.1111,
-      "SoS": 85.2002
+      "SoS": 85.131
     },
     {
       "Rank": 51,
       "Team Name": "Clarington Gaels 2",
       "W-L-T": "11-4-0",
-      "Rating": 85.1526,
+      "Rating": 85.0957,
       "AGD": 3.6,
-      "SoS": 81.5526
+      "SoS": 81.4957
     },
     {
       "Rank": 52,
       "Team Name": "Kitchener Kodiaks 3",
       "W-L-T": "15-4-1",
-      "Rating": 84.9484,
+      "Rating": 84.8948,
       "AGD": 3.15,
-      "SoS": 81.7984
+      "SoS": 81.7448
     },
     {
       "Rank": 53,
       "Team Name": "U13 Nepean Knights 2",
       "W-L-T": "0-4-0",
-      "Rating": 84.2663,
+      "Rating": 84.2337,
       "AGD": -8.0,
-      "SoS": 92.2663
+      "SoS": 92.2337
     },
     {
       "Rank": 54,
       "Team Name": "Burlington Blaze 2",
-      "W-L-T": "10-7-0",
-      "Rating": 84.0893,
-      "AGD": 0.7059,
-      "SoS": 83.3834
+      "W-L-T": "11-7-0",
+      "Rating": 84.0312,
+      "AGD": 0.7222,
+      "SoS": 83.309
     },
     {
       "Rank": 55,
       "Team Name": "Whitby Warriors 2",
       "W-L-T": "3-18-0",
-      "Rating": 84.0069,
+      "Rating": 83.9659,
       "AGD": -5.0952,
-      "SoS": 89.1022
+      "SoS": 89.0611
     },
     {
       "Rank": 56,
       "Team Name": "Strathroy Screaming Eagles",
       "W-L-T": "4-5-0",
-      "Rating": 83.957,
+      "Rating": 83.8874,
       "AGD": 0.0,
-      "SoS": 83.957
+      "SoS": 83.8874
     },
     {
       "Rank": 57,
       "Team Name": "Tyendinaga Thunderbirds",
       "W-L-T": "12-4-1",
-      "Rating": 83.8348,
+      "Rating": 83.789,
       "AGD": 2.9412,
-      "SoS": 80.8936
+      "SoS": 80.8479
     },
     {
       "Rank": 58,
       "Team Name": "Oakville Hawks 2",
       "W-L-T": "2-14-0",
-      "Rating": 83.8318,
+      "Rating": 83.7456,
       "AGD": -4.5625,
-      "SoS": 88.3943
+      "SoS": 88.3081
     },
     {
       "Rank": 59,
       "Team Name": "St. Catharines Athletics 2",
-      "W-L-T": "12-7-1",
-      "Rating": 83.5639,
-      "AGD": 2.1,
-      "SoS": 81.4639
+      "W-L-T": "12-8-1",
+      "Rating": 83.471,
+      "AGD": 1.9524,
+      "SoS": 81.5186
     },
     {
       "Rank": 60,
       "Team Name": "Akwesasne Storm 2",
       "W-L-T": "9-6-4",
-      "Rating": 82.9375,
+      "Rating": 82.8693,
       "AGD": 1.8421,
-      "SoS": 81.0954
+      "SoS": 81.0272
     },
     {
       "Rank": 61,
-      "Team Name": "Peterborough Lakers 3",
-      "W-L-T": "5-2-1",
-      "Rating": 82.6684,
-      "AGD": 1.25,
-      "SoS": 81.4184
+      "Team Name": "Centre Wellington Riverhawks 2",
+      "W-L-T": "11-5-2",
+      "Rating": 82.6458,
+      "AGD": 0.0,
+      "SoS": 82.6458
     },
     {
       "Rank": 62,
-      "Team Name": "Centre Wellington Riverhawks 2",
-      "W-L-T": "11-5-2",
-      "Rating": 82.6563,
-      "AGD": 0.0,
-      "SoS": 82.6563
+      "Team Name": "Pelham Raiders 2",
+      "W-L-T": "12-5-0",
+      "Rating": 82.4587,
+      "AGD": 2.1176,
+      "SoS": 80.3411
     },
     {
       "Rank": 63,
-      "Team Name": "Uxbridge Enforcers 2",
-      "W-L-T": "11-4-0",
-      "Rating": 82.5826,
-      "AGD": 1.8,
-      "SoS": 80.7826
+      "Team Name": "Stayner Hitmen",
+      "W-L-T": "10-9-1",
+      "Rating": 82.4535,
+      "AGD": -0.1,
+      "SoS": 82.5535
     },
     {
       "Rank": 64,
-      "Team Name": "Pelham Raiders 2",
-      "W-L-T": "12-5-0",
-      "Rating": 82.5269,
-      "AGD": 2.1176,
-      "SoS": 80.4092
+      "Team Name": "Sudbury Rockhounds",
+      "W-L-T": "5-6-0",
+      "Rating": 82.3313,
+      "AGD": 0.2727,
+      "SoS": 82.0586
     },
     {
       "Rank": 65,
-      "Team Name": "Stayner Hitmen",
-      "W-L-T": "10-9-1",
-      "Rating": 82.5054,
-      "AGD": -0.1,
-      "SoS": 82.6054
+      "Team Name": "Uxbridge Enforcers 2",
+      "W-L-T": "11-4-1",
+      "Rating": 82.3059,
+      "AGD": 1.6875,
+      "SoS": 80.6184
     },
     {
       "Rank": 66,
-      "Team Name": "Sudbury Rockhounds",
-      "W-L-T": "5-6-0",
-      "Rating": 82.4006,
-      "AGD": 0.2727,
-      "SoS": 82.1279
+      "Team Name": "Barrie Bombers 2",
+      "W-L-T": "7-11-0",
+      "Rating": 82.2894,
+      "AGD": -1.4444,
+      "SoS": 83.7339
     },
     {
       "Rank": 67,
-      "Team Name": "Barrie Bombers 2",
-      "W-L-T": "6-11-0",
-      "Rating": 82.3012,
-      "AGD": -1.7059,
-      "SoS": 84.0071
+      "Team Name": "Owen Sound North Stars 2",
+      "W-L-T": "8-4-0",
+      "Rating": 82.2273,
+      "AGD": 2.4167,
+      "SoS": 79.8107
     },
     {
       "Rank": 68,
-      "Team Name": "Owen Sound North Stars 2",
-      "W-L-T": "7-4-0",
-      "Rating": 81.9524,
-      "AGD": 1.9091,
-      "SoS": 80.0434
+      "Team Name": "Peterborough Lakers 3",
+      "W-L-T": "5-3-1",
+      "Rating": 82.1559,
+      "AGD": 0.0,
+      "SoS": 82.1559
     },
     {
       "Rank": 69,
       "Team Name": "Kingston Krossfire",
       "W-L-T": "10-10-2",
-      "Rating": 81.9395,
+      "Rating": 81.8723,
       "AGD": 0.7727,
-      "SoS": 81.1668
+      "SoS": 81.0995
     },
     {
       "Rank": 70,
-      "Team Name": "Mimico Mountaineers 2",
-      "W-L-T": "4-8-0",
-      "Rating": 81.0825,
-      "AGD": -3.4167,
-      "SoS": 84.4991
+      "Team Name": "Guelph Regals 2",
+      "W-L-T": "7-8-1",
+      "Rating": 81.0513,
+      "AGD": -1.25,
+      "SoS": 82.3013
     },
     {
       "Rank": 71,
-      "Team Name": "Guelph Regals 2",
-      "W-L-T": "7-8-1",
-      "Rating": 81.0322,
-      "AGD": -1.25,
-      "SoS": 82.2822
+      "Team Name": "Mimico Mountaineers 2",
+      "W-L-T": "4-8-0",
+      "Rating": 81.0029,
+      "AGD": -3.4167,
+      "SoS": 84.4196
     },
     {
       "Rank": 72,
       "Team Name": "NOTL Thunderhawks 2",
       "W-L-T": "3-9-1",
-      "Rating": 80.9665,
+      "Rating": 80.899,
       "AGD": -1.9231,
-      "SoS": 82.8896
+      "SoS": 82.8221
     },
     {
       "Rank": 73,
       "Team Name": "Kitchener Kodiaks 4",
-      "W-L-T": "3-9-1",
-      "Rating": 80.5603,
-      "AGD": -0.1538,
-      "SoS": 80.7141
+      "W-L-T": "4-9-1",
+      "Rating": 80.4432,
+      "AGD": 0.0,
+      "SoS": 80.4432
     },
     {
       "Rank": 74,
       "Team Name": "Pickering Ironheads 2",
       "W-L-T": "3-5-0",
-      "Rating": 80.4154,
+      "Rating": 80.3592,
       "AGD": -2.0,
-      "SoS": 82.4154
+      "SoS": 82.3592
     },
     {
       "Rank": 75,
       "Team Name": "Orangeville Northmen 3",
       "W-L-T": "7-6-0",
-      "Rating": 80.282,
+      "Rating": 80.2372,
       "AGD": -0.3077,
-      "SoS": 80.5897
+      "SoS": 80.5449
     },
     {
       "Rank": 76,
       "Team Name": "Fort Erie Hawks",
-      "W-L-T": "8-7-1",
-      "Rating": 80.1046,
-      "AGD": -0.5625,
-      "SoS": 80.6671
+      "W-L-T": "8-8-1",
+      "Rating": 79.9496,
+      "AGD": -1.1176,
+      "SoS": 81.0673
     },
     {
       "Rank": 77,
       "Team Name": "Lincoln Redcoats 2",
-      "W-L-T": "9-11-3",
-      "Rating": 80.039,
-      "AGD": -0.6522,
-      "SoS": 80.6912
+      "W-L-T": "9-11-4",
+      "Rating": 79.9276,
+      "AGD": -0.625,
+      "SoS": 80.5526
     },
     {
       "Rank": 78,
       "Team Name": "Kawartha Lakes Fury 2",
-      "W-L-T": "2-6-1",
-      "Rating": 79.575,
-      "AGD": -3.1111,
-      "SoS": 82.6861
+      "W-L-T": "2-6-2",
+      "Rating": 79.6708,
+      "AGD": -2.8,
+      "SoS": 82.4708
     },
     {
       "Rank": 79,
       "Team Name": "Melancthon Vets",
-      "W-L-T": "5-11-2",
-      "Rating": 79.0981,
-      "AGD": -2.1667,
-      "SoS": 81.2647
+      "W-L-T": "5-12-2",
+      "Rating": 79.0641,
+      "AGD": -2.2105,
+      "SoS": 81.2746
     },
     {
       "Rank": 80,
       "Team Name": "Pickering Ironheads  2",
       "W-L-T": "5-2-1",
-      "Rating": 79.0439,
+      "Rating": 78.9407,
       "AGD": 0.625,
-      "SoS": 78.4189
+      "SoS": 78.3157
     },
     {
       "Rank": 81,
       "Team Name": "Midland Titans 2",
-      "W-L-T": "7-9-1",
-      "Rating": 79.0059,
-      "AGD": -1.8824,
-      "SoS": 80.8882
+      "W-L-T": "7-10-1",
+      "Rating": 78.8962,
+      "AGD": -2.3333,
+      "SoS": 81.2296
     },
     {
       "Rank": 82,
       "Team Name": "Cornwall Celtics 2",
       "W-L-T": "4-10-1",
-      "Rating": 78.9061,
+      "Rating": 78.8331,
       "AGD": -2.2667,
-      "SoS": 81.1728
+      "SoS": 81.0997
     },
     {
       "Rank": 83,
       "Team Name": "Quinte Bayhawks",
       "W-L-T": "4-8-2",
-      "Rating": 78.8534,
+      "Rating": 78.7755,
       "AGD": -1.5,
-      "SoS": 80.3534
+      "SoS": 80.2755
     },
     {
       "Rank": 84,
       "Team Name": "Sarnia Pacers 2",
       "W-L-T": "1-6-1",
-      "Rating": 78.8015,
+      "Rating": 78.7144,
       "AGD": -3.125,
-      "SoS": 81.9265
+      "SoS": 81.8394
     },
     {
       "Rank": 85,
       "Team Name": "NOTL Thunderhawks 3",
-      "W-L-T": "8-8-0",
-      "Rating": 78.7131,
-      "AGD": -0.625,
-      "SoS": 79.3381
+      "W-L-T": "8-8-1",
+      "Rating": 78.6985,
+      "AGD": -0.5882,
+      "SoS": 79.2867
     },
     {
       "Rank": 86,
       "Team Name": "Milton Mavericks 2",
       "W-L-T": "4-7-0",
-      "Rating": 77.9692,
+      "Rating": 77.9154,
       "AGD": -2.2727,
-      "SoS": 80.2419
+      "SoS": 80.1881
     },
     {
       "Rank": 87,
-      "Team Name": "Akwesasne Storm 3",
-      "W-L-T": "2-5-0",
-      "Rating": 77.9023,
-      "AGD": -1.8571,
-      "SoS": 79.7595
+      "Team Name": "Orillia Kings 2",
+      "W-L-T": "4-5-1",
+      "Rating": 77.8302,
+      "AGD": 0.1,
+      "SoS": 77.7302
     },
     {
       "Rank": 88,
-      "Team Name": "Orillia Kings 2",
-      "W-L-T": "4-5-1",
-      "Rating": 77.8679,
-      "AGD": 0.1,
-      "SoS": 77.7679
+      "Team Name": "Akwesasne Storm 3",
+      "W-L-T": "2-5-0",
+      "Rating": 77.8229,
+      "AGD": -1.8571,
+      "SoS": 79.68
     },
     {
       "Rank": 89,
       "Team Name": "Six Nations 3",
-      "W-L-T": "5-14-0",
-      "Rating": 77.7377,
-      "AGD": -4.3684,
-      "SoS": 82.1061
+      "W-L-T": "5-15-0",
+      "Rating": 77.5408,
+      "AGD": -4.2,
+      "SoS": 81.7408
     },
     {
       "Rank": 90,
       "Team Name": "North Perth Outlaws",
-      "W-L-T": "3-12-1",
-      "Rating": 77.6193,
-      "AGD": -4.875,
-      "SoS": 82.4943
+      "W-L-T": "3-13-1",
+      "Rating": 77.4144,
+      "AGD": -5.0588,
+      "SoS": 82.4733
     },
     {
       "Rank": 91,
       "Team Name": "Oshawa Blue Knights 2",
       "W-L-T": "3-9-0",
-      "Rating": 77.3227,
+      "Rating": 77.2184,
       "AGD": -2.8333,
-      "SoS": 80.1561
+      "SoS": 80.0517
     },
     {
       "Rank": 92,
-      "Team Name": "Sault Ste Marie Spartans",
-      "W-L-T": "1-3-0",
-      "Rating": 77.0601,
-      "AGD": -4.5,
-      "SoS": 81.5601
+      "Team Name": "West Grey Rampage 2",
+      "W-L-T": "2-14-0",
+      "Rating": 77.1062,
+      "AGD": -4.25,
+      "SoS": 81.3562
     },
     {
       "Rank": 93,
-      "Team Name": "West Grey Rampage 2",
-      "W-L-T": "2-13-0",
-      "Rating": 77.012,
-      "AGD": -4.4,
-      "SoS": 81.412
+      "Team Name": "Sault Ste Marie Spartans",
+      "W-L-T": "1-3-0",
+      "Rating": 77.0169,
+      "AGD": -4.5,
+      "SoS": 81.5169
     },
     {
       "Rank": 94,
       "Team Name": "Midland Titans 3",
       "W-L-T": "0-8-0",
-      "Rating": 76.7332,
+      "Rating": 76.6747,
       "AGD": -3.5,
-      "SoS": 80.2332
+      "SoS": 80.1747
     },
     {
       "Rank": 95,
-      "Team Name": "Toronto Beaches 3",
-      "W-L-T": "0-10-0",
-      "Rating": 75.9922,
-      "AGD": -6.0,
-      "SoS": 81.9922
+      "Team Name": "Simcoe Timberwolves 2",
+      "W-L-T": "1-15-1",
+      "Rating": 75.8843,
+      "AGD": -3.3529,
+      "SoS": 79.2372
     },
     {
       "Rank": 96,
-      "Team Name": "Simcoe Timberwolves 2",
-      "W-L-T": "0-15-1",
-      "Rating": 75.8133,
-      "AGD": -3.625,
-      "SoS": 79.4383
+      "Team Name": "Toronto Beaches 3",
+      "W-L-T": "0-10-0",
+      "Rating": 75.8758,
+      "AGD": -6.0,
+      "SoS": 81.8758
     },
     {
       "Rank": 97,
       "Team Name": "Mimico Mountaineers 3",
       "W-L-T": "0-10-0",
-      "Rating": 75.5646,
+      "Rating": 75.4897,
       "AGD": -5.6,
-      "SoS": 81.1646
+      "SoS": 81.0897
     },
     {
       "Rank": 98,
       "Team Name": "Kahnawake Mohawks 2",
       "W-L-T": "0-13-0",
-      "Rating": 75.2607,
+      "Rating": 75.2194,
       "AGD": -8.4615,
-      "SoS": 83.7222
+      "SoS": 83.681
     },
     {
       "Rank": 99,
       "Team Name": "Gloucester Griffins 2",
       "W-L-T": "0-14-0",
-      "Rating": 73.55,
+      "Rating": 73.4745,
       "AGD": -8.2857,
-      "SoS": 81.8357
+      "SoS": 81.7602
     },
     {
       "Rank": 100,
       "Team Name": "Huntsville Hawks 2",
       "W-L-T": "1-10-1",
-      "Rating": 73.1604,
+      "Rating": 73.1136,
       "AGD": -5.75,
-      "SoS": 78.9104
+      "SoS": 78.8636
     }
   ],
   "Girls U13": [
     {
       "Rank": 1,
-      "Team Name": "Akwesasne Storm 1",
-      "W-L-T": "12-1-1",
+      "Team Name": "Barrie Bombers",
+      "W-L-T": "18-3-1",
       "Rating": 99.9999,
-      "AGD": 2.7857,
-      "SoS": 97.2043
+      "AGD": 4.3182,
+      "SoS": 95.6718
     },
     {
       "Rank": 2,
-      "Team Name": "Barrie Bombers",
-      "W-L-T": "17-3-1",
-      "Rating": 99.9296,
-      "AGD": 4.1429,
-      "SoS": 95.7867
+      "Team Name": "Akwesasne Storm 1",
+      "W-L-T": "12-1-1",
+      "Rating": 99.9451,
+      "AGD": 2.7857,
+      "SoS": 97.1594
     },
     {
       "Rank": 3,
       "Team Name": "Six Nations",
       "W-L-T": "12-3-0",
-      "Rating": 99.6641,
+      "Rating": 99.6884,
       "AGD": 4.9333,
-      "SoS": 94.7307
+      "SoS": 94.755
     },
     {
       "Rank": 4,
       "Team Name": "Clarington Gaels",
       "W-L-T": "11-4-1",
-      "Rating": 98.7682,
+      "Rating": 98.7631,
       "AGD": 2.5,
-      "SoS": 96.2682
+      "SoS": 96.2631
     },
     {
       "Rank": 5,
       "Team Name": "Whitby Warriors",
       "W-L-T": "9-7-1",
-      "Rating": 97.9794,
+      "Rating": 97.9771,
       "AGD": 1.7647,
-      "SoS": 96.2147
+      "SoS": 96.2124
     },
     {
       "Rank": 6,
       "Team Name": "Burlington Blaze",
-      "W-L-T": "9-5-2",
-      "Rating": 97.4776,
-      "AGD": 1.375,
-      "SoS": 96.1026
+      "W-L-T": "9-6-2",
+      "Rating": 97.3492,
+      "AGD": 1.1765,
+      "SoS": 96.1728
     },
     {
       "Rank": 7,
       "Team Name": "Guelph Regals",
-      "W-L-T": "13-6-1",
-      "Rating": 96.4849,
-      "AGD": 2.75,
-      "SoS": 93.7349
+      "W-L-T": "14-6-1",
+      "Rating": 96.6549,
+      "AGD": 2.7143,
+      "SoS": 93.9406
     },
     {
       "Rank": 8,
       "Team Name": "Newmarket Redbirds",
       "W-L-T": "5-7-2",
-      "Rating": 96.2694,
+      "Rating": 96.2532,
       "AGD": -0.2857,
-      "SoS": 96.5551
+      "SoS": 96.5389
     },
     {
       "Rank": 9,
       "Team Name": "Kitchener Kodiaks",
-      "W-L-T": "6-4-0",
-      "Rating": 96.0501,
-      "AGD": 1.2,
-      "SoS": 94.8501
+      "W-L-T": "7-4-0",
+      "Rating": 96.0755,
+      "AGD": 1.5455,
+      "SoS": 94.53
     },
     {
       "Rank": 10,
       "Team Name": "Peterborough Lakers",
       "W-L-T": "3-7-1",
-      "Rating": 94.6903,
+      "Rating": 94.6804,
       "AGD": -2.4545,
-      "SoS": 97.1448
+      "SoS": 97.135
     },
     {
       "Rank": 11,
       "Team Name": "Nepean Knights",
       "W-L-T": "4-7-0",
-      "Rating": 94.1109,
+      "Rating": 94.0501,
       "AGD": -1.9091,
-      "SoS": 96.02
+      "SoS": 95.9592
     },
     {
       "Rank": 12,
       "Team Name": "Hamilton Bengals",
       "W-L-T": "7-11-1",
-      "Rating": 93.3771,
+      "Rating": 93.4506,
       "AGD": -0.1053,
-      "SoS": 93.4823
+      "SoS": 93.5559
     },
     {
       "Rank": 13,
       "Team Name": "Orillia Kings",
-      "W-L-T": "4-10-1",
-      "Rating": 93.1851,
-      "AGD": -2.8667,
-      "SoS": 96.0517
+      "W-L-T": "4-11-1",
+      "Rating": 93.1547,
+      "AGD": -3.1875,
+      "SoS": 96.3422
     },
     {
       "Rank": 14,
       "Team Name": "Centre Wellington Riverhawks",
       "W-L-T": "4-8-2",
-      "Rating": 93.0687,
+      "Rating": 93.1541,
       "AGD": -1.0714,
-      "SoS": 94.1401
+      "SoS": 94.2255
     },
     {
       "Rank": 15,
-      "Team Name": "Kahnawake",
-      "W-L-T": "5-4-0",
-      "Rating": 92.7054,
-      "AGD": 1.3333,
-      "SoS": 91.372
+      "Team Name": "Wallaceburg Griffins",
+      "W-L-T": "4-6-1",
+      "Rating": 92.3834,
+      "AGD": -1.0,
+      "SoS": 93.3834
     },
     {
       "Rank": 16,
-      "Team Name": "Wallaceburg Griffins",
-      "W-L-T": "4-6-1",
-      "Rating": 92.302,
-      "AGD": -1.0,
-      "SoS": 93.302
+      "Team Name": "Kahnawake",
+      "W-L-T": "6-4-0",
+      "Rating": 92.3147,
+      "AGD": 1.5,
+      "SoS": 90.8147
     },
     {
       "Rank": 17,
       "Team Name": "Owen Sound",
-      "W-L-T": "2-6-1",
-      "Rating": 90.4748,
-      "AGD": -4.1111,
-      "SoS": 94.5859
+      "W-L-T": "2-7-1",
+      "Rating": 90.6183,
+      "AGD": -4.2,
+      "SoS": 94.8183
     },
     {
       "Rank": 18,
       "Team Name": "Cornwall Celtics",
       "W-L-T": "3-8-0",
-      "Rating": 90.125,
+      "Rating": 90.1263,
       "AGD": -2.2727,
-      "SoS": 92.3977
+      "SoS": 92.399
     },
     {
       "Rank": 19,
       "Team Name": "St. Catharines Athletics",
       "W-L-T": "1-14-2",
-      "Rating": 89.367,
+      "Rating": 89.4225,
       "AGD": -5.9412,
-      "SoS": 95.3082
+      "SoS": 95.3637
     },
     {
       "Rank": 20,
       "Team Name": "Akwesasne Storm 2",
-      "W-L-T": "0-10-0",
-      "Rating": 84.6321,
-      "AGD": -8.5,
-      "SoS": 93.1321
+      "W-L-T": "0-11-0",
+      "Rating": 84.9759,
+      "AGD": -8.0,
+      "SoS": 92.9759
     }
   ],
   "U15": [
     {
       "Rank": 1,
       "Team Name": "Burlington Blaze 1",
-      "W-L-T": "15-5-0",
+      "W-L-T": "16-5-0",
       "Rating": 99.9999,
-      "AGD": 4.6,
-      "SoS": 95.39
+      "AGD": 4.8571,
+      "SoS": 95.1329
     },
     {
       "Rank": 2,
       "Team Name": "Orangeville Northmen 1",
       "W-L-T": "14-4-2",
-      "Rating": 99.4963,
+      "Rating": 99.4646,
       "AGD": 2.8,
-      "SoS": 96.6963
+      "SoS": 96.6646
     },
     {
       "Rank": 3,
       "Team Name": "Northumberland Nemesis",
       "W-L-T": "17-1-2",
-      "Rating": 98.4409,
+      "Rating": 98.3992,
       "AGD": 4.7,
-      "SoS": 93.7409
+      "SoS": 93.6992
     },
     {
       "Rank": 4,
       "Team Name": "Halton Hills Bulldogs",
       "W-L-T": "14-6-1",
-      "Rating": 98.408,
+      "Rating": 98.3752,
       "AGD": 2.1905,
-      "SoS": 96.2175
+      "SoS": 96.1848
     },
     {
       "Rank": 5,
       "Team Name": "Centre Wellington Riverhawks 1",
       "W-L-T": "13-5-3",
-      "Rating": 97.9299,
+      "Rating": 97.9031,
       "AGD": 1.5238,
-      "SoS": 96.4061
+      "SoS": 96.3793
     },
     {
       "Rank": 6,
       "Team Name": "Oakville Hawks 1",
       "W-L-T": "12-5-3",
-      "Rating": 97.7393,
+      "Rating": 97.7065,
       "AGD": 1.0,
-      "SoS": 96.7393
+      "SoS": 96.7065
     },
     {
       "Rank": 7,
       "Team Name": "Pickering Ironheads 1",
       "W-L-T": "18-4-1",
-      "Rating": 97.0701,
+      "Rating": 97.0247,
       "AGD": 4.1304,
-      "SoS": 92.9396
+      "SoS": 92.8943
     },
     {
       "Rank": 8,
       "Team Name": "Peterborough Lakers 1",
       "W-L-T": "13-5-0",
-      "Rating": 96.9796,
+      "Rating": 96.9398,
       "AGD": 1.8889,
-      "SoS": 95.0907
+      "SoS": 95.0509
     },
     {
       "Rank": 9,
       "Team Name": "Toronto Beaches 1",
       "W-L-T": "8-7-1",
-      "Rating": 96.9283,
+      "Rating": 96.8896,
       "AGD": 0.8125,
-      "SoS": 96.1158
+      "SoS": 96.0771
     },
     {
       "Rank": 10,
       "Team Name": "Cornwall Celtics",
       "W-L-T": "8-5-1",
-      "Rating": 96.4595,
+      "Rating": 96.4218,
       "AGD": 0.0,
-      "SoS": 96.4595
+      "SoS": 96.4218
     },
     {
       "Rank": 11,
       "Team Name": "St. Catharines Athletics 1",
       "W-L-T": "9-9-2",
-      "Rating": 96.3824,
+      "Rating": 96.3418,
       "AGD": 1.0,
-      "SoS": 95.3824
+      "SoS": 95.3418
     },
     {
       "Rank": 12,
       "Team Name": "Akwesasne Storm 1",
       "W-L-T": "4-6-2",
-      "Rating": 96.1844,
+      "Rating": 96.1498,
       "AGD": 0.6667,
-      "SoS": 95.5178
+      "SoS": 95.4831
     },
     {
       "Rank": 13,
       "Team Name": "Barrie Bombers 1",
       "W-L-T": "22-7-1",
-      "Rating": 96.0034,
+      "Rating": 95.971,
       "AGD": 4.0333,
-      "SoS": 91.9701
+      "SoS": 91.9376
     },
     {
       "Rank": 14,
       "Team Name": "Owen Sound North Stars 1",
       "W-L-T": "14-6-1",
-      "Rating": 95.9828,
+      "Rating": 95.9314,
       "AGD": 3.5714,
-      "SoS": 92.4114
+      "SoS": 92.3599
     },
     {
       "Rank": 15,
       "Team Name": "Sarnia Pacers 1",
       "W-L-T": "8-5-2",
-      "Rating": 95.909,
+      "Rating": 95.8632,
       "AGD": 1.7333,
-      "SoS": 94.1757
+      "SoS": 94.1299
     },
     {
       "Rank": 16,
       "Team Name": "Six Nations 1",
       "W-L-T": "9-9-2",
-      "Rating": 95.8829,
+      "Rating": 95.8392,
       "AGD": 1.1,
-      "SoS": 94.7829
+      "SoS": 94.7392
     },
     {
       "Rank": 17,
       "Team Name": "Milton Mavericks",
       "W-L-T": "9-9-0",
-      "Rating": 95.4342,
+      "Rating": 95.3995,
       "AGD": -0.3889,
-      "SoS": 95.8231
+      "SoS": 95.7884
     },
     {
       "Rank": 18,
       "Team Name": "Gloucester Griffins 1",
       "W-L-T": "15-3-2",
-      "Rating": 94.5163,
+      "Rating": 94.4647,
       "AGD": 2.5,
-      "SoS": 92.0163
+      "SoS": 91.9647
     },
     {
       "Rank": 19,
       "Team Name": "Cambridge Highlanders",
-      "W-L-T": "15-3-2",
-      "Rating": 94.3855,
-      "AGD": 3.4,
-      "SoS": 90.9855
+      "W-L-T": "16-3-2",
+      "Rating": 94.4282,
+      "AGD": 3.619,
+      "SoS": 90.8092
     },
     {
       "Rank": 20,
-      "Team Name": "Burlington Blaze 2",
-      "W-L-T": "19-0-2",
-      "Rating": 93.3492,
-      "AGD": 6.0,
-      "SoS": 87.3492
+      "Team Name": "Newmarket Redbirds",
+      "W-L-T": "8-8-1",
+      "Rating": 93.2911,
+      "AGD": 0.5882,
+      "SoS": 92.7028
     },
     {
       "Rank": 21,
-      "Team Name": "Newmarket Redbirds",
-      "W-L-T": "8-8-1",
-      "Rating": 93.3337,
-      "AGD": 0.5882,
-      "SoS": 92.7455
+      "Team Name": "Nepean Knights 1",
+      "W-L-T": "10-9-2",
+      "Rating": 93.1781,
+      "AGD": 0.0476,
+      "SoS": 93.1305
     },
     {
       "Rank": 22,
       "Team Name": "NOTL Thunderhawks 1",
       "W-L-T": "9-9-3",
-      "Rating": 93.2408,
+      "Rating": 93.1669,
       "AGD": -0.381,
-      "SoS": 93.6218
+      "SoS": 93.5479
     },
     {
       "Rank": 23,
-      "Team Name": "Nepean Knights 1",
-      "W-L-T": "10-9-2",
-      "Rating": 93.2265,
-      "AGD": 0.0476,
-      "SoS": 93.1789
+      "Team Name": "Burlington Blaze 2",
+      "W-L-T": "20-0-2",
+      "Rating": 93.1111,
+      "AGD": 6.0,
+      "SoS": 87.1111
     },
     {
       "Rank": 24,
       "Team Name": "Orillia Kings 1",
       "W-L-T": "4-11-0",
-      "Rating": 92.5689,
+      "Rating": 92.5471,
       "AGD": -2.4667,
-      "SoS": 95.0355
+      "SoS": 95.0138
     },
     {
       "Rank": 25,
       "Team Name": "Kitchener Kodiaks 1",
       "W-L-T": "14-5-0",
-      "Rating": 92.0561,
+      "Rating": 92.008,
       "AGD": 3.0526,
-      "SoS": 89.0034
+      "SoS": 88.9554
     },
     {
       "Rank": 26,
       "Team Name": "Mimico Mountaineers 1",
       "W-L-T": "4-4-0",
-      "Rating": 91.3113,
+      "Rating": 91.2663,
       "AGD": 0.625,
-      "SoS": 90.6863
+      "SoS": 90.6413
     },
     {
       "Rank": 27,
       "Team Name": "Guelph Regals 1",
       "W-L-T": "0-10-0",
-      "Rating": 91.2369,
+      "Rating": 91.2023,
       "AGD": -5.5,
-      "SoS": 96.7369
+      "SoS": 96.7023
     },
     {
       "Rank": 28,
       "Team Name": "Clarington Gaels 1",
       "W-L-T": "5-13-0",
-      "Rating": 90.9529,
+      "Rating": 90.9119,
       "AGD": -1.5556,
-      "SoS": 92.5085
+      "SoS": 92.4674
     },
     {
       "Rank": 29,
       "Team Name": "Hamilton Bengals 1",
-      "W-L-T": "7-14-3",
-      "Rating": 90.9246,
-      "AGD": -1.2083,
-      "SoS": 92.133
+      "W-L-T": "7-15-3",
+      "Rating": 90.8112,
+      "AGD": -1.56,
+      "SoS": 92.3712
     },
     {
       "Rank": 30,
       "Team Name": "Mimico Mountaineers",
       "W-L-T": "1-9-0",
-      "Rating": 90.246,
+      "Rating": 90.2087,
       "AGD": -4.7,
-      "SoS": 94.946
+      "SoS": 94.9087
     },
     {
       "Rank": 31,
       "Team Name": "Pelham Raiders 1",
-      "W-L-T": "4-10-1",
-      "Rating": 90.1524,
-      "AGD": -2.8,
-      "SoS": 92.9524
+      "W-L-T": "5-10-1",
+      "Rating": 90.1391,
+      "AGD": -2.5625,
+      "SoS": 92.7016
     },
     {
       "Rank": 32,
       "Team Name": "Melancthon Vets",
-      "W-L-T": "10-3-0",
-      "Rating": 89.9618,
-      "AGD": 1.8462,
-      "SoS": 88.1156
+      "W-L-T": "11-3-0",
+      "Rating": 90.0193,
+      "AGD": 2.0714,
+      "SoS": 87.9479
     },
     {
       "Rank": 33,
       "Team Name": "Six Nations 2",
-      "W-L-T": "14-8-1",
-      "Rating": 89.9535,
-      "AGD": 2.3913,
-      "SoS": 87.5622
+      "W-L-T": "14-9-1",
+      "Rating": 89.8553,
+      "AGD": 2.25,
+      "SoS": 87.6053
     },
     {
       "Rank": 34,
       "Team Name": "Whitby Warriors",
       "W-L-T": "7-11-0",
-      "Rating": 89.8913,
+      "Rating": 89.8495,
       "AGD": -2.1111,
-      "SoS": 92.0024
+      "SoS": 91.9606
     },
     {
       "Rank": 35,
       "Team Name": "London Blue Devils",
       "W-L-T": "7-13-2",
-      "Rating": 89.7484,
+      "Rating": 89.6974,
       "AGD": -2.1364,
-      "SoS": 91.8847
+      "SoS": 91.8338
     },
     {
       "Rank": 36,
-      "Team Name": "Arthur Aces",
-      "W-L-T": "13-6-0",
-      "Rating": 89.6552,
-      "AGD": 2.0,
-      "SoS": 87.6552
+      "Team Name": "Brampton Excelsiors",
+      "W-L-T": "7-7-1",
+      "Rating": 89.5838,
+      "AGD": -0.6667,
+      "SoS": 90.2505
     },
     {
       "Rank": 37,
-      "Team Name": "Brampton Excelsiors",
-      "W-L-T": "7-7-1",
-      "Rating": 89.633,
-      "AGD": -0.6667,
-      "SoS": 90.2997
+      "Team Name": "Arthur Aces",
+      "W-L-T": "13-6-0",
+      "Rating": 89.5629,
+      "AGD": 2.0,
+      "SoS": 87.5629
     },
     {
       "Rank": 38,
       "Team Name": "Oshawa Blue Knights 1",
       "W-L-T": "13-1-0",
-      "Rating": 89.0367,
+      "Rating": 89.0211,
       "AGD": 6.0714,
-      "SoS": 82.9652
+      "SoS": 82.9497
     },
     {
       "Rank": 39,
       "Team Name": "Sudbury Rockhounds",
       "W-L-T": "9-5-0",
-      "Rating": 88.7587,
+      "Rating": 88.6987,
       "AGD": -0.8571,
-      "SoS": 89.6158
+      "SoS": 89.5558
     },
     {
       "Rank": 40,
-      "Team Name": "Kahnawake Mohawks",
-      "W-L-T": "5-10-0",
-      "Rating": 88.5419,
-      "AGD": -2.4667,
-      "SoS": 91.0085
+      "Team Name": "Orangeville Northmen 2",
+      "W-L-T": "4-7-3",
+      "Rating": 88.4957,
+      "AGD": -1.1429,
+      "SoS": 89.6385
     },
     {
       "Rank": 41,
-      "Team Name": "Orangeville Northmen 2",
-      "W-L-T": "4-7-3",
-      "Rating": 88.5333,
-      "AGD": -1.1429,
-      "SoS": 89.6762
+      "Team Name": "Kahnawake Mohawks",
+      "W-L-T": "5-10-0",
+      "Rating": 88.4839,
+      "AGD": -2.4667,
+      "SoS": 90.9506
     },
     {
       "Rank": 42,
       "Team Name": "Wallaceburg Griffins 1",
       "W-L-T": "6-6-3",
-      "Rating": 88.5168,
+      "Rating": 88.4564,
       "AGD": -0.3333,
-      "SoS": 88.8501
+      "SoS": 88.7898
     },
     {
       "Rank": 43,
       "Team Name": "Centre Wellington Riverhawks 2",
-      "W-L-T": "10-7-2",
-      "Rating": 88.4602,
-      "AGD": 1.3684,
-      "SoS": 87.0917
+      "W-L-T": "10-8-2",
+      "Rating": 88.2763,
+      "AGD": 0.9,
+      "SoS": 87.3763
     },
     {
       "Rank": 44,
       "Team Name": "Huntsville Hawks",
       "W-L-T": "5-7-0",
-      "Rating": 87.7398,
+      "Rating": 87.6931,
       "AGD": -1.5,
-      "SoS": 89.2398
+      "SoS": 89.1931
     },
     {
       "Rank": 45,
       "Team Name": "Midland Titans",
-      "W-L-T": "9-7-1",
-      "Rating": 87.3762,
-      "AGD": 2.8824,
-      "SoS": 84.4939
+      "W-L-T": "10-7-1",
+      "Rating": 87.6001,
+      "AGD": 3.2222,
+      "SoS": 84.3778
     },
     {
       "Rank": 46,
       "Team Name": "Windsor Warlocks",
-      "W-L-T": "6-12-1",
-      "Rating": 87.0187,
-      "AGD": -1.6316,
-      "SoS": 88.6503
+      "W-L-T": "7-12-1",
+      "Rating": 86.9397,
+      "AGD": -1.05,
+      "SoS": 87.9897
     },
     {
       "Rank": 47,
-      "Team Name": "West Grey Rampage",
-      "W-L-T": "5-14-0",
-      "Rating": 86.828,
-      "AGD": -3.3684,
-      "SoS": 90.1964
+      "Team Name": "St. Catharines Athletics 2",
+      "W-L-T": "10-8-1",
+      "Rating": 86.9209,
+      "AGD": 1.5789,
+      "SoS": 85.3419
     },
     {
       "Rank": 48,
-      "Team Name": "St. Catharines Athletics 2",
-      "W-L-T": "9-8-1",
-      "Rating": 86.8209,
-      "AGD": 1.1111,
-      "SoS": 85.7098
+      "Team Name": "West Grey Rampage",
+      "W-L-T": "6-14-0",
+      "Rating": 86.7759,
+      "AGD": -3.1,
+      "SoS": 89.8759
     },
     {
       "Rank": 49,
       "Team Name": "Stayner Hitmen",
-      "W-L-T": "8-5-2",
-      "Rating": 86.3185,
-      "AGD": 1.3333,
-      "SoS": 84.9851
+      "W-L-T": "8-6-2",
+      "Rating": 86.1692,
+      "AGD": 0.9375,
+      "SoS": 85.2317
     },
     {
       "Rank": 50,
       "Team Name": "Lincoln Redcoats",
-      "W-L-T": "9-10-3",
-      "Rating": 86.0201,
-      "AGD": -0.3182,
-      "SoS": 86.3383
+      "W-L-T": "10-10-3",
+      "Rating": 85.9172,
+      "AGD": -0.087,
+      "SoS": 86.0042
     },
     {
       "Rank": 51,
       "Team Name": "Strathroy Screaming Eagles",
       "W-L-T": "6-7-0",
-      "Rating": 85.69,
+      "Rating": 85.6434,
       "AGD": -0.6154,
-      "SoS": 86.3054
+      "SoS": 86.2588
     },
     {
       "Rank": 52,
       "Team Name": "Quinte Bayhawks",
       "W-L-T": "8-6-1",
-      "Rating": 85.5509,
+      "Rating": 85.4624,
       "AGD": 0.8667,
-      "SoS": 84.6843
+      "SoS": 84.5957
     },
     {
       "Rank": 53,
       "Team Name": "Nepean Knights 2",
       "W-L-T": "7-8-0",
-      "Rating": 85.518,
+      "Rating": 85.4272,
       "AGD": 1.1333,
-      "SoS": 84.3847
+      "SoS": 84.2939
     },
     {
       "Rank": 54,
       "Team Name": "Owen Sound North Stars 2",
-      "W-L-T": "11-7-1",
-      "Rating": 85.4768,
-      "AGD": 0.3158,
-      "SoS": 85.161
+      "W-L-T": "12-7-1",
+      "Rating": 85.3486,
+      "AGD": 0.5,
+      "SoS": 84.8486
     },
     {
       "Rank": 55,
       "Team Name": "Brantford Warriors",
       "W-L-T": "10-9-2",
-      "Rating": 85.3786,
+      "Rating": 85.2867,
       "AGD": -0.5714,
-      "SoS": 85.95
+      "SoS": 85.8581
     },
     {
       "Rank": 56,
       "Team Name": "Guelph Regals 2",
-      "W-L-T": "8-9-0",
-      "Rating": 85.015,
-      "AGD": 1.1765,
-      "SoS": 83.8386
+      "W-L-T": "8-10-0",
+      "Rating": 84.9112,
+      "AGD": 1.0,
+      "SoS": 83.9112
     },
     {
       "Rank": 57,
       "Team Name": "Pickering Ironheads 2",
       "W-L-T": "5-7-0",
-      "Rating": 84.9653,
+      "Rating": 84.8959,
       "AGD": 1.0,
-      "SoS": 83.9653
+      "SoS": 83.8959
     },
     {
       "Rank": 58,
       "Team Name": "Kingston Krossfire",
       "W-L-T": "7-8-0",
-      "Rating": 84.9283,
+      "Rating": 84.8328,
       "AGD": -0.2667,
-      "SoS": 85.195
+      "SoS": 85.0995
     },
     {
       "Rank": 59,
       "Team Name": "Hamilton Bengals 2",
       "W-L-T": "10-7-4",
-      "Rating": 84.8568,
+      "Rating": 84.7874,
       "AGD": 0.4762,
-      "SoS": 84.3806
+      "SoS": 84.3112
     },
     {
       "Rank": 60,
       "Team Name": "Peterborough Lakers 2",
       "W-L-T": "3-12-1",
-      "Rating": 84.8052,
+      "Rating": 84.7676,
       "AGD": -3.0,
-      "SoS": 87.8052
+      "SoS": 87.7676
     },
     {
       "Rank": 61,
       "Team Name": "Akwesasne Storm 2",
       "W-L-T": "8-8-0",
-      "Rating": 84.8021,
+      "Rating": 84.7056,
       "AGD": -0.1875,
-      "SoS": 84.9896
+      "SoS": 84.8931
     },
     {
       "Rank": 62,
       "Team Name": "Kawartha Lakes Fury",
       "W-L-T": "5-5-0",
-      "Rating": 84.2235,
+      "Rating": 84.1752,
       "AGD": -1.0,
-      "SoS": 85.2235
+      "SoS": 85.1752
     },
     {
       "Rank": 63,
       "Team Name": "Oakville Hawks 2",
       "W-L-T": "1-10-0",
-      "Rating": 83.8337,
+      "Rating": 83.7845,
       "AGD": -5.7273,
-      "SoS": 89.561
+      "SoS": 89.5118
     },
     {
       "Rank": 64,
-      "Team Name": "Orillia Kings 2",
-      "W-L-T": "6-11-1",
-      "Rating": 83.7743,
-      "AGD": -1.3889,
-      "SoS": 85.1632
+      "Team Name": "Pelham Raiders 2",
+      "W-L-T": "7-10-2",
+      "Rating": 83.6173,
+      "AGD": -0.7895,
+      "SoS": 84.4068
     },
     {
       "Rank": 65,
-      "Team Name": "Pelham Raiders 2",
-      "W-L-T": "7-9-2",
-      "Rating": 83.4897,
-      "AGD": -0.5,
-      "SoS": 83.9897
+      "Team Name": "Orillia Kings 2",
+      "W-L-T": "6-12-1",
+      "Rating": 83.4808,
+      "AGD": -1.7895,
+      "SoS": 85.2703
     },
     {
       "Rank": 66,
       "Team Name": "Sarnia Pacers 2",
       "W-L-T": "4-11-3",
-      "Rating": 82.4288,
+      "Rating": 82.3615,
       "AGD": -1.9444,
-      "SoS": 84.3733
+      "SoS": 84.3059
     },
     {
       "Rank": 67,
       "Team Name": "Toronto Beaches 2",
       "W-L-T": "1-5-1",
-      "Rating": 81.4096,
+      "Rating": 81.3638,
       "AGD": -4.0,
-      "SoS": 85.4096
+      "SoS": 85.3638
     },
     {
       "Rank": 68,
       "Team Name": "Barrie Bombers 2",
       "W-L-T": "3-11-0",
-      "Rating": 81.3327,
+      "Rating": 81.2862,
       "AGD": -4.0,
-      "SoS": 85.3327
+      "SoS": 85.2862
     },
     {
       "Rank": 69,
       "Team Name": "Kitchener Kodiaks 2",
       "W-L-T": "2-11-2",
-      "Rating": 80.9602,
+      "Rating": 80.8755,
       "AGD": -3.4,
-      "SoS": 84.3602
+      "SoS": 84.2755
     },
     {
       "Rank": 70,
       "Team Name": "North Perth Outlaws",
-      "W-L-T": "1-13-1",
-      "Rating": 80.8991,
-      "AGD": -5.2667,
-      "SoS": 86.1658
+      "W-L-T": "1-14-1",
+      "Rating": 80.8342,
+      "AGD": -5.1875,
+      "SoS": 86.0217
     },
     {
       "Rank": 71,
       "Team Name": "Gloucester Griffins 2",
       "W-L-T": "1-6-0",
-      "Rating": 80.5364,
+      "Rating": 80.4481,
       "AGD": -5.1429,
-      "SoS": 85.6792
+      "SoS": 85.5909
     },
     {
       "Rank": 72,
       "Team Name": "Six Nations 3",
-      "W-L-T": "1-12-1",
-      "Rating": 80.224,
-      "AGD": -4.7143,
-      "SoS": 84.9383
+      "W-L-T": "1-13-1",
+      "Rating": 80.1887,
+      "AGD": -4.7333,
+      "SoS": 84.922
     },
     {
       "Rank": 73,
       "Team Name": "Simcoe Timberwolves",
-      "W-L-T": "4-9-0",
-      "Rating": 79.9931,
-      "AGD": -3.5385,
-      "SoS": 83.5316
+      "W-L-T": "4-10-0",
+      "Rating": 79.7202,
+      "AGD": -4.0,
+      "SoS": 83.7202
     },
     {
       "Rank": 74,
       "Team Name": "NOTL Thunderhawks 2",
       "W-L-T": "2-14-0",
-      "Rating": 79.612,
+      "Rating": 79.5368,
       "AGD": -6.0,
-      "SoS": 85.612
+      "SoS": 85.5368
     },
     {
       "Rank": 75,
       "Team Name": "Sault Ste Marie Spartans",
       "W-L-T": "0-8-0",
-      "Rating": 77.6698,
+      "Rating": 77.7054,
       "AGD": -6.625,
-      "SoS": 84.2948
+      "SoS": 84.3304
     },
     {
       "Rank": 76,
       "Team Name": "Clarington Gaels 2",
-      "W-L-T": "2-9-0",
-      "Rating": 76.7535,
-      "AGD": -7.1818,
-      "SoS": 83.9354
+      "W-L-T": "3-9-0",
+      "Rating": 76.7683,
+      "AGD": -6.5,
+      "SoS": 83.2683
     },
     {
       "Rank": 77,
       "Team Name": "Wallaceburg Griffins 2",
-      "W-L-T": "0-10-0",
-      "Rating": 76.3404,
-      "AGD": -7.5,
-      "SoS": 83.8404
+      "W-L-T": "0-11-0",
+      "Rating": 76.3324,
+      "AGD": -7.7273,
+      "SoS": 84.0597
     },
     {
       "Rank": 78,
       "Team Name": "Oshawa Blue Knights 2",
-      "W-L-T": "1-7-0",
-      "Rating": 76.1668,
-      "AGD": -5.875,
-      "SoS": 82.0418
+      "W-L-T": "1-8-0",
+      "Rating": 76.0815,
+      "AGD": -5.3333,
+      "SoS": 81.4149
     }
   ],
   "Girls U15": [
@@ -3828,393 +3828,393 @@
       "Rank": 2,
       "Team Name": "Orangeville Northmen 1",
       "W-L-T": "16-4-0",
-      "Rating": 99.2495,
+      "Rating": 99.231,
       "AGD": 2.9,
-      "SoS": 96.3495
+      "SoS": 96.331
     },
     {
       "Rank": 3,
       "Team Name": "Halton Hills Bulldogs",
       "W-L-T": "18-3-0",
-      "Rating": 98.846,
+      "Rating": 98.7898,
       "AGD": 4.9524,
-      "SoS": 93.8937
+      "SoS": 93.8374
     },
     {
       "Rank": 4,
       "Team Name": "Whitby Warriors",
       "W-L-T": "16-2-2",
-      "Rating": 97.9169,
+      "Rating": 97.9519,
       "AGD": 2.85,
-      "SoS": 95.0669
+      "SoS": 95.1019
     },
     {
       "Rank": 5,
       "Team Name": "Nepean Knights 1",
       "W-L-T": "13-5-2",
-      "Rating": 97.8332,
+      "Rating": 97.8786,
       "AGD": 2.4,
-      "SoS": 95.4332
+      "SoS": 95.4786
     },
     {
       "Rank": 6,
-      "Team Name": "Sarnia Pacers",
-      "W-L-T": "10-6-1",
-      "Rating": 97.1772,
-      "AGD": 1.8235,
-      "SoS": 95.3537
+      "Team Name": "Guelph Regals 1",
+      "W-L-T": "8-5-3",
+      "Rating": 97.1736,
+      "AGD": 1.625,
+      "SoS": 95.5486
     },
     {
       "Rank": 7,
-      "Team Name": "Guelph Regals 1",
-      "W-L-T": "8-5-3",
-      "Rating": 97.1755,
-      "AGD": 1.625,
-      "SoS": 95.5505
+      "Team Name": "Sarnia Pacers",
+      "W-L-T": "10-6-1",
+      "Rating": 97.1563,
+      "AGD": 1.8235,
+      "SoS": 95.3328
     },
     {
       "Rank": 8,
       "Team Name": "St. Catharines Athletics 1",
       "W-L-T": "10-9-0",
-      "Rating": 97.1116,
+      "Rating": 97.1091,
       "AGD": 0.0526,
-      "SoS": 97.0589
+      "SoS": 97.0565
     },
     {
       "Rank": 9,
       "Team Name": "Akwesasne Storm 1",
       "W-L-T": "9-7-1",
-      "Rating": 96.7842,
+      "Rating": 96.7798,
       "AGD": 1.5882,
-      "SoS": 95.196
+      "SoS": 95.1916
     },
     {
       "Rank": 10,
       "Team Name": "Kahnawake Mohawks 1",
       "W-L-T": "11-4-1",
-      "Rating": 96.3208,
+      "Rating": 96.3185,
       "AGD": 3.9375,
-      "SoS": 92.3833
+      "SoS": 92.381
     },
     {
       "Rank": 11,
       "Team Name": "Peterborough Lakers",
-      "W-L-T": "8-6-4",
-      "Rating": 95.8884,
-      "AGD": 0.6667,
-      "SoS": 95.2218
+      "W-L-T": "9-6-4",
+      "Rating": 96.1428,
+      "AGD": 1.0526,
+      "SoS": 95.0902
     },
     {
       "Rank": 12,
       "Team Name": "Brampton Excelsiors",
       "W-L-T": "13-5-2",
-      "Rating": 95.5242,
+      "Rating": 95.4663,
       "AGD": 2.5,
-      "SoS": 93.0242
+      "SoS": 92.9663
     },
     {
       "Rank": 13,
       "Team Name": "Six Nations 1",
       "W-L-T": "3-17-2",
-      "Rating": 95.0942,
+      "Rating": 95.0957,
       "AGD": -1.6818,
-      "SoS": 96.776
+      "SoS": 96.7775
     },
     {
       "Rank": 14,
-      "Team Name": "Hamilton Bengals",
-      "W-L-T": "16-9-3",
-      "Rating": 95.048,
-      "AGD": 2.5357,
-      "SoS": 92.5123
+      "Team Name": "Clarington Gaels 1",
+      "W-L-T": "5-7-2",
+      "Rating": 95.087,
+      "AGD": -0.2143,
+      "SoS": 95.3013
     },
     {
       "Rank": 15,
-      "Team Name": "Clarington Gaels 1",
-      "W-L-T": "5-7-2",
-      "Rating": 95.0459,
-      "AGD": -0.2143,
-      "SoS": 95.2602
+      "Team Name": "Hamilton Bengals",
+      "W-L-T": "17-9-3",
+      "Rating": 95.0245,
+      "AGD": 2.6552,
+      "SoS": 92.3693
     },
     {
       "Rank": 16,
-      "Team Name": "Huntsville Hawks",
-      "W-L-T": "11-5-1",
-      "Rating": 94.6842,
-      "AGD": 1.8824,
-      "SoS": 92.8018
+      "Team Name": "Toronto Beaches",
+      "W-L-T": "5-6-1",
+      "Rating": 94.6763,
+      "AGD": -0.5833,
+      "SoS": 95.2596
     },
     {
       "Rank": 17,
-      "Team Name": "Toronto Beaches",
-      "W-L-T": "5-6-1",
-      "Rating": 94.6478,
-      "AGD": -0.5833,
-      "SoS": 95.2311
+      "Team Name": "Huntsville Hawks",
+      "W-L-T": "11-5-1",
+      "Rating": 94.6211,
+      "AGD": 1.8824,
+      "SoS": 92.7387
     },
     {
       "Rank": 18,
       "Team Name": "London Blue Devils",
       "W-L-T": "6-8-3",
-      "Rating": 94.2841,
+      "Rating": 94.2907,
       "AGD": -1.3529,
-      "SoS": 95.6371
+      "SoS": 95.6437
     },
     {
       "Rank": 19,
       "Team Name": "Barrie Bombers",
       "W-L-T": "13-6-3",
-      "Rating": 94.1405,
+      "Rating": 94.1239,
       "AGD": 0.7727,
-      "SoS": 93.3677
+      "SoS": 93.3512
     },
     {
       "Rank": 20,
       "Team Name": "Pelham Raiders",
       "W-L-T": "3-13-1",
-      "Rating": 93.8891,
+      "Rating": 93.9023,
       "AGD": -2.8824,
-      "SoS": 96.7714
+      "SoS": 96.7847
     },
     {
       "Rank": 21,
       "Team Name": "Pickering Ironheads",
       "W-L-T": "10-12-1",
-      "Rating": 93.8503,
+      "Rating": 93.8718,
       "AGD": -0.4783,
-      "SoS": 94.3286
+      "SoS": 94.35
     },
     {
       "Rank": 22,
       "Team Name": "West Grey Rampage",
       "W-L-T": "15-4-0",
-      "Rating": 93.1904,
+      "Rating": 93.1985,
       "AGD": 2.9474,
-      "SoS": 90.243
+      "SoS": 90.2512
     },
     {
       "Rank": 23,
       "Team Name": "Northumberland Nemesis",
-      "W-L-T": "6-8-2",
-      "Rating": 92.9256,
-      "AGD": 0.25,
-      "SoS": 92.6756
+      "W-L-T": "6-9-2",
+      "Rating": 92.6218,
+      "AGD": -0.2353,
+      "SoS": 92.8571
     },
     {
       "Rank": 24,
       "Team Name": "Owen Sound North Stars",
       "W-L-T": "9-7-2",
-      "Rating": 92.1195,
+      "Rating": 92.1741,
       "AGD": 1.2778,
-      "SoS": 90.8417
+      "SoS": 90.8963
     },
     {
       "Rank": 25,
       "Team Name": "Kitchener Kodiaks",
-      "W-L-T": "10-7-0",
-      "Rating": 91.7112,
-      "AGD": 1.8824,
-      "SoS": 89.8288
+      "W-L-T": "11-7-0",
+      "Rating": 91.7743,
+      "AGD": 2.1111,
+      "SoS": 89.6632
     },
     {
       "Rank": 26,
       "Team Name": "Windsor Warlocks",
-      "W-L-T": "9-13-1",
-      "Rating": 91.5542,
-      "AGD": -0.1304,
-      "SoS": 91.6847
+      "W-L-T": "9-14-1",
+      "Rating": 91.2929,
+      "AGD": -0.4167,
+      "SoS": 91.7096
     },
     {
       "Rank": 27,
-      "Team Name": "Gloucester Griffins",
-      "W-L-T": "9-3-1",
-      "Rating": 90.0639,
-      "AGD": 4.4615,
-      "SoS": 85.6024
+      "Team Name": "Wallaceburg Griffins",
+      "W-L-T": "8-6-2",
+      "Rating": 90.4899,
+      "AGD": 2.3125,
+      "SoS": 88.1774
     },
     {
       "Rank": 28,
       "Team Name": "Orillia Kings",
       "W-L-T": "7-4-0",
-      "Rating": 90.0244,
+      "Rating": 90.1254,
       "AGD": 1.9091,
-      "SoS": 88.1153
+      "SoS": 88.2163
     },
     {
       "Rank": 29,
-      "Team Name": "Wallaceburg Griffins",
-      "W-L-T": "7-6-2",
-      "Rating": 90.0183,
-      "AGD": 2.0,
-      "SoS": 88.0183
+      "Team Name": "Gloucester Griffins",
+      "W-L-T": "9-3-1",
+      "Rating": 90.0767,
+      "AGD": 4.4615,
+      "SoS": 85.6151
     },
     {
       "Rank": 30,
-      "Team Name": "Oshawa Blue Knights",
-      "W-L-T": "2-15-0",
-      "Rating": 89.6564,
-      "AGD": -5.3529,
-      "SoS": 95.0093
+      "Team Name": "Cornwall Celtics",
+      "W-L-T": "3-10-0",
+      "Rating": 89.6296,
+      "AGD": -2.7692,
+      "SoS": 92.3988
     },
     {
       "Rank": 31,
-      "Team Name": "Cornwall Celtics",
-      "W-L-T": "3-10-0",
-      "Rating": 89.6275,
-      "AGD": -2.7692,
-      "SoS": 92.3968
+      "Team Name": "Oshawa Blue Knights",
+      "W-L-T": "2-15-0",
+      "Rating": 89.6191,
+      "AGD": -5.3529,
+      "SoS": 94.972
     },
     {
       "Rank": 32,
-      "Team Name": "Akwesasne Storm 2",
-      "W-L-T": "8-1-1",
-      "Rating": 89.2586,
-      "AGD": 3.7,
-      "SoS": 85.5586
+      "Team Name": "Centre Wellington Riverhawks",
+      "W-L-T": "9-6-1",
+      "Rating": 89.5879,
+      "AGD": 1.8125,
+      "SoS": 87.7754
     },
     {
       "Rank": 33,
-      "Team Name": "Centre Wellington Riverhawks",
-      "W-L-T": "8-6-1",
-      "Rating": 89.2152,
-      "AGD": 1.4,
-      "SoS": 87.8152
+      "Team Name": "Akwesasne Storm 2",
+      "W-L-T": "8-1-1",
+      "Rating": 89.2702,
+      "AGD": 3.7,
+      "SoS": 85.5702
     },
     {
       "Rank": 34,
       "Team Name": "Orangeville Northmen 2",
       "W-L-T": "7-5-1",
-      "Rating": 89.2089,
+      "Rating": 89.2387,
       "AGD": -0.1538,
-      "SoS": 89.3628
+      "SoS": 89.3926
     },
     {
       "Rank": 35,
       "Team Name": "Newmarket Redbirds",
       "W-L-T": "3-9-0",
-      "Rating": 88.8142,
+      "Rating": 88.8074,
       "AGD": -4.1667,
-      "SoS": 92.9809
+      "SoS": 92.9741
     },
     {
       "Rank": 36,
       "Team Name": "Mimico Mountaineers",
       "W-L-T": "4-13-1",
-      "Rating": 88.477,
+      "Rating": 88.4646,
       "AGD": -3.1111,
-      "SoS": 91.5881
+      "SoS": 91.5757
     },
     {
       "Rank": 37,
       "Team Name": "Burlington Blaze 2",
-      "W-L-T": "6-9-2",
-      "Rating": 88.3838,
-      "AGD": -2.3529,
-      "SoS": 90.7367
+      "W-L-T": "6-9-3",
+      "Rating": 88.4125,
+      "AGD": -2.2222,
+      "SoS": 90.6347
     },
     {
       "Rank": 38,
       "Team Name": "St. Catharines Athletics 2",
-      "W-L-T": "3-7-2",
-      "Rating": 88.2204,
-      "AGD": -2.0833,
-      "SoS": 90.3038
+      "W-L-T": "3-7-3",
+      "Rating": 88.2541,
+      "AGD": -1.9231,
+      "SoS": 90.1771
     },
     {
       "Rank": 39,
-      "Team Name": "Arthur Aces",
-      "W-L-T": "5-8-1",
-      "Rating": 87.2199,
-      "AGD": -2.0714,
-      "SoS": 89.2913
+      "Team Name": "Six Nations 2",
+      "W-L-T": "4-11-1",
+      "Rating": 87.1549,
+      "AGD": -1.0,
+      "SoS": 88.1549
     },
     {
       "Rank": 40,
-      "Team Name": "Brantford Warriors",
-      "W-L-T": "8-6-2",
-      "Rating": 87.1094,
-      "AGD": 0.125,
-      "SoS": 86.9844
+      "Team Name": "Arthur Aces",
+      "W-L-T": "5-9-1",
+      "Rating": 87.1501,
+      "AGD": -2.3333,
+      "SoS": 89.4834
     },
     {
       "Rank": 41,
-      "Team Name": "Six Nations 2",
-      "W-L-T": "4-10-1",
-      "Rating": 87.0498,
-      "AGD": -0.6667,
-      "SoS": 87.7165
+      "Team Name": "Brantford Warriors",
+      "W-L-T": "8-7-2",
+      "Rating": 86.8588,
+      "AGD": -0.3529,
+      "SoS": 87.2118
     },
     {
       "Rank": 42,
       "Team Name": "Nepean Knights 2",
       "W-L-T": "5-15-0",
-      "Rating": 86.5493,
+      "Rating": 86.556,
       "AGD": -3.55,
-      "SoS": 90.0993
+      "SoS": 90.106
     },
     {
       "Rank": 43,
       "Team Name": "Stayner Hitmen",
       "W-L-T": "3-5-2",
-      "Rating": 85.4614,
+      "Rating": 85.5373,
       "AGD": -1.5,
-      "SoS": 86.9614
+      "SoS": 87.0373
     },
     {
       "Rank": 44,
       "Team Name": "Cambridge Highlanders",
       "W-L-T": "3-14-1",
-      "Rating": 84.7156,
+      "Rating": 84.7113,
       "AGD": -4.0,
-      "SoS": 88.7156
+      "SoS": 88.7113
     },
     {
       "Rank": 45,
       "Team Name": "Midland Titans",
       "W-L-T": "2-9-2",
-      "Rating": 84.224,
+      "Rating": 84.302,
       "AGD": -2.8462,
-      "SoS": 87.0702
+      "SoS": 87.1482
     },
     {
       "Rank": 46,
       "Team Name": "Guelph Regals 2",
       "W-L-T": "3-10-1",
-      "Rating": 84.0296,
+      "Rating": 84.089,
       "AGD": -4.5,
-      "SoS": 88.5296
+      "SoS": 88.589
     },
     {
       "Rank": 47,
       "Team Name": "Kahnawake Mohawks 2",
       "W-L-T": "1-6-0",
-      "Rating": 82.4531,
+      "Rating": 82.4546,
       "AGD": -5.7143,
-      "SoS": 88.1674
+      "SoS": 88.1688
     },
     {
       "Rank": 48,
       "Team Name": "Strathroy Screaming Eagles",
       "W-L-T": "0-10-0",
-      "Rating": 79.6106,
+      "Rating": 79.7425,
       "AGD": -9.3,
-      "SoS": 88.9106
+      "SoS": 89.0425
     },
     {
       "Rank": 49,
       "Team Name": "Quinte Bayhawks",
       "W-L-T": "0-6-0",
-      "Rating": 78.4666,
+      "Rating": 78.4225,
       "AGD": -9.5,
-      "SoS": 87.9666
+      "SoS": 87.9225
     },
     {
       "Rank": 50,
       "Team Name": "Thunder Bay ICE",
       "W-L-T": "0-4-0",
-      "Rating": 77.5239,
+      "Rating": 77.5512,
       "AGD": -10.0,
-      "SoS": 87.5239
+      "SoS": 87.5512
     }
   ],
   "Girls U17": [
@@ -4230,339 +4230,339 @@
       "Rank": 2,
       "Team Name": "Burlington Blaze",
       "W-L-T": "10-4-0",
-      "Rating": 96.7599,
+      "Rating": 96.768,
       "AGD": 2.1429,
-      "SoS": 94.617
+      "SoS": 94.6251
     },
     {
       "Rank": 3,
       "Team Name": "Nepean Knights",
       "W-L-T": "15-2-0",
-      "Rating": 96.3989,
+      "Rating": 96.4282,
       "AGD": 5.9412,
-      "SoS": 90.4577
+      "SoS": 90.487
     },
     {
       "Rank": 4,
       "Team Name": "Akwesasne Storm 1",
       "W-L-T": "8-4-0",
-      "Rating": 96.1154,
+      "Rating": 96.1367,
       "AGD": 2.8333,
-      "SoS": 93.2821
+      "SoS": 93.3033
     },
     {
       "Rank": 5,
       "Team Name": "St. Catharines Athletics",
       "W-L-T": "7-4-0",
-      "Rating": 94.8628,
+      "Rating": 94.8577,
       "AGD": -0.2727,
-      "SoS": 95.1356
+      "SoS": 95.1304
     },
     {
       "Rank": 6,
       "Team Name": "Six Nations",
       "W-L-T": "9-8-0",
-      "Rating": 94.1478,
+      "Rating": 94.1604,
       "AGD": 0.7059,
-      "SoS": 93.4419
+      "SoS": 93.4545
     },
     {
       "Rank": 7,
       "Team Name": "Orangeville Northmen",
       "W-L-T": "11-5-2",
-      "Rating": 94.0593,
+      "Rating": 94.0934,
       "AGD": 2.0556,
-      "SoS": 92.0038
+      "SoS": 92.0379
     },
     {
       "Rank": 8,
       "Team Name": "Barrie Bombers",
       "W-L-T": "5-11-0",
-      "Rating": 93.4527,
+      "Rating": 93.4506,
       "AGD": -1.375,
-      "SoS": 94.8277
+      "SoS": 94.8256
     },
     {
       "Rank": 9,
       "Team Name": "Centre Wellington Riverhawks",
       "W-L-T": "6-12-1",
-      "Rating": 92.9153,
+      "Rating": 92.9235,
       "AGD": -0.3158,
-      "SoS": 93.2311
+      "SoS": 93.2393
     },
     {
       "Rank": 10,
-      "Team Name": "Owen Sound North Stars",
-      "W-L-T": "5-5-0",
-      "Rating": 92.4972,
-      "AGD": -0.9,
-      "SoS": 93.3972
+      "Team Name": "Peterborough Lakers",
+      "W-L-T": "8-8-0",
+      "Rating": 92.3854,
+      "AGD": 1.125,
+      "SoS": 91.2604
     },
     {
       "Rank": 11,
-      "Team Name": "Peterborough Lakers",
-      "W-L-T": "8-8-0",
-      "Rating": 92.3575,
-      "AGD": 1.125,
-      "SoS": 91.2325
+      "Team Name": "Owen Sound North Stars",
+      "W-L-T": "6-5-0",
+      "Rating": 92.3764,
+      "AGD": -0.2727,
+      "SoS": 92.6491
     },
     {
       "Rank": 12,
       "Team Name": "Wallaceburg Griffins",
       "W-L-T": "4-2-0",
-      "Rating": 91.0152,
+      "Rating": 91.0364,
       "AGD": 2.6667,
-      "SoS": 88.3485
+      "SoS": 88.3697
     },
     {
       "Rank": 13,
       "Team Name": "Cornwall Celtics",
       "W-L-T": "1-6-0",
-      "Rating": 87.2006,
+      "Rating": 87.227,
       "AGD": -3.8571,
-      "SoS": 91.0578
+      "SoS": 91.0841
     },
     {
       "Rank": 14,
       "Team Name": "Akwesasne Storm 2",
       "W-L-T": "3-5-0",
-      "Rating": 85.7185,
+      "Rating": 85.7452,
       "AGD": -4.5,
-      "SoS": 90.2185
+      "SoS": 90.2452
     },
     {
       "Rank": 15,
       "Team Name": "Kitchener Kodiaks",
-      "W-L-T": "1-7-0",
-      "Rating": 84.7113,
-      "AGD": -7.75,
-      "SoS": 92.4613
+      "W-L-T": "1-8-0",
+      "Rating": 84.9036,
+      "AGD": -7.5556,
+      "SoS": 92.4591
     },
     {
       "Rank": 16,
       "Team Name": "Kawartha Lakes",
       "W-L-T": "0-10-0",
-      "Rating": 84.4874,
+      "Rating": 84.532,
       "AGD": -8.2,
-      "SoS": 92.6874
+      "SoS": 92.732
     },
     {
       "Rank": 17,
       "Team Name": "Hamilton Bengals",
       "W-L-T": "0-8-0",
-      "Rating": 83.158,
+      "Rating": 83.18,
       "AGD": -8.5,
-      "SoS": 91.658
+      "SoS": 91.68
     }
   ],
   "U22": [
     {
       "Rank": 1,
       "Team Name": "Windsor Warlocks",
-      "W-L-T": "8-0-0",
+      "W-L-T": "9-0-0",
       "Rating": 99.9999,
-      "AGD": 4.875,
-      "SoS": 95.115
+      "AGD": 4.5556,
+      "SoS": 95.4344
     },
     {
       "Rank": 2,
       "Team Name": "Sarnia Pacers",
-      "W-L-T": "2-2-0",
-      "Rating": 98.3539,
-      "AGD": 1.5,
-      "SoS": 96.8539
+      "W-L-T": "2-3-0",
+      "Rating": 98.2544,
+      "AGD": 0.8,
+      "SoS": 97.4544
     },
     {
       "Rank": 3,
       "Team Name": "Sudbury Rockhounds",
       "W-L-T": "7-3-1",
-      "Rating": 95.8473,
+      "Rating": 95.8625,
       "AGD": 3.7273,
-      "SoS": 92.1201
+      "SoS": 92.1352
     },
     {
       "Rank": 4,
       "Team Name": "Wallaceburg Griffins",
       "W-L-T": "3-5-0",
-      "Rating": 95.8085,
+      "Rating": 95.764,
       "AGD": -1.25,
-      "SoS": 97.0585
+      "SoS": 97.014
     },
     {
       "Rank": 5,
       "Team Name": "St. Catharines Athletics",
-      "W-L-T": "10-2-2",
-      "Rating": 95.7874,
-      "AGD": 2.7143,
-      "SoS": 93.0731
+      "W-L-T": "10-2-3",
+      "Rating": 95.6884,
+      "AGD": 2.5333,
+      "SoS": 93.1551
     },
     {
       "Rank": 6,
       "Team Name": "Cambridge Highlanders",
       "W-L-T": "11-4-0",
-      "Rating": 95.3412,
+      "Rating": 95.3418,
       "AGD": 2.5333,
-      "SoS": 92.8078
+      "SoS": 92.8085
     },
     {
       "Rank": 7,
       "Team Name": "Six Nations 1",
-      "W-L-T": "6-5-1",
-      "Rating": 94.2782,
-      "AGD": 0.9167,
-      "SoS": 93.3615
+      "W-L-T": "6-5-2",
+      "Rating": 94.3615,
+      "AGD": 0.8462,
+      "SoS": 93.5153
     },
     {
       "Rank": 8,
       "Team Name": "Hamilton Bengals",
       "W-L-T": "7-8-2",
-      "Rating": 93.7969,
+      "Rating": 93.786,
       "AGD": 1.0,
-      "SoS": 92.7969
+      "SoS": 92.786
     },
     {
       "Rank": 9,
       "Team Name": "Barrie Bombers",
       "W-L-T": "12-6-3",
-      "Rating": 93.6963,
+      "Rating": 93.7052,
       "AGD": 1.4286,
-      "SoS": 92.2677
+      "SoS": 92.2766
     },
     {
       "Rank": 10,
       "Team Name": "Orangeville Northmen",
       "W-L-T": "6-4-1",
-      "Rating": 93.6157,
+      "Rating": 93.6468,
       "AGD": 1.8182,
-      "SoS": 91.7976
+      "SoS": 91.8286
     },
     {
       "Rank": 11,
       "Team Name": "Orillia Kings",
-      "W-L-T": "7-5-1",
-      "Rating": 93.4711,
-      "AGD": 1.4615,
-      "SoS": 92.0096
+      "W-L-T": "8-5-1",
+      "Rating": 93.5344,
+      "AGD": 2.0714,
+      "SoS": 91.463
     },
     {
       "Rank": 12,
       "Team Name": "Kawartha Lakes",
-      "W-L-T": "6-4-1",
-      "Rating": 93.452,
-      "AGD": -0.2727,
-      "SoS": 93.7247
+      "W-L-T": "6-5-1",
+      "Rating": 93.3022,
+      "AGD": -0.4167,
+      "SoS": 93.7189
     },
     {
       "Rank": 13,
       "Team Name": "Guelph Regals",
       "W-L-T": "3-2-1",
-      "Rating": 93.1261,
+      "Rating": 93.1393,
       "AGD": 1.3333,
-      "SoS": 91.7928
+      "SoS": 91.8059
     },
     {
       "Rank": 14,
       "Team Name": "Kahnawake Mohawks",
       "W-L-T": "3-0-0",
-      "Rating": 92.8849,
+      "Rating": 93.0073,
       "AGD": 2.6667,
-      "SoS": 90.2183
+      "SoS": 90.3406
     },
     {
       "Rank": 15,
       "Team Name": "Clarington Gaels",
-      "W-L-T": "5-2-0",
-      "Rating": 92.4191,
-      "AGD": 0.1429,
-      "SoS": 92.2762
+      "W-L-T": "6-2-0",
+      "Rating": 92.8734,
+      "AGD": 0.375,
+      "SoS": 92.4984
     },
     {
       "Rank": 16,
       "Team Name": "Newmarket Redbirds",
       "W-L-T": "5-5-0",
-      "Rating": 92.3291,
+      "Rating": 92.4907,
       "AGD": 0.2,
-      "SoS": 92.1291
+      "SoS": 92.2907
     },
     {
       "Rank": 17,
       "Team Name": "Toronto Stars",
       "W-L-T": "3-4-0",
-      "Rating": 91.9922,
+      "Rating": 92.1391,
       "AGD": -0.7143,
-      "SoS": 92.7065
+      "SoS": 92.8534
     },
     {
       "Rank": 18,
       "Team Name": "Nepean Knights",
       "W-L-T": "2-6-2",
-      "Rating": 91.5099,
+      "Rating": 91.6323,
       "AGD": 0.0,
-      "SoS": 91.5099
+      "SoS": 91.6323
     },
     {
       "Rank": 19,
       "Team Name": "Simcoe Timberwolves",
-      "W-L-T": "3-9-1",
-      "Rating": 91.4825,
-      "AGD": -1.7692,
-      "SoS": 93.2518
+      "W-L-T": "4-9-1",
+      "Rating": 91.4532,
+      "AGD": -1.5714,
+      "SoS": 93.0246
     },
     {
       "Rank": 20,
       "Team Name": "Centre Wellington Riverhawks",
       "W-L-T": "6-6-1",
-      "Rating": 91.2394,
+      "Rating": 91.2531,
       "AGD": -1.1538,
-      "SoS": 92.3932
+      "SoS": 92.407
     },
     {
       "Rank": 21,
       "Team Name": "Pelham Raiders",
-      "W-L-T": "1-9-2",
-      "Rating": 90.1763,
-      "AGD": -3.9167,
-      "SoS": 94.093
+      "W-L-T": "1-10-2",
+      "Rating": 90.1944,
+      "AGD": -3.6923,
+      "SoS": 93.8867
     },
     {
       "Rank": 22,
       "Team Name": "West Grey Rampage",
       "W-L-T": "5-9-1",
-      "Rating": 89.9563,
+      "Rating": 89.9633,
       "AGD": -1.8,
-      "SoS": 91.7563
+      "SoS": 91.7633
     },
     {
       "Rank": 23,
       "Team Name": "Milton Mavericks",
       "W-L-T": "1-8-1",
-      "Rating": 89.3648,
+      "Rating": 89.3775,
       "AGD": -3.4,
-      "SoS": 92.7648
+      "SoS": 92.7775
     },
     {
       "Rank": 24,
       "Team Name": "Cornwall Celtics",
       "W-L-T": "0-2-1",
-      "Rating": 87.6349,
+      "Rating": 87.7573,
       "AGD": -4.3333,
-      "SoS": 91.9683
+      "SoS": 92.0906
     },
     {
       "Rank": 25,
       "Team Name": "Stayner Hitmen",
       "W-L-T": "1-9-0",
-      "Rating": 86.2966,
+      "Rating": 86.3273,
       "AGD": -6.7,
-      "SoS": 92.9966
+      "SoS": 93.0273
     },
     {
       "Rank": 26,
       "Team Name": "Midland Titans",
-      "W-L-T": "0-4-0",
-      "Rating": 84.1893,
-      "AGD": -8.5,
-      "SoS": 92.6893
+      "W-L-T": "0-5-0",
+      "Rating": 84.0696,
+      "AGD": -8.8,
+      "SoS": 92.8696
     }
   ],
   "Girls U22": [
@@ -4578,129 +4578,129 @@
       "Rank": 2,
       "Team Name": "Peterborough Lakers",
       "W-L-T": "9-2-0",
-      "Rating": 98.9684,
+      "Rating": 98.9989,
       "AGD": 2.0909,
-      "SoS": 96.8775
+      "SoS": 96.9079
     },
     {
       "Rank": 3,
       "Team Name": "Kitchener Kodiaks",
       "W-L-T": "8-1-0",
-      "Rating": 97.979,
+      "Rating": 97.9416,
       "AGD": 4.4444,
-      "SoS": 93.5345
+      "SoS": 93.4972
     },
     {
       "Rank": 4,
       "Team Name": "Burlington Blaze",
-      "W-L-T": "9-7-0",
-      "Rating": 97.2489,
-      "AGD": 2.125,
-      "SoS": 95.1239
+      "W-L-T": "10-7-0",
+      "Rating": 97.3805,
+      "AGD": 2.5294,
+      "SoS": 94.8511
     },
     {
       "Rank": 5,
       "Team Name": "Akwesasne Storm",
       "W-L-T": "7-0-1",
-      "Rating": 96.7161,
+      "Rating": 96.648,
       "AGD": 6.625,
-      "SoS": 90.0911
+      "SoS": 90.023
     },
     {
       "Rank": 6,
       "Team Name": "Gloucester Lady Griffins",
       "W-L-T": "7-5-1",
-      "Rating": 95.9194,
+      "Rating": 95.8956,
       "AGD": 1.2308,
-      "SoS": 94.6887
+      "SoS": 94.6649
     },
     {
       "Rank": 7,
       "Team Name": "Barrie Bombers",
       "W-L-T": "6-5-1",
-      "Rating": 95.4744,
+      "Rating": 95.479,
       "AGD": 0.5833,
-      "SoS": 94.8911
+      "SoS": 94.8957
     },
     {
       "Rank": 8,
       "Team Name": "Wallaceburg Griffins 1",
       "W-L-T": "5-7-0",
-      "Rating": 93.5377,
+      "Rating": 93.5268,
       "AGD": -0.0833,
-      "SoS": 93.621
+      "SoS": 93.6102
     },
     {
       "Rank": 9,
       "Team Name": "Orangeville Northmen",
       "W-L-T": "7-7-1",
-      "Rating": 93.5294,
+      "Rating": 93.4956,
       "AGD": -0.7333,
-      "SoS": 94.2628
+      "SoS": 94.2289
     },
     {
       "Rank": 10,
       "Team Name": "Six Nations",
       "W-L-T": "11-5-2",
-      "Rating": 91.6177,
+      "Rating": 91.5736,
       "AGD": 2.1111,
-      "SoS": 89.5066
+      "SoS": 89.4625
     },
     {
       "Rank": 11,
       "Team Name": "Centre Wellington Riverhawks",
-      "W-L-T": "9-10-0",
-      "Rating": 90.94,
-      "AGD": -1.7895,
-      "SoS": 92.7294
+      "W-L-T": "9-11-0",
+      "Rating": 90.781,
+      "AGD": -2.15,
+      "SoS": 92.931
     },
     {
       "Rank": 12,
       "Team Name": "Windsor Warlocks",
       "W-L-T": "6-5-0",
-      "Rating": 90.3248,
+      "Rating": 90.2882,
       "AGD": 1.4545,
-      "SoS": 88.8702
+      "SoS": 88.8337
     },
     {
       "Rank": 13,
       "Team Name": "Nepean Knights",
       "W-L-T": "0-11-2",
-      "Rating": 90.2014,
+      "Rating": 90.1417,
       "AGD": -5.1538,
-      "SoS": 95.3553
+      "SoS": 95.2955
     },
     {
       "Rank": 14,
       "Team Name": "St. Catharines Athletics",
       "W-L-T": "0-9-1",
-      "Rating": 89.5039,
+      "Rating": 89.4824,
       "AGD": -5.2,
-      "SoS": 94.7039
+      "SoS": 94.6824
     },
     {
       "Rank": 15,
       "Team Name": "Mississauga Badgers",
       "W-L-T": "0-7-0",
-      "Rating": 88.1115,
+      "Rating": 88.045,
       "AGD": -5.1429,
-      "SoS": 93.2543
+      "SoS": 93.1879
     },
     {
       "Rank": 16,
       "Team Name": "Wallaceburg Griffins 2",
       "W-L-T": "1-8-0",
-      "Rating": 84.9521,
+      "Rating": 84.8958,
       "AGD": -5.3333,
-      "SoS": 90.2854
+      "SoS": 90.2291
     },
     {
       "Rank": 17,
       "Team Name": "Sudbury Rockhounds",
       "W-L-T": "0-4-0",
-      "Rating": 80.3781,
+      "Rating": 80.3328,
       "AGD": -9.25,
-      "SoS": 89.6281
+      "SoS": 89.5828
     }
   ]
 }

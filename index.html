@@ -38,6 +38,12 @@
 </head>
 <body class="bg-neutral-950 text-neutral-100 font-sans antialiased min-h-screen flex flex-col selection:bg-fuchsia-500 selection:text-white">
 
+    <!-- GHOST SITE WARNING HEADER (COMMENTED OUT FOR LIVE DEPLOYMENT)
+    <div class="bg-[#d4ff00] text-neutral-950 text-center py-2 text-[10px] sm:text-xs font-black uppercase tracking-widest border-b-2 border-yellow-400 sticky top-0 z-[60] shadow-xl animate-pulse">
+        ⚠️ WARNING: GHOST SITE (STAGING PREVIEW) — DATA ACCURACY TESTING ENVIRONMENT ⚠️
+    </div>
+    -->
+
     <div id="ticker-banner" class="bg-neutral-900 text-neutral-200 font-extrabold uppercase tracking-widest text-xs sm:text-sm py-4 overflow-hidden border-b border-cyan-500/30 shadow-lg">
         <div id="ticker-content" class="animate-marquee whitespace-nowrap flex space-x-20">
             <span>⚡ Ingesting live lacrosse data feeds...</span>
@@ -151,7 +157,7 @@
                 <div class="relative bg-neutral-900 border border-neutral-800/80 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row justify-between items-center gap-6 shadow-2xl overflow-hidden">
                     
                     <div class="space-y-3 text-center md:text-left max-w-2xl">
-                        <div class="inline-flex items-center space-x-2 bg-violet-950/60 border border-violet-500/30 rounded-full px-3 py-1 text-[10px] font-black text-violet-400 uppercase tracking-widest animate-pulse">
+                        <div class="inline-flex items-center space-x-2 bg-violet-950/60 border border-violet-500/30 rounded-full px-3 py-1 text-[10px] font-black text-violet-400 uppercase tracking-widest">
                             <span>🧠 Labs Update — Development Phase</span>
                         </div>
                         <h3 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-white">AI Scenario Generator</h3>
@@ -162,7 +168,8 @@
 
                     <div class="flex-shrink-0 bg-neutral-950 border border-neutral-800 px-6 py-4 rounded-xl text-center min-w-[170px] shadow-inner transform md:rotate-2">
                         <span class="block text-[10px] font-mono font-black tracking-widest text-neutral-500 uppercase leading-none">Status Loop</span>
-                        <span class="text-xs font-black text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-violet-400 font-mono tracking-tight uppercase block mt-2 animate-pulse">🤖 Training Matrix...</span>
+                        <!-- 🎯 BADGE UPDATED FROM TRAINING MATRIX TO COMING SOON -->
+                        <span class="text-xs font-black text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-violet-400 font-mono tracking-tight uppercase block mt-2 animate-pulse">🤖 Coming Soon</span>
                     </div>
 
                 </div>
@@ -279,7 +286,6 @@
         let allRankingsData = {};
         let historyData = {};
 
-        // FETCH METADATA (DATE & TOURNAMENTS)
         async function fetchSiteMetadata() {
             try {
                 const response = await fetch('./site_metadata.json');
@@ -318,7 +324,6 @@
             }
         }
 
-        // FETCH BACKEND HISTORY LOGS BEFORE RENDERING LEADERBOARDS
         async function fetchHistoryData() {
             try {
                 const response = await fetch('./rankings_history.json');
@@ -330,7 +335,6 @@
             }
         }
 
-        // RUN FETCH PIPELINE NATIVELY AGAINST THE TRUE JSON FILE
         async function fetchRankingsData() {
             try {
                 const response = await fetch('./MyLax_Rankings.json');

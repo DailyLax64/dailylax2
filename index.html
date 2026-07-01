@@ -172,8 +172,7 @@
                                 <th class="py-4 px-6 text-center">W-L-T</th>
                                 <th class="py-4 px-6 text-center">Rating</th>
                                 <th class="py-4 px-6 text-center text-cyan-400">24H Change</th> 
-                                <th class="py-4 px-6 text-center">AGD</th>
-                                <th class="py-4 px-6 text-center">SoS</th>
+                                <!-- 🧹 HIDE/REMOVE AGD AND SOS HEADERS FROM THE MAIN ARRAY GRID VIEW -->
                             </tr>
                         </thead>
                         <tbody id="rankings-tbody" class="divide-y divide-neutral-800/50 text-xs font-bold uppercase tracking-wider">
@@ -376,6 +375,21 @@
             tickerContainer.innerHTML = marqueeString + marqueeString;
         }
 
+        // 🦾 DYNAMIC ACCORDION EXPANSION CONTROL LOOPS
+        function toggleTeamDetails(division, index) {
+            const detailsRow = document.getElementById(`details-${division}-${index}`);
+            if (!detailsRow) return;
+
+            const isHidden = detailsRow.classList.contains('hidden');
+            
+            // Close any open details row in this table to maintain neat formatting
+            document.querySelectorAll('.expanded-detail-row').forEach(row => row.classList.add('hidden'));
+            
+            if (isHidden) {
+                detailsRow.classList.remove('hidden');
+            }
+        }
+
         function loadDivisionTable() {
             const selectedDivision = document.getElementById('division-select').value;
             if (!allRankingsData[selectedDivision]) return;
@@ -393,7 +407,7 @@
                 prevDate = sortedDates[sortedDates.length - 2];
             }
 
-            // 🧠 MATHEMATICAL PASS #1: ISOLATE ALL ABSOLUTE SWINGS FOR PERCENTILE INDEXING
+            // FIRST PASS — COMPUTE PERCENTILE MATRIX
             let absDiffs = [];
             allRankingsData[selectedDivision].forEach(team => {
                 const teamName = team["Team Name"];
@@ -406,7 +420,6 @@
                 }
             });
 
-            // Calculate precise 25th and 75th percentile cutoffs for this specific division array
             absDiffs.sort((a, b) => a - b);
             let lowCutoff = 0;
             let highCutoff = 0;
@@ -417,7 +430,7 @@
                 highCutoff = absDiffs[q75Index];
             }
 
-            // 📊 PASS #2: DISTRIBUTE STYLES DEPENDING UPON RELATIVE STANDING
+            // SECOND PASS — APPEND ACTIVE DOM ROWS WITH EXPANSION SLOTS
             allRankingsData[selectedDivision].forEach(team => {
                 const teamName = team["Team Name"];
                 if (searchQuery && !teamName.toLowerCase().includes(searchQuery)) {
@@ -425,8 +438,7 @@
                 }
 
                 printedRowsCount++;
-                const tr = document.createElement('tr');
-                tr.className = "hover:bg-neutral-800/40 transition-colors border-b border-neutral-800/40";
+                const currentRowIndex = printedRowsCount;
 
                 let rankClass = "text-neutral-500 font-bold";
                 let rowBgClass = "";
@@ -435,7 +447,7 @@
                 if (team.Rank === 3) { rankClass = "text-lime-400 font-bold"; }
 
                 let changeText = "0.0000";
-                let changeClass = "text-neutral-500 font-normal"; // Middle 50% (Standard Matte Gray)
+                let changeClass = "text-neutral-500 font-normal";
                 
                 if (prevDate && historyData[prevDate] && historyData[prevDate][selectedDivision] && historyData[prevDate][selectedDivision][teamName]) {
                     const prevRating = historyData[prevDate][selectedDivision][teamName].Rating;
@@ -445,16 +457,12 @@
                     
                     changeText = diff > 0 ? `+${diff.toFixed(4)}` : `${diff.toFixed(4)}`;
 
-                    // Segment color based strictly on relative volatility group rankings
                     if (absDiffs.length >= 4) { 
                         if (absDiff >= highCutoff && highCutoff > 0) {
-                            // 🔥 Top 25% of absolute movement (Highest volatility -> Bright Fuchsia)
                             changeClass = "text-fuchsia-400 font-black drop-shadow-[0_0_8px_rgba(217,70,239,0.2)]";
                         } else if (absDiff <= lowCutoff) {
-                            // 🧊 Bottom 25% of absolute movement (Most stable -> Ice Cyan)
                             changeClass = "text-cyan-400 font-semibold";
                         } else {
-                            // ⚖️ Middle 50% of absolute movement (Balanced Churn -> Default Matte Gray)
                             changeClass = "text-neutral-400 font-normal";
                         }
                     } else if (absDiff > 0) {
@@ -462,16 +470,56 @@
                     }
                 }
 
-                tr.innerHTML = `
+                // 📦 1. MAIN DISPLAY ROW (CLEAN INTERFACE, ONLY 5 VISIBLE COLUMNS)
+                const mainTr = document.createElement('tr');
+                mainTr.className = "group hover:bg-neutral-800/40 transition-colors border-b border-neutral-800/40";
+                mainTr.innerHTML = `
                     <td class="py-4 px-6 text-center ${rankClass} ${rowBgClass}">${team.Rank}</td>
-                    <td class="py-4 px-6 font-black text-neutral-200 tracking-tight ${rowBgClass}">${teamName}</td>
+                    <!-- 📑 CLICKABLE TEAM NAME CELL WITH HOVER INTERACTIVE BADGE -->
+                    <td class="py-4 px-6 font-black text-neutral-200 tracking-tight cursor-pointer hover:text-cyan-400 transition-colors ${rowBgClass}" onclick="toggleTeamDetails('${selectedDivision}', ${currentRowIndex})">
+                        <span>${teamName}</span>
+                        <span class="text-[9px] text-neutral-600/70 font-mono tracking-normal ml-2 font-normal uppercase group-hover:text-cyan-400/80 transition-colors select-none">▸ Details</span>
+                    </td>
                     <td class="py-4 px-6 text-center text-neutral-400 font-mono tracking-normal ${rowBgClass}">${team["W-L-T"]}</td>
                     <td class="py-4 px-6 text-center font-black text-cyan-400 ${rowBgClass}">${team.Rating.toFixed(4)}</td>
                     <td class="py-4 px-6 text-center font-mono ${changeClass} ${rowBgClass}">${changeText}</td>
-                    <td class="py-4 px-6 text-center font-mono ${team.AGD > 0 ? 'text-lime-400' : 'text-neutral-400'} ${rowBgClass}">${team.AGD > 0 ? '+' + team.AGD.toFixed(4) : team.AGD.toFixed(4)}</td>
-                    <td class="py-4 px-6 text-center text-neutral-500 font-mono ${rowBgClass}">${team.SoS.toFixed(4)}</td>
                 `;
-                tbody.appendChild(tr);
+                tbody.appendChild(mainTr);
+
+                // 📂 2. ACCORDION SUB-ROW SLOTTED DIRECTLY UNDERNEATH (SPANNING ALL 5 COLUMNS)
+                const detailsTr = document.createElement('tr');
+                detailsTr.id = `details-${selectedDivision}-${currentRowIndex}`;
+                detailsTr.className = "expanded-detail-row hidden bg-neutral-950/40 border-b border-neutral-800/30";
+                detailsTr.innerHTML = `
+                    <td colspan="5" class="py-5 px-8">
+                        <div class="flex flex-col sm:flex-row gap-6 sm:gap-16 justify-start sm:justify-center items-start sm:items-center max-w-xl mx-auto">
+                            
+                            <!-- DYNAMIC AGD CARD -->
+                            <div class="flex items-center space-x-3 bg-neutral-900/60 p-3 rounded-xl border border-neutral-800/60 w-full sm:w-auto min-w-[210px]">
+                                <div class="p-2 bg-neutral-950 rounded-lg text-xs font-mono font-bold text-neutral-500">AGD</div>
+                                <div>
+                                    <span class="block text-[9px] uppercase font-black tracking-widest text-neutral-500 leading-none">Avg Goal Differential</span>
+                                    <span class="text-sm font-mono font-bold mt-1 block ${team.AGD > 0 ? 'text-lime-400' : 'text-neutral-400'}">
+                                        ${team.AGD > 0 ? '+' + team.AGD.toFixed(4) : team.AGD.toFixed(4)}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- DYNAMIC SOS CARD -->
+                            <div class="flex items-center space-x-3 bg-neutral-900/60 p-3 rounded-xl border border-neutral-800/60 w-full sm:w-auto min-w-[210px]">
+                                <div class="p-2 bg-neutral-950 rounded-lg text-xs font-mono font-bold text-neutral-500">SOS</div>
+                                <div>
+                                    <span class="block text-[9px] uppercase font-black tracking-widest text-neutral-500 leading-none">Strength of Schedule</span>
+                                    <span class="text-sm font-mono font-bold mt-1 block text-neutral-300">
+                                        ${team.SoS.toFixed(4)}
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(detailsTr);
             });
 
             if (printedRowsCount === 0) {

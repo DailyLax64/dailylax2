@@ -2,8 +2,8 @@ name: Nightly Deployer (LIVE SITE)
 
 on:
   schedule:
-    - cron: '0 6 * * *' # Runs automatically every night at 2:00 AM EST
-  workflow_dispatch: # Allows you to press the green button manually
+    - cron: '37 6 * * *' # 🤖 Fires at 2:37 AM EDT (Beats the global server traffic jam)
+  workflow_dispatch:
 
 jobs:
   run-matrix-engine:

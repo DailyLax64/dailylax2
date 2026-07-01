@@ -23,7 +23,6 @@
         .animate-marquee {
             display: flex;
             width: max-content;
-            /* 🏎️ SLOWED DOWN TO 75 SECONDS PER LOOP */
             animation: marquee 75s linear infinite;
         }
         .animate-marquee:hover {
@@ -38,12 +37,6 @@
     </style>
 </head>
 <body class="bg-neutral-950 text-neutral-100 font-sans antialiased min-h-screen flex flex-col selection:bg-fuchsia-500 selection:text-white">
-
-<!-- GHOST SITE WARNING HEADER (COMMENTED OUT FOR LIVE DEPLOYMENT)
-<div class="bg-[#d4ff00] text-neutral-950 text-center py-2 text-[10px] sm:text-xs font-black uppercase tracking-widest border-b-2 border-yellow-400 sticky top-0 z-[60] shadow-xl animate-pulse">
-    ⚠️ WARNING: GHOST SITE (STAGING PREVIEW) — DATA ACCURACY TESTING ENVIRONMENT ⚠️
-</div>
--->
 
     <div id="ticker-banner" class="bg-neutral-900 text-neutral-200 font-extrabold uppercase tracking-widest text-xs sm:text-sm py-4 overflow-hidden border-b border-cyan-500/30 shadow-lg">
         <div id="ticker-content" class="animate-marquee whitespace-nowrap flex space-x-20">
@@ -67,6 +60,7 @@
             <nav class="flex flex-wrap justify-center gap-1 bg-neutral-950 p-1 rounded-xl border border-neutral-800">
                 <button onclick="switchTab('home')" id="tab-home" class="nav-btn px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider transition-all bg-fuchsia-500 text-white neon-glow-fuchsia">Home</button>
                 <button onclick="switchTab('rankings')" id="tab-rankings" class="nav-btn px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider text-neutral-400 hover:text-cyan-400 transition-all">Rankings</button>
+                <button onclick="switchTab('matchup')" id="tab-matchup" class="nav-btn px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider text-neutral-400 hover:text-cyan-400 transition-all">Matchup</button>
                 <button onclick="switchTab('updates')" id="tab-updates" class="nav-btn px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider text-neutral-400 hover:text-cyan-400 transition-all">Updates</button>
                 <button onclick="switchTab('faqs')" id="tab-faqs" class="nav-btn px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider text-neutral-400 hover:text-cyan-400 transition-all">FAQs</button>
                 <button onclick="switchTab('contact')" id="tab-contact" class="nav-btn px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider text-neutral-400 hover:text-cyan-400 transition-all">Contact</button>
@@ -76,76 +70,84 @@
 
     <main class="max-w-6xl w-full mx-auto px-4 py-10 flex-grow">
 
-        <section id="content-home" class="tab-content grid grid-cols-1 lg:grid-cols-12 gap-8 items-center py-6">
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                <div class="inline-flex items-center space-x-2 bg-cyan-950/60 border border-cyan-500/30 rounded-full px-4 py-1.5 text-xs font-bold text-cyan-400 uppercase tracking-widest">
-                    <span class="w-2 h-2 rounded-full bg-lime-400 animate-ping"></span>
-                    <span>Daily Data Feed Active</span>
+        <section id="content-home" class="tab-content space-y-16 py-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-cyan-950/60 border border-cyan-500/30 rounded-full px-4 py-1.5 text-xs font-bold text-cyan-400 uppercase tracking-widest">
+                        <span class="w-2 h-2 rounded-full bg-lime-400 animate-ping"></span>
+                        <span>Daily Data Feed Active</span>
+                    </div>
+                    <h2 class="text-4xl sm:text-6xl font-black uppercase tracking-tighter leading-none text-white">
+                        The Pulse of <br class="hidden sm:inline">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-lime-400">Box Lacrosse</span>
+                    </h2>
+                    <p class="text-neutral-400 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Welcome to <span class="text-white font-semibold">dailylax.ca</span>. We process tournament schedules, league standings, game statistics, and metrics every 24 hours to give you the truest computational rankings in the province.
+                    </p>
+                    <div class="pt-2">
+                        <button onclick="switchTab('rankings')" class="px-8 py-4 bg-gradient-to-r from-fuchsia-500 to-violet-600 hover:from-fuchsia-600 hover:to-violet-700 text-white font-black uppercase text-xs tracking-widest rounded-xl transition-all transform hover:scale-105 shadow-lg neon-glow-fuchsia">
+                            Launch Leaderboards
+                        </button>
+                    </div>
                 </div>
-                <h2 class="text-4xl sm:text-6xl font-black uppercase tracking-tighter leading-none text-white">
-                    The Pulse of <br class="hidden sm:inline">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-lime-400">Box Lacrosse</span>
-                </h2>
-                <p class="text-neutral-400 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                    Welcome to <span class="text-white font-semibold">dailylax.ca</span>. We process tournament schedules, league standings, game statistics, and metrics every 24 hours to give you the truest computational rankings in the province.
-                </p>
-                <div class="pt-2">
-                    <button onclick="switchTab('rankings')" class="px-8 py-4 bg-gradient-to-r from-fuchsia-500 to-violet-600 hover:from-fuchsia-600 hover:to-violet-700 text-white font-black uppercase text-xs tracking-widest rounded-xl transition-all transform hover:scale-105 shadow-lg neon-glow-fuchsia">
-                        Launch Leaderboards
-                    </button>
+                
+                <div class="lg:col-span-5 relative group">
+                    <div class="absolute -inset-1.5 bg-gradient-to-r from-cyan-400 to-fuchsia-500 rounded-2xl blur opacity-40 group-hover:opacity-60 transition duration-1000"></div>
+                    <div class="relative bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col h-full justify-between">
+                        <div class="w-full h-64 bg-gradient-to-br from-neutral-900 via-slate-900 to-neutral-900 relative flex items-center justify-center overflow-hidden border-b border-neutral-800">
+                            <div class="absolute inset-0 opacity-[0.22] bg-[linear-gradient(to_right,#a3a3a3_1px,transparent_1px),linear-gradient(to_bottom,#a3a3a3_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+                            <svg class="w-48 h-44 drop-shadow-[0_0_30px_rgba(34,211,238,0.5)]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <filter id="glow-precision" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="1.8" result="blur" />
+                                        <feMerge>
+                                            <feMergeNode in="blur" />
+                                            <feMergeNode in="SourceGraphic" />
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                                <line x1="50" y1="5" x2="50" y2="95" stroke="#22d3ee" stroke-width="0.75" opacity="0.35" />
+                                <line x1="5" y1="50" x2="95" y2="50" stroke="#22d3ee" stroke-width="0.75" opacity="0.35" />
+                                <circle cx="50" cy="50" r="40" stroke="#22d3ee" stroke-width="1" stroke-dasharray="1 5" opacity="0.6" />
+                                <path d="M 16 26 L 16 16 L 26 16" stroke="#22d3ee" stroke-width="1.5" opacity="0.7" />
+                                <path d="M 84 26 L 84 16 L 74 16" stroke="#22d3ee" stroke-width="1.5" opacity="0.7" />
+                                <path d="M 16 74 L 16 84 L 26 84" stroke="#22d3ee" stroke-width="1.5" opacity="0.7" />
+                                <path d="M 84 74 L 84 84 L 74 84" stroke="#22d3ee" stroke-width="1.5" opacity="0.7" />
+                                <circle cx="50" cy="50" r="28" stroke="#d946ef" stroke-width="1.5" stroke-dasharray="10 4" filter="url(#glow-precision)" opacity="0.8" />
+                                <line x1="50" y1="20" x2="50" y2="26" stroke="#22d3ee" stroke-width="1.5" />
+                                <line x1="50" y1="74" x2="50" y2="80" stroke="#22d3ee" stroke-width="1.5" />
+                                <line x1="20" y1="50" x2="26" y2="50" stroke="#22d3ee" stroke-width="1.5" />
+                                <line x1="74" y1="50" x2="80" y2="50" stroke="#22d3ee" stroke-width="1.5" />
+                                <circle cx="50" cy="50" r="14" stroke="#22d3ee" stroke-width="2" filter="url(#glow-precision)" />
+                                <polygon points="50,33 47,38 53,38" fill="#22d3ee" opacity="0.8" />
+                                <polygon points="50,67 47,62 53,62" fill="#22d3ee" opacity="0.8" />
+                                <circle cx="50" cy="50" r="4.5" fill="#a3e635" filter="url(#glow-precision)" class="drop-shadow-[0_0_12px_#a3e635]" />
+                            </svg>
+                            <div class="absolute top-4 left-1/4 w-40 h-40 bg-cyan-400/25 rounded-full blur-3xl"></div>
+                            <div class="absolute bottom-4 right-1/4 w-40 h-40 bg-fuchsia-500/30 rounded-full blur-3xl"></div>
+                        </div>
+                        <div class="p-6 bg-neutral-900 relative">
+                            <span class="text-xs font-mono font-bold text-lime-400 uppercase tracking-widest">Live Integration</span>
+                            <h3 class="text-xl font-black uppercase tracking-tight text-white mt-1">Algorithmic Precision</h3>
+                            <p class="text-xs text-neutral-400 mt-2 normal-case leading-relaxed">Our custom engine analyzes Team Records (W-L-T), Average Goal Differential (AGD), and Strength of Schedule to deliver precise Rankings.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="lg:col-span-5 relative group">
-                <div class="absolute -inset-1.5 bg-gradient-to-r from-cyan-400 to-fuchsia-500 rounded-2xl blur opacity-40 group-hover:opacity-60 transition duration-1000"></div>
-                <div class="relative bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col h-full justify-between">
-                    
-                    <div class="w-full h-64 bg-gradient-to-br from-neutral-900 via-slate-900 to-neutral-900 relative flex items-center justify-center overflow-hidden border-b border-neutral-800">
-                        <div class="absolute inset-0 opacity-[0.22] bg-[linear-gradient(to_right,#a3a3a3_1px,transparent_1px),linear-gradient(to_bottom,#a3a3a3_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-                        
-                        <svg class="w-48 h-44 drop-shadow-[0_0_30px_rgba(34,211,238,0.5)]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <filter id="glow-precision" x="-20%" y="-20%" width="140%" height="140%">
-                                    <feGaussianBlur stdDeviation="1.8" result="blur" />
-                                    <feMerge>
-                                        <feMergeNode in="blur" />
-                                        <feMergeNode in="SourceGraphic" />
-                                    </feMerge>
-                                </filter>
-                            </defs>
-                            <line x1="50" y1="5" x2="50" y2="95" stroke="#22d3ee" stroke-width="0.75" opacity="0.35" />
-                            <line x1="5" y1="50" x2="95" y2="50" stroke="#22d3ee" stroke-width="0.75" opacity="0.35" />
-                            
-                            <circle cx="50" cy="50" r="40" stroke="#22d3ee" stroke-width="1" stroke-dasharray="1 5" opacity="0.6" />
-                            
-                            <path d="M 16 26 L 16 16 L 26 16" stroke="#22d3ee" stroke-width="1.5" opacity="0.7" />
-                            <path d="M 84 26 L 84 16 L 74 16" stroke="#22d3ee" stroke-width="1.5" opacity="0.7" />
-                            <path d="M 16 74 L 16 84 L 26 84" stroke="#22d3ee" stroke-width="1.5" opacity="0.7" />
-                            <path d="M 84 74 L 84 84 L 74 84" stroke="#22d3ee" stroke-width="1.5" opacity="0.7" />
-                            
-                            <circle cx="50" cy="50" r="28" stroke="#d946ef" stroke-width="1.5" stroke-dasharray="10 4" filter="url(#glow-precision)" opacity="0.8" />
-                            
-                            <line x1="50" y1="20" x2="50" y2="26" stroke="#22d3ee" stroke-width="1.5" />
-                            <line x1="50" y1="74" x2="50" y2="80" stroke="#22d3ee" stroke-width="1.5" />
-                            <line x1="20" y1="50" x2="26" y2="50" stroke="#22d3ee" stroke-width="1.5" />
-                            <line x1="74" y1="50" x2="80" y2="50" stroke="#22d3ee" stroke-width="1.5" />
 
-                            <circle cx="50" cy="50" r="14" stroke="#22d3ee" stroke-width="2" filter="url(#glow-precision)" />
-                            
-                            <polygon points="50,33 47,38 53,38" fill="#22d3ee" opacity="0.8" />
-                            <polygon points="50,67 47,62 53,62" fill="#22d3ee" opacity="0.8" />
-                            
-                            <circle cx="50" cy="50" r="4.5" fill="#a3e635" filter="url(#glow-precision)" class="drop-shadow-[0_0_12px_#a3e635]" />
-                        </svg>
-
-                        <div class="absolute top-4 left-1/4 w-40 h-40 bg-cyan-400/25 rounded-full blur-3xl"></div>
-                        <div class="absolute bottom-4 right-1/4 w-40 h-40 bg-fuchsia-500/30 rounded-full blur-3xl"></div>
+            <div class="relative group">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 rounded-2xl blur opacity-30 group-hover:opacity-40 transition duration-750"></div>
+                <div class="relative bg-neutral-900 border border-neutral-800/80 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row justify-between items-center gap-6 shadow-2xl overflow-hidden">
+                    <div class="space-y-3 text-center md:text-left max-w-2xl">
+                        <div class="inline-flex items-center space-x-2 bg-violet-950/60 border border-violet-500/30 rounded-full px-3 py-1 text-[10px] font-black text-violet-400 uppercase tracking-widest">
+                            <span>🧠 Labs Update — Development Phase</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-black uppercase tracking-tight text-white">AI Scenario Generator</h3>
+                        <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed normal-case">Simulate endless forward-looking curves with our upcoming computational predictive intelligence engine. Forecast ranking changes before the referees even take the floor.</p>
                     </div>
-
-                    <div class="p-6 bg-neutral-900 relative">
-                        <span class="text-xs font-mono font-bold text-lime-400 uppercase tracking-widest">Live Integration</span>
-                        <h3 class="text-xl font-black uppercase tracking-tight text-white mt-1">Algorithmic Precision</h3>
-                        <p class="text-xs text-neutral-400 mt-2 normal-case leading-relaxed">Our custom engine analyzes Team Records (W-L-T), Average Goal Differential (AGD), and Strength of Schedule to deliver precise Rankings.</p>
+                    <div class="flex-shrink-0 bg-neutral-950 border border-neutral-800 px-6 py-4 rounded-xl text-center min-w-[170px] shadow-inner transform md:rotate-2">
+                        <span class="block text-[10px] font-mono font-black tracking-widest text-neutral-500 uppercase leading-none">Status Loop</span>
+                        <span class="text-xs font-black text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-violet-400 font-mono tracking-tight uppercase block mt-2 animate-pulse">🤖 Coming Soon</span>
                     </div>
                 </div>
             </div>
@@ -172,8 +174,7 @@
                                 <th class="py-4 px-6">Team Name</th>
                                 <th class="py-4 px-6 text-center">W-L-T</th>
                                 <th class="py-4 px-6 text-center">Rating</th>
-                                <th class="py-4 px-6 text-center">AGD</th>
-                                <th class="py-4 px-6 text-center">SoS</th>
+                                <th class="py-4 px-6 text-center text-cyan-400">24H Change</th> 
                             </tr>
                         </thead>
                         <tbody id="rankings-tbody" class="divide-y divide-neutral-800/50 text-xs font-bold uppercase tracking-wider">
@@ -186,44 +187,111 @@
             </div>
         </section>
 
+        <section id="content-matchup" class="tab-content hidden max-w-4xl mx-auto space-y-8">
+            <div class="text-center py-2">
+                <div class="inline-flex items-center space-x-2 bg-fuchsia-950/60 border border-fuchsia-500/30 rounded-full px-5 py-2.5 text-sm font-black text-fuchsia-400 uppercase tracking-widest shadow-lg neon-glow-fuchsia">
+                    <span>⚔️ Matchup Simulator</span>
+                </div>
+            </div>
+
+            <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 shadow-xl space-y-6">
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-widest text-fuchsia-400 mb-2">1. Choose Matrix Division</label>
+                    <select id="matchup-division-select" onchange="onMatchupDivisionChange()" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3.5 text-xs font-black uppercase tracking-wider text-white focus:outline-none focus:border-fuchsia-500 cursor-pointer"></select>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="relative">
+                        <label class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">2. Primary Squad (Home / Team 1)</label>
+                        <input type="text" id="matchup-t1-search" oninput="filterMatchupSearch('t1')" onfocus="showMatchupDropdown('t1')" placeholder="🔍 Type or select Team 1..." class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3.5 text-xs font-bold uppercase tracking-wider text-white focus:outline-none focus:border-cyan-400 placeholder-neutral-700">
+                        <div id="matchup-t1-list" class="hidden absolute left-0 right-0 mt-1 max-h-48 overflow-y-auto bg-neutral-950 border border-neutral-800 rounded-xl z-50 divide-y divide-neutral-900 scrollbar-thin shadow-2xl"></div>
+                    </div>
+
+                    <div class="relative">
+                        <label class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">3. Opposing Squad (Away / Team 2)</label>
+                        <input type="text" id="matchup-t2-search" oninput="filterMatchupSearch('t2')" onfocus="showMatchupDropdown('t2')" placeholder="🔍 Type or select Team 2..." class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3.5 text-xs font-bold uppercase tracking-wider text-white focus:outline-none focus:border-cyan-400 placeholder-neutral-700">
+                        <div id="matchup-t2-list" class="hidden absolute left-0 right-0 mt-1 max-h-48 overflow-y-auto bg-neutral-950 border border-neutral-800 rounded-xl z-50 divide-y divide-neutral-900 scrollbar-thin shadow-2xl"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="matchup-forecast-box" class="relative group hidden">
+                <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-fuchsia-500 rounded-2xl blur opacity-25"></div>
+                <div class="relative bg-neutral-900 border border-neutral-800 rounded-2xl p-8 text-center space-y-4">
+                    <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 font-bold">Algorithmic Projections</span>
+                    <h4 class="text-sm uppercase tracking-widest font-black text-cyan-400">Theoretical Spread</h4>
+                    <div id="matchup-spread-display" class="text-4xl sm:text-6xl font-black font-mono tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-neutral-100 to-fuchsia-400 py-2">0.0000</div>
+                    
+                    <div class="w-full max-w-lg mx-auto pt-4 space-y-2">
+                        <div class="flex justify-between text-xs font-black uppercase tracking-widest">
+                            <span id="matchup-t1-label" class="text-cyan-400 truncate w-2/5 text-left opacity-80">Team 1</span>
+                            <span class="text-neutral-600 w-1/5 text-center">Even</span>
+                            <span id="matchup-t2-label" class="text-fuchsia-500 truncate w-2/5 text-right opacity-80">Team 2</span>
+                        </div>
+                        <div class="relative w-full h-3 bg-neutral-950 rounded-full overflow-hidden border border-neutral-800 shadow-inner">
+                            <div class="absolute top-0 bottom-0 left-1/2 w-0.5 bg-neutral-700 z-10 -translate-x-1/2"></div>
+                            <div id="matchup-gauge-fill" class="absolute top-0 bottom-0 transition-all duration-700 ease-out" style="left: 50%; width: 0%;"></div>
+                        </div>
+                        <div class="flex justify-between text-[10px] font-mono text-neutral-600 font-bold">
+                            <span>+10.0</span>
+                            <span>-10.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="matchup-data-sheets" class="grid grid-cols-1 md:grid-cols-2 gap-6 hidden">
+                <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 space-y-4 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-cyan-400"></div>
+                    <h4 id="matchup-t1-name-display" class="font-black text-base uppercase tracking-tight text-cyan-400 truncate">Team 1 Profile</h4>
+                    <div class="grid grid-cols-2 gap-3 text-xs font-mono">
+                        <div class="bg-neutral-950 p-3 rounded-xl border border-neutral-800/60"><span class="block text-[9px] font-sans font-black uppercase text-neutral-500 leading-none mb-1.5">Record</span><span id="matchup-t1-rec" class="text-white font-bold">-</span></div>
+                        <div class="bg-neutral-950 p-3 rounded-xl border border-neutral-800/60"><span class="block text-[9px] font-sans font-black uppercase text-neutral-500 leading-none mb-1.5">Rating</span><span id="matchup-t1-rat" class="text-cyan-400 font-black">-</span></div>
+                        <div class="bg-neutral-950 p-3 rounded-xl border border-neutral-800/60"><span class="block text-[9px] font-sans font-black uppercase text-neutral-500 leading-none mb-1.5">Avg Goal Diff</span><span id="matchup-t1-agd" class="text-white font-bold">-</span></div>
+                        <div class="bg-neutral-950 p-3 rounded-xl border border-neutral-800/60"><span class="block text-[9px] font-sans font-black uppercase text-neutral-500 leading-none mb-1.5">Schedule Strength</span><span id="matchup-t1-sos" class="text-neutral-400 font-bold">-</span></div>
+                    </div>
+                </div>
+
+                <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 space-y-4 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-fuchsia-500"></div>
+                    <h4 id="matchup-t2-name-display" class="font-black text-base uppercase tracking-tight text-fuchsia-400 truncate">Team 2 Profile</h4>
+                    <div class="grid grid-cols-2 gap-3 text-xs font-mono">
+                        <div class="bg-neutral-950 p-3 rounded-xl border border-neutral-800/60"><span class="block text-[9px] font-sans font-black uppercase text-neutral-500 leading-none mb-1.5">Record</span><span id="matchup-t2-rec" class="text-white font-bold">-</span></div>
+                        <div class="bg-neutral-950 p-3 rounded-xl border border-neutral-800/60"><span class="block text-[9px] font-sans font-black uppercase text-neutral-500 leading-none mb-1.5">Rating</span><span id="matchup-t2-rat" class="text-fuchsia-400 font-black">-</span></div>
+                        <div class="bg-neutral-950 p-3 rounded-xl border border-neutral-800/60"><span class="block text-[9px] font-sans font-black uppercase text-neutral-500 leading-none mb-1.5">Avg Goal Diff</span><span id="matchup-t2-agd" class="text-white font-bold">-</span></div>
+                        <div class="bg-neutral-950 p-3 rounded-xl border border-neutral-800/60"><span class="block text-[9px] font-sans font-black uppercase text-neutral-500 leading-none mb-1.5">Schedule Strength</span><span id="matchup-t2-sos" class="text-neutral-400 font-bold">-</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="content-updates" class="tab-content hidden max-w-4xl mx-auto space-y-6">
             <h3 class="text-2xl font-black uppercase tracking-tight text-white border-b border-neutral-800 pb-3">Engine Updates & Ingestion Logs</h3>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="bg-neutral-900 p-6 rounded-xl border border-neutral-800 relative overflow-hidden shadow-md neon-glow-cyan">
                     <div class="absolute left-0 top-0 bottom-0 w-1 bg-cyan-400"></div>
                     <div class="text-[10px] font-mono uppercase tracking-widest text-cyan-400 font-bold">📊 Database Pipeline</div>
                     <h4 class="font-black text-lg mt-2 text-white uppercase tracking-tight">System Last Updated</h4>
-                    <p id="dynamic-date" class="text-3xl font-black text-white mt-4 font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500">
-                        Updating...
-                    </p>
-                    <p class="text-xs text-neutral-400 mt-4 normal-case leading-relaxed">
-                        The rankings computation script completed its latest 24-hour routine, using games upto and including the dates above. All individual win-loss-ties, goal margins, and Strength of Schedule (SoS) algorithms are synchronized with the newest league data.
-                    </p>
+                    <p id="dynamic-date" class="text-3xl font-black text-white mt-4 font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500">Updating...</p>
+                    <p class="text-xs text-neutral-400 mt-4 normal-case leading-relaxed">The rankings computation script completed its latest 24-hour routine, using games upto and including the dates above. All individual win-loss-ties, goal margins, and Strength of Schedule (SoS) algorithms are synchronized with the newest league data.</p>
                 </div>
-
                 <div class="bg-neutral-900 p-6 rounded-xl border border-neutral-800 relative overflow-hidden shadow-md neon-glow-fuchsia">
                     <div class="absolute left-0 top-0 bottom-0 w-1 bg-fuchsia-500"></div>
                     <div class="text-[10px] font-mono uppercase tracking-widest text-fuchsia-400 font-bold">🏆 Bracket Aggregator</div>
                     <h4 class="font-black text-lg mt-2 text-white uppercase tracking-tight">Latest Tournaments Added</h4>
-                    
-                    <ul id="dynamic-tournaments" class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs uppercase tracking-wider font-extrabold text-neutral-200">
-                        </ul>
-                    
-                    <p class="text-xs text-neutral-400 mt-4 normal-case leading-relaxed">
-                        All weekend games and corresponding point allocations from these tournaments have been compiled. These new game records have caused massive positional shifts across both localized and regional division ranks.
-                    </p>
+                    <ul id="dynamic-tournaments" class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs uppercase tracking-wider font-extrabold text-neutral-200"></ul>
+                    <p class="text-xs text-neutral-400 mt-4 normal-case leading-relaxed">All weekend games and corresponding point allocations from these tournaments have been compiled. These new game records have caused massive positional shifts across both localized and regional division ranks.</p>
                 </div>
             </div>
         </section>
 
         <section id="content-faqs" class="tab-content hidden max-w-3xl mx-auto space-y-4">
             <h3 class="text-2xl font-black uppercase tracking-tight text-white border-b border-neutral-800 pb-3 mb-4">Frequently Asked Questions</h3>
-            <div class="bg-neutral-900 p-5 rounded-xl border border-neutral-800 space-y-2">
+            <div class="bg-neutral-900 p-5 rounded-xl border border-neutral-800/60 space-y-2">
                 <h4 class="font-black text-cyan-400 text-sm uppercase tracking-wider">How often do the ratings update?</h4>
                 <p class="text-xs text-neutral-400 normal-case leading-relaxed">Every night! Our computation routine accepts new data entries and runs updates daily to ensure up-to-the-minute tournament and season transparency.</p>
             </div>
-            <div class="bg-neutral-900 p-5 rounded-xl border border-neutral-800 space-y-2">
+            <div class="bg-neutral-900 p-5 rounded-xl border border-neutral-800/60 space-y-2">
                 <h4 class="font-black text-cyan-400 text-sm uppercase tracking-wider">What does SoS stand for?</h4>
                 <p class="text-xs text-neutral-400 normal-case leading-relaxed">Strength of Schedule. It evaluates the difficulty of opponents a team has faced, ensuring that groups playing tougher brackets are credited fairly in the calculation loop.</p>
             </div>
@@ -234,20 +302,23 @@
                 <h3 class="text-2xl font-black uppercase tracking-tight text-white">Data Control Center</h3>
                 <p class="text-xs text-neutral-500 uppercase tracking-widest">Flag missing results or statistical adjustments.</p>
             </div>
-            <form class="space-y-4 bg-neutral-900 p-6 rounded-xl border border-neutral-800 shadow-2xl" onsubmit="event.preventDefault(); alert('Transmission simulated successfully.');">
+            
+            <form id="netlify-contact-form" name="dailylax-support" method="POST" data-netlify="true" class="space-y-4 bg-neutral-900 p-6 rounded-xl border border-neutral-800 shadow-2xl transition-all duration-500">
+                <input type="hidden" name="form-name" value="dailylax-support" />
+                
                 <div>
-                    <label class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">Representative Name</label>
-                    <input type="text" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-xs font-bold uppercase text-white focus:outline-none focus:border-cyan-400 transition-all placeholder-neutral-700" placeholder="Coach / Manager Name">
+                    <label for="name" class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">Name</label>
+                    <input type="text" id="name" name="name" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-xs font-bold uppercase text-white focus:outline-none focus:border-cyan-400 transition-all placeholder-neutral-700" placeholder="Your Name">
                 </div>
                 <div>
-                    <label class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">Email Destination</label>
-                    <input type="email" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-xs font-bold text-white focus:outline-none focus:border-cyan-400 transition-all placeholder-neutral-700" placeholder="name@club.com">
+                    <label for="email" class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-xs font-bold text-white focus:outline-none focus:border-cyan-400 transition-all placeholder-neutral-700" placeholder="your.email@club.com">
                 </div>
                 <div>
-                    <label class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">Message Specification</label>
-                    <textarea required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-xs font-bold text-white focus:outline-none focus:border-cyan-400 transition-all h-32 placeholder-neutral-700" placeholder="Please clarify the division, team, and date coordinates..."></textarea>
+                    <label class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">Message</label>
+                    <textarea name="message" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg p-3 text-xs font-bold text-white focus:outline-none focus:border-cyan-400 transition-all h-32 placeholder-neutral-700" placeholder="Please clarify the division, team, and date coordinates..."></textarea>
                 </div>
-                <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-cyan-500 to-fuchsia-600 text-neutral-950 font-black uppercase text-xs tracking-widest rounded-lg hover:from-cyan-400 hover:to-fuchsia-500 transition-all shadow-lg">Submit Verification Request</button>
+                <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-cyan-500 to-fuchsia-600 text-neutral-950 font-black uppercase text-xs tracking-widest rounded-lg hover:from-cyan-400 hover:to-fuchsia-500 transition-all shadow-lg">Submit Message</button>
             </form>
         </section>
 
@@ -259,21 +330,46 @@
 
     <script>
         let allRankingsData = {};
+        let historyData = {};
 
-        // FETCH METADATA (DATE & TOURNAMENTS)
+        function switchTab(tabId) {
+            try {
+                document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+                document.querySelectorAll('.nav-btn').forEach(el => {
+                    el.className = "nav-btn px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider text-neutral-400 hover:text-cyan-400 transition-all";
+                });
+                
+                const targetContent = document.getElementById('content-' + tabId);
+                if (targetContent) targetContent.classList.remove('hidden');
+                
+                const activeBtn = document.getElementById('tab-' + tabId);
+                if (activeBtn) {
+                    activeBtn.className = "nav-btn px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider transition-all bg-fuchsia-500 text-white neon-glow-fuchsia";
+                }
+                closeAllMatchupDropdowns();
+            } catch (err) {
+                console.error("Navigation safety catch triggered:", err);
+            }
+        }
+
+        function closeAllMatchupDropdowns() {
+            const t1 = document.getElementById('matchup-t1-list');
+            const t2 = document.getElementById('matchup-t2-list');
+            if (t1) t1.classList.add('hidden');
+            if (t2) t2.classList.add('hidden');
+        }
+
         async function fetchSiteMetadata() {
             try {
-                const response = await fetch('./site_metadata.json');
+                const response = await fetch('/site_metadata.json');
                 if (!response.ok) return;
                 const metadata = await response.json();
                 
-                // 1. Inject the latest date
                 const dateEl = document.getElementById('dynamic-date');
                 if (dateEl && metadata.latest_game_date) {
                     dateEl.innerText = metadata.latest_game_date;
                 }
 
-                // 2. Inject the latest tournaments with alternating neon colors
                 const tourneyEl = document.getElementById('dynamic-tournaments');
                 if (tourneyEl && metadata.recent_tournaments) {
                     tourneyEl.innerHTML = ''; 
@@ -301,33 +397,48 @@
             }
         }
 
-        // RUN FETCH PIPELINE NATIVELY AGAINST THE TRUE JSON FILE
+        async function fetchHistoryData() {
+            try {
+                const response = await fetch('/rankings_history.json');
+                if (response.ok) {
+                    historyData = await response.json();
+                }
+            } catch (error) {
+                console.error('History data processing offline or empty:', error);
+            }
+        }
+
         async function fetchRankingsData() {
             try {
-                const response = await fetch('./MyLax_Rankings.json');
+                const response = await fetch('/MyLax_Rankings.json');
                 if (!response.ok) throw new Error('Data processing error');
                 allRankingsData = await response.json();
                 
                 initializeUI();
             } catch (error) {
                 console.error('Data pipeline loading failure:', error);
-                document.getElementById('ticker-content').innerHTML = `
-                    <span class="text-fuchsia-500 font-bold">
-                        ⚠️ CORS Error: To preview this .json file on your local desktop, you must open this folder using a local web server (like VS Code Live Server) or deploy it to Netlify.
-                    </span>`;
+                const ticker = document.getElementById('ticker-content');
+                if (ticker) {
+                    ticker.innerHTML = `<span class="text-fuchsia-500 font-bold">⚠️ Data pipeline failed to ingest json structure. Check desktop hosting constraints.</span>`;
+                }
             }
         }
 
         function initializeUI() {
-            populateDivisionDropdown();
-            buildMarqueeTicker();
-            loadDivisionTable();
+            try {
+                populateDivisionDropdown();
+                populateMatchupDivisionDropdown(); 
+                buildMarqueeTicker();
+                loadDivisionTable();
+            } catch (err) {
+                console.error("UI Framework render breakdown caught safely:", err);
+            }
         }
 
         function populateDivisionDropdown() {
             const selectEl = document.getElementById('division-select');
+            if (!selectEl) return;
             selectEl.innerHTML = '';
-            
             Object.keys(allRankingsData).forEach(division => {
                 const option = document.createElement('option');
                 option.value = division;
@@ -338,6 +449,7 @@
 
         function buildMarqueeTicker() {
             const tickerContainer = document.getElementById('ticker-content');
+            if (!tickerContainer) return;
             let marqueeString = "";
 
             Object.keys(allRankingsData).forEach(divName => {
@@ -362,29 +474,74 @@
                 }
             });
 
-            tickerContainer.innerHTML = marqueeString + marqueeString;
+            if (marqueeString) tickerContainer.innerHTML = marqueeString + marqueeString;
+        }
+
+        function toggleTeamDetails(division, index) {
+            const detailsRow = document.getElementById(`details-${division}-${index}`);
+            if (!detailsRow) return;
+
+            const isHidden = detailsRow.classList.contains('hidden');
+            document.querySelectorAll('.expanded-detail-row').forEach(row => {
+                if (row.id !== detailsRow.id) row.classList.add('hidden');
+            });
+            
+            if (isHidden) {
+                detailsRow.classList.remove('hidden');
+            } else {
+                detailsRow.classList.add('hidden');
+            }
         }
 
         function loadDivisionTable() {
-            const selectedDivision = document.getElementById('division-select').value;
+            const selectEl = document.getElementById('division-select');
+            if (!selectEl) return;
+            const selectedDivision = selectEl.value;
             if (!allRankingsData[selectedDivision]) return;
 
-            const searchQuery = document.getElementById('team-search').value.toLowerCase().trim();
+            const searchInput = document.getElementById('team-search');
+            const searchQuery = searchInput ? searchInput.value.toLowerCase().trim() : '';
             const tbody = document.getElementById('rankings-tbody');
             const noResults = document.getElementById('no-results');
             
+            if (!tbody) return;
             tbody.innerHTML = '';
             let printedRowsCount = 0;
 
+            const sortedDates = Object.keys(historyData).sort();
+            let prevDate = null;
+            if (sortedDates.length >= 2) {
+                prevDate = sortedDates[sortedDates.length - 2];
+            }
+
+            let absDiffs = [];
             allRankingsData[selectedDivision].forEach(team => {
                 const teamName = team["Team Name"];
-                if (searchQuery && !teamName.toLowerCase().includes(searchQuery)) {
-                    return; 
+                if (prevDate && historyData[prevDate] && historyData[prevDate][selectedDivision] && historyData[prevDate][selectedDivision][teamName]) {
+                    const prevRating = historyData[prevDate][selectedDivision][teamName].Rating;
+                    const currentRating = team.Rating;
+                    absDiffs.push(Math.abs(currentRating - prevRating));
+                } else {
+                    absDiffs.push(0);
                 }
+            });
+
+            absDiffs.sort((a, b) => a - b);
+            let lowCutoff = 0;
+            let highCutoff = 0;
+            if (absDiffs.length > 0) {
+                const q25Index = Math.floor(absDiffs.length * 0.25);
+                const q75Index = Math.floor(absDiffs.length * 0.75);
+                lowCutoff = absDiffs[q25Index];
+                highCutoff = absDiffs[q75Index];
+            }
+
+            allRankingsData[selectedDivision].forEach(team => {
+                const teamName = team["Team Name"];
+                if (searchQuery && !teamName.toLowerCase().includes(searchQuery)) return; 
 
                 printedRowsCount++;
-                const tr = document.createElement('tr');
-                tr.className = "hover:bg-neutral-800/40 transition-colors border-b border-neutral-800/40";
+                const currentRowIndex = printedRowsCount;
 
                 let rankClass = "text-neutral-500 font-bold";
                 let rowBgClass = "";
@@ -392,22 +549,100 @@
                 if (team.Rank === 2) { rankClass = "text-cyan-400 font-black"; rowBgClass = "bg-cyan-950/5"; }
                 if (team.Rank === 3) { rankClass = "text-lime-400 font-bold"; }
 
-                /* 🎯 HARDCODED TO 4 DECIMALS STRICT VIA TOFIXED(4) FOR RATING, AGD, AND SOS */
-                tr.innerHTML = `
+                let changeText = "0.0000";
+                let changeClass = "text-neutral-500 font-normal";
+                
+                if (prevDate && historyData[prevDate] && historyData[prevDate][selectedDivision] && historyData[prevDate][selectedDivision][teamName]) {
+                    const prevRating = historyData[prevDate][selectedDivision][teamName].Rating;
+                    const currentRating = team.Rating;
+                    const diff = currentRating - prevRating;
+                    const absDiff = Math.abs(diff);
+                    
+                    changeText = diff > 0 ? `+${diff.toFixed(4)}` : `${diff.toFixed(4)}`;
+
+                    if (absDiffs.length >= 4) { 
+                        if (absDiff >= highCutoff && highCutoff > 0) {
+                            changeClass = "text-fuchsia-400 font-black drop-shadow-[0_0_8px_rgba(217,70,239,0.2)]";
+                        } else if (absDiff <= lowCutoff) {
+                            changeClass = "text-cyan-400 font-semibold";
+                        } else {
+                            changeClass = "text-neutral-400 font-normal";
+                        }
+                    } else if (absDiff > 0) {
+                        changeClass = "text-neutral-300 font-normal";
+                    }
+                }
+
+                const recordParts = team["W-L-T"].split('-');
+                const wins = parseInt(recordParts[0]) || 0;
+                const losses = parseInt(recordParts[1]) || 0;
+                const ties = parseInt(recordParts[2]) || 0;
+                const totalGames = wins + losses + ties;
+                const winPercentage = totalGames > 0 ? ((wins + (ties * 0.5)) / totalGames).toFixed(3) : "0.000";
+
+                const mainTr = document.createElement('tr');
+                mainTr.className = "group hover:bg-neutral-800/40 transition-colors border-b border-neutral-800/40";
+                mainTr.innerHTML = `
                     <td class="py-4 px-6 text-center ${rankClass} ${rowBgClass}">${team.Rank}</td>
-                    <td class="py-4 px-6 font-black text-neutral-200 tracking-tight ${rowBgClass}">${teamName}</td>
+                    <td class="py-4 px-6 font-black text-neutral-200 tracking-tight cursor-pointer hover:text-cyan-400 transition-colors ${rowBgClass}" onclick="toggleTeamDetails('${selectedDivision}', ${currentRowIndex})">
+                        <span>${teamName}</span>
+                        <span class="text-[9px] text-neutral-600/70 font-mono tracking-normal ml-2 font-normal uppercase group-hover:text-cyan-400/80 transition-colors select-none">▸ Details</span>
+                    </td>
                     <td class="py-4 px-6 text-center text-neutral-400 font-mono tracking-normal ${rowBgClass}">${team["W-L-T"]}</td>
                     <td class="py-4 px-6 text-center font-black text-cyan-400 ${rowBgClass}">${team.Rating.toFixed(4)}</td>
-                    <td class="py-4 px-6 text-center font-mono ${team.AGD > 0 ? 'text-lime-400' : 'text-neutral-400'} ${rowBgClass}">${team.AGD > 0 ? '+' + team.AGD.toFixed(4) : team.AGD.toFixed(4)}</td>
-                    <td class="py-4 px-6 text-center text-neutral-500 font-mono ${rowBgClass}">${team.SoS.toFixed(4)}</td>
+                    <td class="py-4 px-6 text-center font-mono ${changeClass} ${rowBgClass}">${changeText}</td>
                 `;
-                tbody.appendChild(tr);
+                tbody.appendChild(mainTr);
+
+                const detailsTr = document.createElement('tr');
+                detailsTr.id = `details-${selectedDivision}-${currentRowIndex}`;
+                detailsTr.className = "expanded-detail-row hidden bg-neutral-950/40 border-b border-neutral-800/30";
+                
+                let pctFraction = "000";
+                if (winPercentage.includes('.')) pctFraction = winPercentage.split('.')[1];
+
+                detailsTr.innerHTML = `
+                    <td colspan="5" class="py-5 px-6">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+                            <div class="flex items-center space-x-3 bg-neutral-900/60 p-3 rounded-xl border border-neutral-800/60">
+                                <div class="p-2 bg-neutral-950 rounded-lg text-[10px] font-mono font-bold text-neutral-500 w-10 text-center">REC</div>
+                                <div class="truncate">
+                                    <span class="block text-[9px] uppercase font-black tracking-widest text-neutral-500 leading-none">Record Split</span>
+                                    <span class="text-xs font-mono font-bold mt-1 block text-neutral-300 truncate">
+                                        W: <span class="text-neutral-100">${wins}</span> | L: <span class="text-neutral-100">${losses}</span> | T: <span class="text-neutral-100">${ties}</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-neutral-900/60 p-3 rounded-xl border border-neutral-800/60">
+                                <div class="p-2 bg-neutral-950 rounded-lg text-[10px] font-mono font-bold text-neutral-500 w-10 text-center">PCT</div>
+                                <div>
+                                    <span class="block text-[9px] uppercase font-black tracking-widest text-neutral-500 leading-none">Win Percentage</span>
+                                    <span class="text-sm font-mono font-bold mt-0.5 block text-fuchsia-400">.${pctFraction}</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-neutral-900/60 p-3 rounded-xl border border-neutral-800/60">
+                                <div class="p-2 bg-neutral-950 rounded-lg text-[10px] font-mono font-bold text-neutral-500 w-10 text-center">AGD</div>
+                                <div>
+                                    <span class="block text-[9px] uppercase font-black tracking-widest text-neutral-500 leading-none">Avg Goal Diff</span>
+                                    <span class="text-sm font-mono font-bold mt-0.5 block ${team.AGD > 0 ? 'text-lime-400' : 'text-neutral-400'}">${team.AGD > 0 ? '+' + team.AGD.toFixed(4) : team.AGD.toFixed(4)}</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-neutral-900/60 p-3 rounded-xl border border-neutral-800/60">
+                                <div class="p-2 bg-neutral-950 rounded-lg text-[10px] font-mono font-bold text-neutral-500 w-10 text-center">SOS</div>
+                                <div>
+                                    <span class="block text-[9px] uppercase font-black tracking-widest text-neutral-500 leading-none">Schedule Strength</span>
+                                    <span class="text-sm font-mono font-bold mt-0.5 block text-cyan-400">${team.SoS.toFixed(4)}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(detailsTr);
             });
 
-            if (printedRowsCount === 0) {
-                noResults.classList.remove('hidden');
-            } else {
-                noResults.classList.add('hidden');
+            if (noResults) {
+                if (printedRowsCount === 0) noResults.classList.remove('hidden');
+                else noResults.classList.add('hidden');
             }
         }
 
@@ -415,23 +650,225 @@
             loadDivisionTable();
         }
 
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.nav-btn').forEach(el => {
-                el.className = "nav-btn px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider text-neutral-400 hover:text-cyan-400 transition-all";
+        function populateMatchupDivisionDropdown() {
+            const selectEl = document.getElementById('matchup-division-select');
+            if (!selectEl) return;
+            selectEl.innerHTML = '';
+            Object.keys(allRankingsData).forEach(division => {
+                const option = document.createElement('option');
+                option.value = division;
+                option.textContent = division;
+                selectEl.appendChild(option);
             });
-            
-            document.getElementById('content-' + tabId).classList.remove('hidden');
-            const activeBtn = document.getElementById('tab-' + tabId);
-            if (activeBtn) {
-                activeBtn.className = "nav-btn px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider transition-all bg-fuchsia-500 text-white neon-glow-fuchsia";
-            }
+            onMatchupDivisionChange();
         }
 
-        // Fire both fetches when the page loads
-        window.addEventListener('DOMContentLoaded', () => {
+        function onMatchupDivisionChange() {
+            const t1 = document.getElementById('matchup-t1-search');
+            const t2 = document.getElementById('matchup-t2-search');
+            const fb = document.getElementById('matchup-forecast-box');
+            const ds = document.getElementById('matchup-data-sheets');
+            
+            if (t1) t1.value = '';
+            if (t2) t2.value = '';
+            if (fb) fb.classList.add('hidden');
+            if (ds) ds.classList.add('hidden');
+            
+            closeAllMatchupDropdowns();
+        }
+
+        function showMatchupDropdown(slot) {
+            const selectEl = document.getElementById('matchup-division-select');
+            if (!selectEl) return;
+            const divName = selectEl.value;
+            if (!allRankingsData[divName]) return;
+
+            const listEl = document.getElementById(`matchup-${slot}-list`);
+            const searchInput = document.getElementById(`matchup-${slot}-search`);
+            if (!listEl || !searchInput) return;
+
+            const filterText = searchInput.value.toLowerCase().trim();
+            listEl.innerHTML = '';
+            listEl.classList.remove('hidden');
+
+            allRankingsData[divName].forEach(team => {
+                const name = team["Team Name"];
+                if (filterText && !name.toLowerCase().includes(filterText)) return;
+
+                const row = document.createElement('div');
+                row.className = "px-4 py-3 text-xs uppercase font-bold text-neutral-300 hover:bg-neutral-800 hover:text-cyan-400 cursor-pointer transition-colors";
+                row.innerText = name;
+                row.onclick = () => {
+                    searchInput.value = name;
+                    listEl.classList.add('hidden');
+                    runMatchupSimulationPipeline();
+                };
+                listEl.appendChild(row);
+            });
+        }
+
+        function filterMatchupSearch(slot) {
+            showMatchupDropdown(slot);
+        }
+
+        window.addEventListener('click', (e) => {
+            if (!e.target) return;
+            const t1List = document.getElementById('matchup-t1-list');
+            const t2List = document.getElementById('matchup-t2-list');
+            
+            if (t1List && typeof e.target.closest === 'function' && !e.target.closest('#matchup-t1-search') && !e.target.closest('#matchup-t1-list')) {
+                t1List.classList.add('hidden');
+            }
+            if (t2List && typeof e.target.closest === 'function' && !e.target.closest('#matchup-t2-search') && !e.target.closest('#matchup-t2-list')) {
+                t2List.classList.add('hidden');
+            }
+        });
+
+        function runMatchupSimulationPipeline() {
+            const divEl = document.getElementById('matchup-division-select');
+            const t1El = document.getElementById('matchup-t1-search');
+            const t2El = document.getElementById('matchup-t2-search');
+            const forecastBox = document.getElementById('matchup-forecast-box');
+            const dataSheets = document.getElementById('matchup-data-sheets');
+
+            if (!divEl || !t1El || !t2El || !forecastBox || !dataSheets) return;
+
+            const divName = divEl.value;
+            const t1Name = t1El.value.trim();
+            const t2Name = t2El.value.trim();
+
+            if (!t1Name || !t2Name) {
+                forecastBox.classList.add('hidden');
+                dataSheets.classList.add('hidden');
+                return;
+            }
+
+            const divisionTeams = allRankingsData[divName] || [];
+            const t1Data = divisionTeams.find(t => t["Team Name"] === t1Name);
+            const t2Data = divisionTeams.find(t => t["Team Name"] === t2Name);
+
+            if (!t1Data || !t2Data) return;
+
+            forecastBox.classList.remove('hidden');
+            dataSheets.classList.remove('hidden');
+
+            const spreadDisplay = document.getElementById('matchup-spread-display');
+            const gaugeFill = document.getElementById('matchup-gauge-fill');
+            const t1Label = document.getElementById('matchup-t1-label');
+            const t2Label = document.getElementById('matchup-t2-label');
+            
+            if (!spreadDisplay) return;
+
+            if (t1Name === t2Name) {
+                spreadDisplay.innerText = "0.0000";
+                spreadDisplay.className = "text-3xl font-black text-fuchsia-400 font-mono tracking-tight py-2";
+                if (gaugeFill) gaugeFill.style.width = '0%';
+                if (t1Label) t1Label.innerText = "Team 1";
+                if (t2Label) t2Label.innerText = "Team 2";
+                return;
+            }
+
+            const spread = t1Data.Rating - t2Data.Rating;
+            const cappedSpread = Math.max(-10, Math.min(10, spread)); 
+            const percentage = (Math.abs(cappedSpread) / 10) * 50; 
+
+            spreadDisplay.innerText = spread >= 0 ? `+${spread.toFixed(4)}` : `${spread.toFixed(4)}`;
+            spreadDisplay.className = "text-4xl sm:text-6xl font-black font-mono tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-neutral-100 to-fuchsia-400 py-2";
+
+            if (t1Label) t1Label.innerText = `◀ ${t1Name}`;
+            if (t2Label) t2Label.innerText = `${t2Name} ▶`;
+
+            if (gaugeFill) {
+                if (spread > 0) {
+                    gaugeFill.style.left = `${50 - percentage}%`;
+                    gaugeFill.style.width = `${percentage}%`;
+                    gaugeFill.className = "absolute top-0 bottom-0 bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)] transition-all duration-700 ease-out";
+                } else if (spread < 0) {
+                    gaugeFill.style.left = '50%';
+                    gaugeFill.style.width = `${percentage}%`;
+                    gaugeFill.className = "absolute top-0 bottom-0 bg-fuchsia-500 shadow-[0_0_12px_rgba(217,70,239,0.8)] transition-all duration-700 ease-out";
+                } else {
+                    gaugeFill.style.width = '0%';
+                }
+            }
+
+            const sets = {
+                t1: { name: t1Name, src: t1Data },
+                t2: { name: t2Name, src: t2Data }
+            };
+
+            Object.keys(sets).forEach(prefix => {
+                const item = sets[prefix];
+                const nameEl = document.getElementById(`matchup-${prefix}-name-display`);
+                const recEl = document.getElementById(`matchup-${prefix}-rec`);
+                const ratEl = document.getElementById(`matchup-${prefix}-rat`);
+                const agdEl = document.getElementById(`matchup-${prefix}-agd`);
+                const sosEl = document.getElementById(`matchup-${prefix}-sos`);
+
+                if (nameEl) nameEl.innerText = item.name;
+                if (recEl) recEl.innerText = item.src["W-L-T"];
+                if (ratEl) ratEl.innerText = item.src.Rating.toFixed(4);
+                if (agdEl) agdEl.innerText = item.src.AGD > 0 ? `+${item.src.AGD.toFixed(4)}` : item.src.AGD.toFixed(4);
+                if (sosEl) sosEl.innerText = item.src.SoS.toFixed(4);
+            });
+        }
+
+        // 🚀 FULLY REBUILT CONTACT FORM INTERCEPTOR
+        document.addEventListener('DOMContentLoaded', async () => {
+            
+            // Start the data pulls
             fetchSiteMetadata();
+            await fetchHistoryData(); 
             fetchRankingsData();
+
+            // Intercept form natively
+            const form = document.getElementById('netlify-contact-form');
+            if (form) {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault(); 
+                    
+                    // Stop Local Computers from executing to prevent 404s
+                    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
+                    if (isLocal) {
+                        alert("⚠️ NETLIFY ENVIRONMENT REQUIRED\n\nNetlify Forms cannot process on a local computer. Push your code to GitHub and test this form on your live Netlify staging link!");
+                        return;
+                    }
+
+                    // Package the form payload perfectly for Netlify
+                    const formData = new FormData(form);
+                    const dataParams = new URLSearchParams();
+                    for (const [key, value] of formData) {
+                        dataParams.append(key, value);
+                    }
+                    
+                    // Failsafe injection: Guarantee Netlify knows the DB target name
+                    if (!dataParams.has('form-name')) {
+                        dataParams.append('form-name', 'dailylax-support');
+                    }
+
+                    try {
+                        const response = await fetch("/", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                            body: dataParams.toString()
+                        });
+                        
+                        if (response.ok) {
+                            // Render pure success state
+                            form.innerHTML = `
+                                <div class="text-center py-8 space-y-4 animate-fadeIn">
+                                    <div class="w-12 h-12 rounded-full bg-cyan-950 border border-cyan-400 flex items-center justify-center mx-auto shadow-lg neon-glow-cyan text-cyan-400 font-bold text-xl">✓</div>
+                                    <h4 class="text-white font-black text-sm uppercase tracking-wider">Transmission Logged Successfully</h4>
+                                    <p class="text-xs text-neutral-400 max-w-xs mx-auto leading-relaxed normal-case">The matrix audit desk has processed your metadata query. Core analysts will cross-examine the schedule coordinates shortly.</p>
+                                </div>`;
+                        } else {
+                            alert(`Transmission failure exception code: ${response.status}`);
+                        }
+                    } catch (err) {
+                        console.error("Form handling failure:", err);
+                    }
+                });
+            }
         });
     </script>
 </body>

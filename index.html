@@ -171,7 +171,7 @@
                                 <th class="py-4 px-6">Team Name</th>
                                 <th class="py-4 px-6 text-center">W-L-T</th>
                                 <th class="py-4 px-6 text-center">Rating</th>
-                                <th class="py-4 px-6 text-center text-cyan-400">24H Change</th> <!-- 👈 TWEAK #1: NEW COLUMN TITLE -->
+                                <th class="py-4 px-6 text-center text-cyan-400">24H Change</th> 
                                 <th class="py-4 px-6 text-center">AGD</th>
                                 <th class="py-4 px-6 text-center">SoS</th>
                             </tr>
@@ -393,21 +393,31 @@
                 prevDate = sortedDates[sortedDates.length - 2];
             }
 
-            // 📊 TWEAK #2: FIRST PASS — DEFINE THE HIGHEST ABSOLUTE SWING IN THIS SPECIFIC DIVISION
-            let maxAbsDiff = 0;
+            // 🧠 MATHEMATICAL PASS #1: ISOLATE ALL ABSOLUTE SWINGS FOR PERCENTILE INDEXING
+            let absDiffs = [];
             allRankingsData[selectedDivision].forEach(team => {
                 const teamName = team["Team Name"];
                 if (prevDate && historyData[prevDate] && historyData[prevDate][selectedDivision] && historyData[prevDate][selectedDivision][teamName]) {
                     const prevRating = historyData[prevDate][selectedDivision][teamName].Rating;
                     const currentRating = team.Rating;
-                    const currentDiff = Math.abs(currentRating - prevRating);
-                    if (currentDiff > maxAbsDiff) {
-                        maxAbsDiff = currentDiff;
-                    }
+                    absDiffs.push(Math.abs(currentRating - prevRating));
+                } else {
+                    absDiffs.push(0);
                 }
             });
 
-            // SECOND PASS — RENDER THE HEATED TIERS
+            // Calculate precise 25th and 75th percentile cutoffs for this specific division array
+            absDiffs.sort((a, b) => a - b);
+            let lowCutoff = 0;
+            let highCutoff = 0;
+            if (absDiffs.length > 0) {
+                const q25Index = Math.floor(absDiffs.length * 0.25);
+                const q75Index = Math.floor(absDiffs.length * 0.75);
+                lowCutoff = absDiffs[q25Index];
+                highCutoff = absDiffs[q75Index];
+            }
+
+            // 📊 PASS #2: DISTRIBUTE STYLES DEPENDING UPON RELATIVE STANDING
             allRankingsData[selectedDivision].forEach(team => {
                 const teamName = team["Team Name"];
                 if (searchQuery && !teamName.toLowerCase().includes(searchQuery)) {
@@ -425,7 +435,7 @@
                 if (team.Rank === 3) { rankClass = "text-lime-400 font-bold"; }
 
                 let changeText = "0.0000";
-                let changeClass = "text-neutral-600";
+                let changeClass = "text-neutral-500 font-normal"; // Middle 50% (Standard Matte Gray)
                 
                 if (prevDate && historyData[prevDate] && historyData[prevDate][selectedDivision] && historyData[prevDate][selectedDivision][teamName]) {
                     const prevRating = historyData[prevDate][selectedDivision][teamName].Rating;
@@ -433,27 +443,22 @@
                     const diff = currentRating - prevRating;
                     const absDiff = Math.abs(diff);
                     
-                    // Dynamic scaling ratio relative to maximum division movement
-                    const relativeRangeRatio = maxAbsDiff > 0 ? (absDiff / maxAbsDiff) : 1;
+                    changeText = diff > 0 ? `+${diff.toFixed(4)}` : `${diff.toFixed(4)}`;
 
-                    if (diff > 0) {
-                        changeText = `+${diff.toFixed(4)}`;
-                        if (relativeRangeRatio > 0.65) {
-                            changeClass = "text-lime-400 font-black drop-shadow-[0_0_10px_rgba(163,230,53,0.15)]"; // Tier 1: Hot Surge
-                        } else if (relativeRangeRatio > 0.30) {
-                            changeClass = "text-lime-500 font-bold"; // Tier 2: Normal Climb
+                    // Segment color based strictly on relative volatility group rankings
+                    if (absDiffs.length >= 4) { 
+                        if (absDiff >= highCutoff && highCutoff > 0) {
+                            // 🔥 Top 25% of absolute movement (Highest volatility -> Bright Fuchsia)
+                            changeClass = "text-fuchsia-400 font-black drop-shadow-[0_0_8px_rgba(217,70,239,0.2)]";
+                        } else if (absDiff <= lowCutoff) {
+                            // 🧊 Bottom 25% of absolute movement (Most stable -> Ice Cyan)
+                            changeClass = "text-cyan-400 font-semibold";
                         } else {
-                            changeClass = "text-lime-600/70 font-medium"; // Tier 3: Minor Tick
+                            // ⚖️ Middle 50% of absolute movement (Balanced Churn -> Default Matte Gray)
+                            changeClass = "text-neutral-400 font-normal";
                         }
-                    } else if (diff < 0) {
-                        changeText = `${diff.toFixed(4)}`;
-                        if (relativeRangeRatio > 0.65) {
-                            changeClass = "text-rose-400 font-black drop-shadow-[0_0_10px_rgba(244,63,94,0.15)]"; // Tier 1: Severe Crash
-                        } else if (relativeRangeRatio > 0.30) {
-                            changeClass = "text-rose-500 font-bold"; // Tier 2: Normal Drop
-                        } else {
-                            changeClass = "text-rose-700/70 font-medium"; // Tier 3: Minor Edge
-                        }
+                    } else if (absDiff > 0) {
+                        changeClass = "text-neutral-300 font-normal";
                     }
                 }
 

@@ -809,19 +809,22 @@
             });
         }
 
-        // ⚡ GLOBAL RUNTIME ENGINE INITIALIZATION
         document.addEventListener('DOMContentLoaded', async () => {
-            // Unify data fetches safely
             fetchSiteMetadata();
             await fetchHistoryData(); 
             fetchRankingsData();
 
-            // Bind the AJAX submission handling safely
             const form = document.getElementById('netlify-contact-form');
             if (form) {
                 form.addEventListener('submit', async (e) => {
                     e.preventDefault(); 
                     
+                    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
+                    if (isLocal) {
+                        alert("⚠️ NETLIFY ENVIRONMENT REQUIRED\n\nNetlify Forms cannot process on a local computer. Push your code to GitHub and test this form on your live Netlify staging link!");
+                        return;
+                    }
+
                     const formData = new FormData(form);
                     try {
                         const response = await fetch("/", {

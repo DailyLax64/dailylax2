@@ -38,6 +38,12 @@
 </head>
 <body class="bg-neutral-950 text-neutral-100 font-sans antialiased min-h-screen flex flex-col selection:bg-fuchsia-500 selection:text-white">
 
+    <!-- GHOST SITE WARNING HEADER (COMMENTED OUT FOR LIVE DEPLOYMENT)
+    <div class="bg-[#d4ff00] text-neutral-950 text-center py-2 text-[10px] sm:text-xs font-black uppercase tracking-widest border-b-2 border-yellow-400 sticky top-0 z-[60] shadow-xl animate-pulse">
+        ⚠️ WARNING: GHOST SITE (STAGING PREVIEW) — DATA ACCURACY TESTING ENVIRONMENT ⚠️
+    </div>
+    -->
+
     <div id="ticker-banner" class="bg-neutral-900 text-neutral-200 font-extrabold uppercase tracking-widest text-xs sm:text-sm py-4 overflow-hidden border-b border-cyan-500/30 shadow-lg">
         <div id="ticker-content" class="animate-marquee whitespace-nowrap flex space-x-20">
             <span>⚡ Ingesting live lacrosse data feeds...</span>
@@ -275,7 +281,7 @@
             <h3 class="text-2xl font-black uppercase tracking-tight text-white border-b border-neutral-800 pb-3 mb-4">Frequently Asked Questions</h3>
             <div class="bg-neutral-900 p-5 rounded-xl border border-neutral-800 space-y-2">
                 <h4 class="font-black text-cyan-400 text-sm uppercase tracking-wider">How often do the ratings update?</h4>
-                <p class="text-xs text-neutral-400 normal-case leading-relaxed">Every night! Our computation routine accepts new data entries and runs updates daily to ensure up-the-minute tournament and season transparency.</p>
+                <p class="text-xs text-neutral-400 normal-case leading-relaxed">Every night! Our computation routine accepts new data entries and runs updates daily to ensure up-to-the-minute tournament and season transparency.</p>
             </div>
             <div class="bg-neutral-900 p-5 rounded-xl border border-neutral-800 space-y-2">
                 <h4 class="font-black text-cyan-400 text-sm uppercase tracking-wider">What does SoS stand for?</h4>
@@ -311,7 +317,35 @@
         let allRankingsData = {};
         let historyData = {};
 
-        // METADATA INGESTION ENGINE
+        // 🛡️ HOISTED & IMMUNE TO CRASHES: BULLETPROOF NAV ENGINE
+        function switchTab(tabId) {
+            try {
+                document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+                document.querySelectorAll('.nav-btn').forEach(el => {
+                    el.className = "nav-btn px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider text-neutral-400 hover:text-cyan-400 transition-all";
+                });
+                
+                const targetContent = document.getElementById('content-' + tabId);
+                if (targetContent) targetContent.classList.remove('hidden');
+                
+                const activeBtn = document.getElementById('tab-' + tabId);
+                if (activeBtn) {
+                    activeBtn.className = "nav-btn px-4 py-2 rounded-lg text-xs font-black uppercase tracking-wider transition-all bg-fuchsia-500 text-white neon-glow-fuchsia";
+                }
+                closeAllMatchupDropdowns();
+            } catch (err) {
+                console.error("Navigation safety catch triggered:", err);
+            }
+        }
+
+        function closeAllMatchupDropdowns() {
+            const t1 = document.getElementById('matchup-t1-list');
+            const t2 = document.getElementById('matchup-t2-list');
+            if (t1) t1.classList.add('hidden');
+            if (t2) t2.classList.add('hidden');
+        }
+
+        // METADATA CARD INGESTION
         async function fetchSiteMetadata() {
             try {
                 const response = await fetch('./site_metadata.json');
@@ -370,22 +404,27 @@
                 initializeUI();
             } catch (error) {
                 console.error('Data pipeline loading failure:', error);
-                document.getElementById('ticker-content').innerHTML = `
-                    <span class="text-fuchsia-500 font-bold">
-                        ⚠️ CORS Error: To preview this .json file on your local desktop, you must open this folder using a local web server (like VS Code Live Server) or deploy it to Netlify.
-                    </span>`;
+                const ticker = document.getElementById('ticker-content');
+                if (ticker) {
+                    ticker.innerHTML = `<span class="text-fuchsia-500 font-bold">⚠️ Data pipeline failed to ingest json structure. Check desktop hosting constraints.</span>`;
+                }
             }
         }
 
         function initializeUI() {
-            populateDivisionDropdown();
-            populateMatchupDivisionDropdown(); // 🤝 INITIATE MATCHUP MAPS
-            buildMarqueeTicker();
-            loadDivisionTable();
+            try {
+                populateDivisionDropdown();
+                populateMatchupDivisionDropdown(); 
+                buildMarqueeTicker();
+                loadDivisionTable();
+            } catch (err) {
+                console.error("UI Framework render breakdown caught safely:", err);
+            }
         }
 
         function populateDivisionDropdown() {
             const selectEl = document.getElementById('division-select');
+            if (!selectEl) return;
             selectEl.innerHTML = '';
             Object.keys(allRankingsData).forEach(division => {
                 const option = document.createElement('option');
@@ -397,6 +436,7 @@
 
         function buildMarqueeTicker() {
             const tickerContainer = document.getElementById('ticker-content');
+            if (!tickerContainer) return;
             let marqueeString = "";
 
             Object.keys(allRankingsData).forEach(divName => {
@@ -421,7 +461,7 @@
                 }
             });
 
-            tickerContainer.innerHTML = marqueeString + marqueeString;
+            if (marqueeString) tickerContainer.innerHTML = marqueeString + marqueeString;
         }
 
         function toggleTeamDetails(division, index) {
@@ -441,13 +481,17 @@
         }
 
         function loadDivisionTable() {
-            const selectedDivision = document.getElementById('division-select').value;
+            const selectEl = document.getElementById('division-select');
+            if (!selectEl) return;
+            const selectedDivision = selectEl.value;
             if (!allRankingsData[selectedDivision]) return;
 
-            const searchQuery = document.getElementById('team-search').value.toLowerCase().trim();
+            const searchInput = document.getElementById('team-search');
+            const searchQuery = searchInput ? searchInput.value.toLowerCase().trim() : '';
             const tbody = document.getElementById('rankings-tbody');
             const noResults = document.getElementById('no-results');
             
+            if (!tbody) return;
             tbody.innerHTML = '';
             let printedRowsCount = 0;
 
@@ -481,9 +525,7 @@
 
             allRankingsData[selectedDivision].forEach(team => {
                 const teamName = team["Team Name"];
-                if (searchQuery && !teamName.toLowerCase().includes(searchQuery)) {
-                    return; 
-                }
+                if (searchQuery && !teamName.toLowerCase().includes(searchQuery)) return; 
 
                 printedRowsCount++;
                 const currentRowIndex = printedRowsCount;
@@ -542,6 +584,10 @@
                 const detailsTr = document.createElement('tr');
                 detailsTr.id = `details-${selectedDivision}-${currentRowIndex}`;
                 detailsTr.className = "expanded-detail-row hidden bg-neutral-950/40 border-b border-neutral-800/30";
+                
+                let pctFraction = "000";
+                if (winPercentage.includes('.')) pctFraction = winPercentage.split('.')[1];
+
                 detailsTr.innerHTML = `
                     <td colspan="5" class="py-5 px-6">
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
@@ -558,7 +604,7 @@
                                 <div class="p-2 bg-neutral-950 rounded-lg text-[10px] font-mono font-bold text-neutral-500 w-10 text-center">PCT</div>
                                 <div>
                                     <span class="block text-[9px] uppercase font-black tracking-widest text-neutral-500 leading-none">Win Percentage</span>
-                                    <span class="text-sm font-mono font-bold mt-0.5 block text-fuchsia-400">.${winPercentage.split('.')[1]}</span>
+                                    <span class="text-sm font-mono font-bold mt-0.5 block text-fuchsia-400">.${pctFraction}</span>
                                 </div>
                             </div>
                             <div class="flex items-center space-x-3 bg-neutral-900/60 p-3 rounded-xl border border-neutral-800/60">
@@ -581,10 +627,9 @@
                 tbody.appendChild(detailsTr);
             });
 
-            if (printedRowsCount === 0) {
-                noResults.classList.remove('hidden');
-            } else {
-                noResults.classList.add('hidden');
+            if (noResults) {
+                if (printedRowsCount === 0) noResults.classList.remove('hidden');
+                else noResults.classList.add('hidden');
             }
         }
 
@@ -592,9 +637,10 @@
             loadDivisionTable();
         }
 
-        // ⚔️ MATCHUP ENGINE CALCULATOR LOGIC LOOPS
+        // MATCHUP SIMULATION LOGIC LOOP
         function populateMatchupDivisionDropdown() {
             const selectEl = document.getElementById('matchup-division-select');
+            if (!selectEl) return;
             selectEl.innerHTML = '';
             Object.keys(allRankingsData).forEach(division => {
                 const option = document.createElement('option');
@@ -602,3 +648,150 @@
                 option.textContent = division;
                 selectEl.appendChild(option);
             });
+            onMatchupDivisionChange();
+        }
+
+        function onMatchupDivisionChange() {
+            const t1 = document.getElementById('matchup-t1-search');
+            const t2 = document.getElementById('matchup-t2-search');
+            const fb = document.getElementById('matchup-forecast-box');
+            const ds = document.getElementById('matchup-data-sheets');
+            
+            if (t1) t1.value = '';
+            if (t2) t2.value = '';
+            if (fb) fb.classList.add('hidden');
+            if (ds) ds.classList.add('hidden');
+            
+            closeAllMatchupDropdowns();
+        }
+
+        function showMatchupDropdown(slot) {
+            const selectEl = document.getElementById('matchup-division-select');
+            if (!selectEl) return;
+            const divName = selectEl.value;
+            if (!allRankingsData[divName]) return;
+
+            const listEl = document.getElementById(`matchup-${slot}-list`);
+            const searchInput = document.getElementById(`matchup-${slot}-search`);
+            if (!listEl || !searchInput) return;
+
+            const filterText = searchInput.value.toLowerCase().trim();
+            listEl.innerHTML = '';
+            listEl.classList.remove('hidden');
+
+            allRankingsData[divName].forEach(team => {
+                const name = team["Team Name"];
+                if (filterText && !name.toLowerCase().includes(filterText)) return;
+
+                const row = document.createElement('div');
+                row.className = "px-4 py-3 text-xs uppercase font-bold text-neutral-300 hover:bg-neutral-800 hover:text-cyan-400 cursor-pointer transition-colors";
+                row.innerText = name;
+                row.onclick = () => {
+                    searchInput.value = name;
+                    listEl.classList.add('hidden');
+                    runMatchupSimulationPipeline();
+                };
+                listEl.appendChild(row);
+            });
+        }
+
+        function filterMatchupSearch(slot) {
+            showMatchupDropdown(slot);
+        }
+
+        window.addEventListener('click', (e) => {
+            if (!e.target) return;
+            const t1List = document.getElementById('matchup-t1-list');
+            const t2List = document.getElementById('matchup-t2-list');
+            
+            if (t1List && typeof e.target.closest === 'function' && !e.target.closest('#matchup-t1-search') && !e.target.closest('#matchup-t1-list')) {
+                t1List.classList.add('hidden');
+            }
+            if (t2List && typeof e.target.closest === 'function' && !e.target.closest('#matchup-t2-search') && !e.target.closest('#matchup-t2-list')) {
+                t2List.classList.add('hidden');
+            }
+        });
+
+        function runMatchupSimulationPipeline() {
+            const divEl = document.getElementById('matchup-division-select');
+            const t1El = document.getElementById('matchup-t1-search');
+            const t2El = document.getElementById('matchup-t2-search');
+            const forecastBox = document.getElementById('matchup-forecast-box');
+            const dataSheets = document.getElementById('matchup-data-sheets');
+
+            if (!divEl || !t1El || !t2El || !forecastBox || !dataSheets) return;
+
+            const divName = divEl.value;
+            const t1Name = t1El.value.trim();
+            const t2Name = t2El.value.trim();
+
+            if (!t1Name || !t2Name) {
+                forecastBox.classList.add('hidden');
+                dataSheets.classList.add('hidden');
+                return;
+            }
+
+            const divisionTeams = allRankingsData[divName] || [];
+            const t1Data = divisionTeams.find(t => t["Team Name"] === t1Name);
+            const t2Data = divisionTeams.find(t => t["Team Name"] === t2Name);
+
+            if (!t1Data || !t2Data) return;
+
+            forecastBox.classList.remove('hidden');
+            dataSheets.classList.remove('hidden');
+
+            const spreadDisplay = document.getElementById('matchup-spread-display');
+            const funTextDisplay = document.getElementById('matchup-fun-text');
+            if (!spreadDisplay || !funTextDisplay) return;
+
+            if (t1Name === t2Name) {
+                spreadDisplay.innerText = "0.0000";
+                spreadDisplay.className = "text-3xl font-black text-fuchsia-400 font-mono tracking-tight py-2";
+                funTextDisplay.innerText = "Simulation Error: A squad cannot battle their own shadow clone! Pick two separate teams to run the spread.";
+                return;
+            }
+
+            const spread = t1Data.Rating - t2Data.Rating;
+            const absSpread = Math.abs(spread).toFixed(4);
+
+            spreadDisplay.innerText = spread >= 0 ? `+${spread.toFixed(4)}` : `${spread.toFixed(4)}`;
+            spreadDisplay.className = "text-5xl sm:text-7xl font-black font-mono tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-neutral-100 to-fuchsia-400 py-2";
+
+            if (spread > 0) {
+                funTextDisplay.innerHTML = `Computational simulation hints at a closely-matched field day! Analytics predict <span class="text-cyan-400 font-black">${t1Name}</span> holds a gentle edge of <span class="text-cyan-400 font-black font-mono">${absSpread}</span> expected goals over <span class="text-fuchsia-400 font-bold">${t2Name}</span> if the whistle blew right now.`;
+            } else if (spread < 0) {
+                funTextDisplay.innerHTML = `Computational simulation hints at an absolute nail-biter! Analytics predict <span class="text-fuchsia-500 font-black">${t2Name}</span> holds a gentle edge of <span class="text-fuchsia-500 font-black font-mono">${absSpread}</span> expected goals over <span class="text-cyan-400 font-bold">${t1Name}</span> if the whistle blew right now.`;
+            } else {
+                funTextDisplay.innerHTML = `The data loops predict a flawless algorithmic deadlock! Both squads match at an identical level. Expected to be a perfectly split tactical matchup.`;
+            }
+
+            // Fill individual card panels securely
+            const sets = {
+                t1: { name: t1Name, src: t1Data },
+                t2: { name: t2Name, src: t2Data }
+            };
+
+            Object.keys(sets).forEach(prefix => {
+                const item = sets[prefix];
+                const nameEl = document.getElementById(`matchup-${prefix}-name-display`);
+                const recEl = document.getElementById(`matchup-${prefix}-rec`);
+                const ratEl = document.getElementById(`matchup-${prefix}-rat`);
+                const agdEl = document.getElementById(`matchup-${prefix}-agd`);
+                const sosEl = document.getElementById(`matchup-${prefix}-sos`);
+
+                if (nameEl) nameEl.innerText = item.name;
+                if (recEl) recEl.innerText = item.src["W-L-T"];
+                if (ratEl) ratEl.innerText = item.src.Rating.toFixed(4);
+                if (agdEl) agdEl.innerText = item.src.AGD > 0 ? `+${item.src.AGD.toFixed(4)}` : item.src.AGD.toFixed(4);
+                if (sosEl) sosEl.innerText = item.src.SoS.toFixed(4);
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', async () => {
+            fetchSiteMetadata();
+            await fetchHistoryData(); 
+            fetchRankingsData();
+        });
+    </script>
+</body>
+</html>

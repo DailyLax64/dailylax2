@@ -328,39 +328,6 @@
         let allRankingsData = {};
         let historyData = {};
 
-        // 🛡️ SUBMIT CAPTURE INTERCEPT ROUTINE (BYPASSES THE 404 REDIRECT DEADLOCK)
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('netlify-contact-form');
-            if (form) {
-                form.addEventListener('submit', async (e) => {
-                    e.preventDefault(); 
-                    
-                    const formData = new FormData(form);
-                    try {
-                        const response = await fetch("/", {
-                            method: "POST",
-                            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                            body: new URLSearchParams(formData).toString()
-                        });
-                        
-                        if (response.ok) {
-                            // Render an elegant confirmation state container smoothly inside the DOM frame
-                            form.innerHTML = `
-                                <div class="text-center py-8 space-y-4 animate-fadeIn">
-                                    <div class="w-12 h-12 rounded-full bg-cyan-950 border border-cyan-400 flex items-center justify-center mx-auto shadow-lg neon-glow-cyan text-cyan-400 font-bold text-xl">✓</div>
-                                    <h4 class="text-white font-black text-sm uppercase tracking-wider">Transmission Logged Successfully</h4>
-                                    <p class="text-xs text-neutral-400 max-w-xs mx-auto leading-relaxed normal-case">The matrix audit desk has processed your metadata query. Core analysts will cross-examine the schedule coordinates shortly.</p>
-                                </div>`;
-                        } else {
-                            alert(`Transmission failure exception code: ${response.status}`);
-                        }
-                    } catch (err) {
-                        console.error("Form handling failure:", err);
-                    }
-                });
-            }
-        });
-
         function switchTab(tabId) {
             try {
                 document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
@@ -384,13 +351,13 @@
         function closeAllMatchupDropdowns() {
             const t1 = document.getElementById('matchup-t1-list');
             const t2 = document.getElementById('matchup-t2-list');
-            if (t1) t1.add('hidden');
-            if (t2) t2.add('hidden');
+            if (t1) t1.classList.add('hidden');
+            if (t2) t2.classList.add('hidden');
         }
 
         async function fetchSiteMetadata() {
             try {
-                const response = await fetch('./site_metadata.json');
+                const response = await fetch('/site_metadata.json');
                 if (!response.ok) return;
                 const metadata = await response.json();
                 
@@ -428,7 +395,7 @@
 
         async function fetchHistoryData() {
             try {
-                const response = await fetch('./rankings_history.json');
+                const response = await fetch('/rankings_history.json');
                 if (response.ok) {
                     historyData = await response.json();
                 }
@@ -439,7 +406,7 @@
 
         async function fetchRankingsData() {
             try {
-                const response = await fetch('./MyLax_Rankings.json');
+                const response = await fetch('/MyLax_Rankings.json');
                 if (!response.ok) throw new Error('Data processing error');
                 allRankingsData = await response.json();
                 
@@ -842,10 +809,42 @@
             });
         }
 
-        window.addEventListener('DOMContentLoaded', async () => {
+        // ⚡ GLOBAL RUNTIME ENGINE INITIALIZATION
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Unify data fetches safely
             fetchSiteMetadata();
             await fetchHistoryData(); 
             fetchRankingsData();
+
+            // Bind the AJAX submission handling safely
+            const form = document.getElementById('netlify-contact-form');
+            if (form) {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault(); 
+                    
+                    const formData = new FormData(form);
+                    try {
+                        const response = await fetch("/", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                            body: new URLSearchParams(formData).toString()
+                        });
+                        
+                        if (response.ok) {
+                            form.innerHTML = `
+                                <div class="text-center py-8 space-y-4">
+                                    <div class="w-12 h-12 rounded-full bg-cyan-950 border border-cyan-400 flex items-center justify-center mx-auto shadow-lg neon-glow-cyan text-cyan-400 font-bold text-xl">✓</div>
+                                    <h4 class="text-white font-black text-sm uppercase tracking-wider">Transmission Logged Successfully</h4>
+                                    <p class="text-xs text-neutral-400 max-w-xs mx-auto leading-relaxed normal-case">The matrix audit desk has processed your metadata query. Core analysts will cross-examine the schedule coordinates shortly.</p>
+                                </div>`;
+                        } else {
+                            alert(`Transmission failure exception code: ${response.status}`);
+                        }
+                    } catch (err) {
+                        console.error("Form handling failure:", err);
+                    }
+                });
+            }
         });
     </script>
 </body>

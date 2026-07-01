@@ -237,7 +237,6 @@
                             <span>-10.0</span>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -304,8 +303,8 @@
                 <p class="text-xs text-neutral-500 uppercase tracking-widest">Flag missing results or statistical adjustments.</p>
             </div>
             
-            <form id="netlify-contact-form" name="contact" method="POST" data-netlify="true" class="space-y-4 bg-neutral-900 p-6 rounded-xl border border-neutral-800 shadow-2xl transition-all duration-500">
-                <input type="hidden" name="form-name" value="contact" />
+            <form id="netlify-contact-form" name="dailylax-support" method="POST" data-netlify="true" class="space-y-4 bg-neutral-900 p-6 rounded-xl border border-neutral-800 shadow-2xl transition-all duration-500">
+                <input type="hidden" name="form-name" value="dailylax-support" />
                 
                 <div>
                     <label for="name" class="block text-[10px] font-black uppercase tracking-widest text-neutral-400 mb-2">Name</label>
@@ -814,37 +813,37 @@
             });
         }
 
-        // 🛡️ REBUILT, BULLETPROOF INITIALIZATION & FORM INTERCEPTOR
+        // 🚀 FULLY REBUILT CONTACT FORM INTERCEPTOR
         document.addEventListener('DOMContentLoaded', async () => {
             
-            // 1. Fire up the site analytics natively
+            // Start the data pulls
             fetchSiteMetadata();
             await fetchHistoryData(); 
             fetchRankingsData();
 
-            // 2. Lock down the Netlify Form Submission
+            // Intercept form natively
             const form = document.getElementById('netlify-contact-form');
             if (form) {
                 form.addEventListener('submit', async (e) => {
                     e.preventDefault(); 
                     
-                    // Failsafe 1: Don't crash out local testers
+                    // Stop Local Computers from executing to prevent 404s
                     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
                     if (isLocal) {
                         alert("⚠️ NETLIFY ENVIRONMENT REQUIRED\n\nNetlify Forms cannot process on a local computer. Push your code to GitHub and test this form on your live Netlify staging link!");
                         return;
                     }
 
-                    // Failsafe 2: Build a bulletproof URL Encoded Payload to bypass the Netlify 404
+                    // Package the form payload perfectly for Netlify
                     const formData = new FormData(form);
                     const dataParams = new URLSearchParams();
                     for (const [key, value] of formData) {
                         dataParams.append(key, value);
                     }
                     
-                    // Hard-inject the form-name target just in case the browser missed the hidden tag
+                    // Failsafe injection: Guarantee Netlify knows the DB target name
                     if (!dataParams.has('form-name')) {
-                        dataParams.append('form-name', 'contact');
+                        dataParams.append('form-name', 'dailylax-support');
                     }
 
                     try {
@@ -855,6 +854,7 @@
                         });
                         
                         if (response.ok) {
+                            // Render pure success state
                             form.innerHTML = `
                                 <div class="text-center py-8 space-y-4 animate-fadeIn">
                                     <div class="w-12 h-12 rounded-full bg-cyan-950 border border-cyan-400 flex items-center justify-center mx-auto shadow-lg neon-glow-cyan text-cyan-400 font-bold text-xl">✓</div>

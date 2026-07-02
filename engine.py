@@ -211,22 +211,27 @@ def fetch_all_lacrosse_data():
     load_division_map()
     
     all_ids = []
-    recent_tournaments = []
+    ordered_tournament_names = []
+    tournament_id_to_name = {}
     
+    # 🧠 Initialize Smart-Mapping for Tournaments
     if isinstance(sources, dict):
         all_ids = list(sources.get("leagues", {}).values()) + list(sources.get("tournaments", {}).values())
         if not all_ids:
             all_ids = list(sources.values())
             
         if "tournaments" in sources:
-            tournament_names = list(sources["tournaments"].keys())
-            recent_tournaments = tournament_names[-6:]
-            
+            ordered_tournament_names = list(sources["tournaments"].keys())
+            for name, tid in sources["tournaments"].items():
+                tournament_id_to_name[tid] = name
+                
     elif isinstance(sources, list):
         all_ids = sources
 
     print(f"🚀 Initializing Extraction. Found {len(all_ids)} GameSheet targets.", flush=True)
     final_clean_games = []
+    valid_states = ["final", "official", "completed", "complete", "played", "2"]
+    tournaments_with_finals = set()
 
     for id_number in all_ids:
         url = f"https://gamesheetstats.com/api/unified-games/{id_number}"
@@ -239,14 +244,22 @@ def fetch_all_lacrosse_data():
                 for game in target_list:
                     clean_item = transform_and_filter_game(game, id_number)
                     final_clean_games.append(clean_item)
+                    
+                    # SMART FILTER: Check if this tournament has a finalized score
+                    if clean_item["Status"] in valid_states:
+                        if id_number in tournament_id_to_name:
+                            tournaments_with_finals.add(tournament_id_to_name[id_number])
         except Exception:
             pass
 
     print(f"✅ Data Extraction Complete. Total valid matches stored: {len(final_clean_games)}", flush=True)
     
+    # Filter tournaments to only those with finalized scores, keeping original chronological order
+    active_ordered_tournaments = [name for name in ordered_tournament_names if name in tournaments_with_finals]
+    recent_tournaments = active_ordered_tournaments[-6:]
+    
     # CALCULATE MOST RECENT DATE
     valid_dates = []
-    valid_states = ["final", "official", "completed", "complete", "played", "2"]
     for g in final_clean_games:
         if g["Status"] in valid_states and g["Date"]:
             try:

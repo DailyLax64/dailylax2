@@ -1,0 +1,31 @@
+name: Mid-Day Tournament Update (NO HISTORY OVERWRITE)
+
+on:
+  workflow_dispatch: # 👈 This means it ONLY runs when you manually click the button
+
+jobs:
+  run-midday-engine:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Live Repository Code
+      uses: actions/checkout@v4
+      with:
+        ref: main
+
+    - name: Set up Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Execute Matrix Engine in Mid-Day Mode
+      env:
+        SKIP_HISTORY: "true" # 👈 This tells Python to protect the history baseline
+      run: python engine.py
+
+    - name: Commit and Push Live Mid-Day Data
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add MyLax_Rankings.json site_metadata.json
+        git commit -m "☀️ Mid-Day Live Rankings Update [skip netlify]" || echo "No data updates detected."
+        git push origin main

@@ -298,23 +298,29 @@ def fetch_all_lacrosse_data():
         except Exception:
             history_data = {}
 
-    today_key = datetime.now().strftime("%Y-%m-%d")
-    today_map = {}
-    
-    # Pack both Rank and Rating into the daily snapshot profile
-    for div, teams in rankings_output.items():
-        today_map[div] = {t["Team Name"]: {"Rank": t["Rank"], "Rating": t["Rating"]} for t in teams}
+    # 🚦 CHECK FOR MID-DAY SIGNAL FROM GITHUB ACTIONS
+    skip_history = os.environ.get("SKIP_HISTORY", "false").lower() == "true"
+
+    if not skip_history:
+        today_key = datetime.now().strftime("%Y-%m-%d")
+        today_map = {}
         
-    history_data[today_key] = today_map
+        # Pack both Rank and Rating into the daily snapshot profile
+        for div, teams in rankings_output.items():
+            today_map[div] = {t["Team Name"]: {"Rank": t["Rank"], "Rating": t["Rating"]} for t in teams}
+            
+        history_data[today_key] = today_map
 
-    sorted_history_days = sorted(history_data.keys())
-    while len(sorted_history_days) > 6:
-        oldest_day = sorted_history_days.pop(0)
-        history_data.pop(oldest_day, None)
+        sorted_history_days = sorted(history_data.keys())
+        while len(sorted_history_days) > 6:
+            oldest_day = sorted_history_days.pop(0)
+            history_data.pop(oldest_day, None)
 
-    with open(history_file, 'w') as hf:
-        json.dump(history_data, hf, indent=2)
-    print(f"📦 Advanced profile history log updated. Days archived: {len(history_data)}/6", flush=True)
+        with open(history_file, 'w') as hf:
+            json.dump(history_data, hf, indent=2)
+        print(f"📦 Standard Run: History log updated. Days archived: {len(history_data)}/6", flush=True)
+    else:
+        print("☀️ MID-DAY MODE ENGAGED: Live rankings updated, but morning historical baseline preserved.", flush=True)
 
 if __name__ == "__main__":
     fetch_all_lacrosse_data()
